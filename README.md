@@ -6,10 +6,6 @@ Perfil de Aplicação DCAT para Catálogos de Dados no Brasil
 
 O DCAT-BR é um perfil de aplicação baseado no vocabulário [Data Catalogue Vocabulary (DCAT)](https://www.w3.org/TR/vocab-dcat-3/) da W3C, desenvolvido especificamente para descrever catálogos de dados públicos no Brasil.
 
-## Site GitHub Pages
-
-Este repositório contém o site do DCAT-BR hospedado no GitHub Pages. Acesse: [https://seu-usuario.github.io/dcat-br/](https://seu-usuario.github.io/dcat-br/)
-
 ## Estrutura do Repositório
 
 ```
@@ -55,7 +51,7 @@ DCAT-BR/
    ```json
    {
      "version": "1.1",
-     "date": "2024-06-01",
+     "date": "2025-10-12",
      "status": "Recommendation",
      "description": "Descrição da nova versão...",
      "links": {

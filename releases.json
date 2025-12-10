@@ -2,7 +2,7 @@
   "releases": [
     {
       "version": "1.0",
-      "date": "2024-01-01",
+      "date": "2025-10-12",
       "status": "Recommendation",
       "description": "Primeira versão do DCAT-BR, baseada no DCAT-AP 2.x e adaptada para o contexto brasileiro.",
       "links": {
@@ -11,7 +11,7 @@
         "rdf": "docs/releases/1.0/dcat-br.rdf"
       },
       "shacl": "docs/shacl/1.0/",
-      "changelog": "CHANGELOG.md#10---2024-01-01"
+      "changelog": "CHANGELOG.md#10---2025-10-12"
     }
   ],
   "latest": "1.0",

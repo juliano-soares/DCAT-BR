@@ -9,15 +9,11 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ### Adicionado
 - Primeira versão do DCAT-BR
-- Especificação completa baseada no DCAT-AP 2.x
+- Especificação completa baseada no DCAT
 - Arquivos SHACL para validação
 - Documentação em HTML, PDF e RDF
 - Vocabulários controlados adaptados para o contexto brasileiro
 
-### Notas
-- Esta versão é baseada no DCAT-AP 2.x e adaptada para o contexto brasileiro
-- Inclui suporte para vocabulários específicos do Brasil
-- Compatível com o Catálogo Nacional de Dados
 
 ---
 
