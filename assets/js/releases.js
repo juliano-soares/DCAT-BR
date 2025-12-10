@@ -17,16 +17,67 @@ let releasesData = {
     ]
 };
 
+// Função para normalizar caminhos relativos
+function normalizePath(path) {
+    // Se o caminho já começa com http:// ou https://, retorna como está
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+        return path;
+    }
+    
+    // Detecta o caminho base
+    const basePath = window.location.pathname.replace(/\/[^/]*$/, '') || '';
+    
+    // Se o caminho começa com ./, remove
+    if (path.startsWith('./')) {
+        path = path.substring(2);
+    }
+    
+    // Se o caminho começa com /, usa caminho absoluto
+    if (path.startsWith('/')) {
+        return path;
+    }
+    
+    // Caso contrário, usa caminho relativo ao basePath
+    return basePath ? `${basePath}/${path}` : `./${path}`;
+}
+
 // Tenta carregar releases.json
 async function loadReleasesData() {
     try {
-        const response = await fetch('releases.json');
-        if (response.ok) {
-            const data = await response.json();
-            releasesData = data;
+        // Detecta o caminho base automaticamente
+        const basePath = window.location.pathname.replace(/\/[^/]*$/, '') || '';
+        
+        // Tenta diferentes caminhos para releases.json
+        const paths = [
+            normalizePath('releases.json'),
+            './releases.json',
+            'releases.json',
+            basePath + '/releases.json',
+            '/DCAT-BR/releases.json',
+            '/releases.json'
+        ];
+        
+        let loaded = false;
+        for (const path of paths) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const data = await response.json();
+                    releasesData = data;
+                    loaded = true;
+                    console.log('releases.json carregado de:', path);
+                    break;
+                }
+            } catch (e) {
+                continue;
+            }
+        }
+        
+        if (!loaded) {
+            console.warn('Não foi possível carregar releases.json, usando dados padrão');
         }
     } catch (error) {
-        console.warn('Não foi possível carregar releases.json, usando dados padrão');
+        console.warn('Não foi possível carregar releases.json, usando dados padrão', error);
     }
     loadReleases();
 }
@@ -44,16 +95,22 @@ function loadReleases() {
             ? '<span class="version">Recomendação</span>' 
             : `<span class="version" style="background: #ff9800;">${release.status}</span>`;
         
+        // Normaliza os caminhos dos links
+        const htmlLink = normalizePath(release.links.html);
+        const pdfLink = normalizePath(release.links.pdf);
+        const rdfLink = normalizePath(release.links.rdf);
+        const shaclLink = release.shacl ? normalizePath(release.shacl) : '';
+        
         releaseCard.innerHTML = `
             <h3>DCAT-BR ${release.version}</h3>
             ${statusBadge}
             <p class="date">Publicado em: ${formatDate(release.date)}</p>
             <p class="description">${release.description}</p>
             <div class="links">
-                <a href="${release.links.html}" class="btn">Especificação HTML</a>
-                <a href="${release.links.pdf}" class="btn btn-secondary">PDF</a>
-                <a href="${release.links.rdf}" class="btn btn-secondary">RDF</a>
-                ${release.shacl ? `<a href="${release.shacl}" class="btn btn-secondary">SHACL</a>` : ''}
+                <a href="${htmlLink}" class="btn">Especificação HTML</a>
+                <a href="${pdfLink}" class="btn btn-secondary">PDF</a>
+                <a href="${rdfLink}" class="btn btn-secondary">RDF</a>
+                ${shaclLink ? `<a href="${shaclLink}" class="btn btn-secondary">SHACL</a>` : ''}
             </div>
         `;
         
@@ -76,4 +133,3 @@ if (document.readyState === 'loading') {
 } else {
     loadReleasesData();
 }
-
