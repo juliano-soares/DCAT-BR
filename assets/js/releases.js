@@ -24,56 +24,31 @@ function normalizePath(path) {
         return path;
     }
     
-    // Detecta o caminho base
-    const basePath = window.location.pathname.replace(/\/[^/]*$/, '') || '';
-    
-    // Se o caminho começa com ./, remove
-    if (path.startsWith('./')) {
-        path = path.substring(2);
-    }
-    
-    // Se o caminho começa com /, usa caminho absoluto
+    // Se o caminho começa com /, retorna como está (caminho absoluto)
     if (path.startsWith('/')) {
         return path;
     }
     
-    // Caso contrário, usa caminho relativo ao basePath
-    return basePath ? `${basePath}/${path}` : `./${path}`;
+    // Remove ./ se existir
+    if (path.startsWith('./')) {
+        path = path.substring(2);
+    }
+    
+    // Retorna o caminho relativo (o <base> tag cuida do resto)
+    return path;
 }
 
 // Tenta carregar releases.json
 async function loadReleasesData() {
     try {
-        // Detecta o caminho base automaticamente
-        const basePath = window.location.pathname.replace(/\/[^/]*$/, '') || '';
-        
-        // Tenta diferentes caminhos para releases.json
-        const paths = [
-            normalizePath('releases.json'),
-            './releases.json',
-            'releases.json',
-            basePath + '/releases.json',
-            '/DCAT-BR/releases.json',
-            '/releases.json'
-        ];
-        
-        let loaded = false;
-        for (const path of paths) {
-            try {
-                const response = await fetch(path);
-                if (response.ok) {
-                    const data = await response.json();
-                    releasesData = data;
-                    loaded = true;
-                    console.log('releases.json carregado de:', path);
-                    break;
-                }
-            } catch (e) {
-                continue;
-            }
-        }
-        
-        if (!loaded) {
+        // Tenta carregar releases.json usando caminho relativo
+        // O <base> tag no HTML cuida do caminho base
+        const response = await fetch('releases.json');
+        if (response.ok) {
+            const data = await response.json();
+            releasesData = data;
+            console.log('releases.json carregado com sucesso');
+        } else {
             console.warn('Não foi possível carregar releases.json, usando dados padrão');
         }
     } catch (error) {
