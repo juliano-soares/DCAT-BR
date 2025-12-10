@@ -41,14 +41,34 @@ function normalizePath(path) {
 // Tenta carregar releases.json
 async function loadReleasesData() {
     try {
-        // Tenta carregar releases.json usando caminho relativo
-        // O <base> tag no HTML cuida do caminho base
-        const response = await fetch('releases.json');
-        if (response.ok) {
-            const data = await response.json();
-            releasesData = data;
-            console.log('releases.json carregado com sucesso');
-        } else {
+        // Tenta diferentes caminhos para releases.json
+        const basePath = document.querySelector('base')?.href || window.location.pathname.replace(/\/[^/]*$/, '') || '';
+        const paths = [
+            'releases.json',
+            basePath + 'releases.json',
+            './releases.json',
+            '/DCAT-BR/releases.json'
+        ];
+        
+        let loaded = false;
+        for (const path of paths) {
+            try {
+                console.log('Tentando carregar releases.json de:', path);
+                const response = await fetch(path);
+                if (response.ok) {
+                    const data = await response.json();
+                    releasesData = data;
+                    loaded = true;
+                    console.log('releases.json carregado com sucesso de:', path);
+                    break;
+                }
+            } catch (e) {
+                console.warn('Erro ao carregar de', path, e);
+                continue;
+            }
+        }
+        
+        if (!loaded) {
             console.warn('Não foi possível carregar releases.json, usando dados padrão');
         }
     } catch (error) {
