@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCAT-BR v1.0 - Especificação</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <style>
+        .version-header {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .version-info {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .version-info-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="version-header">
+        <div class="content-wrapper">
+            <a href="../../../index.html" class="back-link" style="color: white;">← Voltar para a página principal</a>
+            <h1>DCAT-BR v1.0</h1>
+            <div class="version-info">
+                <div class="version-info-item">
+                    <strong>Status:</strong> Recomendação
+                </div>
+                <div class="version-info-item">
+                    <strong>Data de Publicação:</strong> Janeiro 2024
+                </div>
+                <div class="version-info-item">
+                    <strong>Baseado em:</strong> DCAT-AP 2.x
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="dcat-br.html">Especificação</a></li>
+                <li><a href="dcat-br.pdf" target="_blank">PDF</a></li>
+                <li><a href="dcat-br.rdf" target="_blank">RDF</a></li>
+                <li><a href="../../shacl/1.0/">SHACL</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section>
+            <h2>Especificação DCAT-BR v1.0</h2>
+            <p>
+                Esta é a primeira versão do DCAT-BR, um perfil de aplicação baseado no DCAT-AP 2.x 
+                adaptado para o contexto brasileiro.
+            </p>
+            
+            <h3>Documentação</h3>
+            <div style="margin-top: 1rem;">
+                <iframe src="dcat-br.html" title="Especificação DCAT-BR v1.0"></iframe>
+            </div>
+
+            <h3>Downloads</h3>
+            <div class="docs-grid" style="margin-top: 1rem;">
+                <div class="doc-card">
+                    <h4>Especificação HTML</h4>
+                    <a href="dcat-br.html" class="btn" target="_blank">Abrir HTML</a>
+                </div>
+                <div class="doc-card">
+                    <h4>Especificação PDF</h4>
+                    <a href="dcat-br.pdf" class="btn" target="_blank">Download PDF</a>
+                </div>
+                <div class="doc-card">
+                    <h4>Especificação RDF</h4>
+                    <a href="dcat-br.rdf" class="btn" target="_blank">Download RDF</a>
+                </div>
+                <div class="doc-card">
+                    <h4>Arquivos SHACL</h4>
+                    <a href="../../shacl/1.0/" class="btn">Ver SHACL</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                Copyright © 2025 DCAT-BR. Todo o material neste repositório é publicado sob a licença 
+                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+

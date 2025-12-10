@@ -1,0 +1,206 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/shapes_recommended.ttl#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcatbr: <http://purl.org/dcat-br/> .
+
+<https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/shapes_recommended.ttl> 
+    dct:description "Este arquivo especifica as restrições sobre propriedades recomendadas expressas pelo DCAT-BR em SHACL."@pt-BR ;
+    dct:description "This file specifies the constraints on recommended properties expressed by DCAT-BR in SHACL."@en .
+
+#-------------------------------------------------------------------------
+# As shapes neste arquivo cobrem todas as recomendações no DCAT-BR 1.0.0.
+# Estas são propriedades que não são obrigatórias, mas são recomendadas
+# para melhorar a qualidade e interoperabilidade dos metadados.
+#-------------------------------------------------------------------------
+
+:Agent_Shape
+    a sh:NodeShape ;
+    rdfs:label "Agente"@pt-BR ;
+    rdfs:label "Agent"@en ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:path dct:type ;
+        sh:severity sh:Warning
+    ] ;
+    sh:targetClass foaf:Agent .
+
+:DataService_Shape
+    a sh:NodeShape ;
+    rdfs:label "Serviço de Dados"@pt-BR ;
+    rdfs:label "Data Service"@en ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:path dcat:servesDataset ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:endpointDescription ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:contactPoint ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:publisher ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:theme ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:conformsTo ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:keyword ;
+        sh:severity sh:Warning
+    ] ;
+    sh:targetClass dcat:DataService .
+
+:Dataset_Shape
+    a sh:NodeShape ;
+    rdfs:label "Conjunto de Dados"@pt-BR ;
+    rdfs:label "Dataset"@en ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:path dcat:contactPoint ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:distribution ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:keyword ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:publisher ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:spatial ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:temporal ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:theme ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:accrualPeriodicity ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:accessRights ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:license ;
+        sh:severity sh:Warning
+    ] ;
+    sh:targetClass dcat:Dataset .
+
+:Distribution_Shape
+    a sh:NodeShape ;
+    rdfs:label "Distribuição"@pt-BR ;
+    rdfs:label "Distribution"@en ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:path dct:description ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:format ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:license ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:title ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:byteSize ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:modified ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dct:issued ;
+        sh:severity sh:Warning
+    ] ;
+    sh:targetClass dcat:Distribution .
+
+:Location_Shape
+    a sh:NodeShape ;
+    rdfs:label "Local"@pt-BR ;
+    rdfs:label "Location"@en ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:path dcat:bbox ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:centroid ;
+        sh:severity sh:Warning
+    ] ;
+    sh:targetClass dct:Location .
+
+:PeriodOfTime_Shape
+    a sh:NodeShape ;
+    rdfs:label "Período de Tempo"@pt-BR ;
+    rdfs:label "PeriodOfTime"@en ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:path dcat:endDate ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:startDate ;
+        sh:severity sh:Warning
+    ] ;
+    sh:targetClass dct:PeriodOfTime .
+
+:VCard_Shape
+    a sh:NodeShape ;
+    rdfs:label "vCard"@pt-BR ;
+    rdfs:label "vCard"@en ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:path vcard:fn ;
+        sh:severity sh:Warning
+    ], [
+        sh:minCount 1 ;
+        sh:path vcard:hasEmail ;
+        sh:severity sh:Warning
+    ] ;
+    sh:targetClass vcard:Organization .
+

@@ -1,0 +1,21 @@
+{
+  "releases": [
+    {
+      "version": "1.0",
+      "date": "2024-01-01",
+      "status": "Recommendation",
+      "description": "Primeira versão do DCAT-BR, baseada no DCAT-AP 2.x e adaptada para o contexto brasileiro.",
+      "links": {
+        "html": "docs/releases/1.0/dcat-br.html",
+        "pdf": "docs/releases/1.0/dcat-br.pdf",
+        "rdf": "docs/releases/1.0/dcat-br.rdf"
+      },
+      "shacl": "docs/shacl/1.0/",
+      "changelog": "CHANGELOG.md#10---2024-01-01"
+    }
+  ],
+  "latest": "1.0",
+  "repository": "https://github.com/seu-usuario/dcat-br",
+  "issues": "https://github.com/seu-usuario/dcat-br/issues"
+}
+

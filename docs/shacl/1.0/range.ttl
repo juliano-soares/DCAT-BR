@@ -1,0 +1,202 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/range.ttl#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcatbr: <http://purl.org/dcat-br/> .
+
+<https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/range.ttl> 
+    dct:description "Este arquivo contém as restrições de intervalo de classe para todas as propriedades no DCAT-BR."@pt-BR ;
+    dct:description "This file contains the class range constraints for all properties in DCAT-BR."@en .
+
+#-------------------------------------------------------------------------
+# As shapes neste arquivo cobrem todas as restrições de intervalo de classe no DCAT-BR
+#
+# Dependendo dos acordos de troca, essas podem ser necessárias para fazer parte
+# do processo de validação. No entanto, elas figuram principalmente no entendimento
+# semântico dos intervalos.
+#-------------------------------------------------------------------------
+
+:Agent_Shape
+    a sh:NodeShape ;
+    rdfs:label "Agente"@pt-BR ;
+    rdfs:label "Agent"@en ;
+    sh:property [
+        sh:class skos:Concept ;
+        sh:path dct:type ;
+        sh:severity sh:Violation
+    ] ;
+    sh:targetClass foaf:Agent .
+
+:DataService_Shape
+    a sh:NodeShape ;
+    rdfs:label "Serviço de Dados"@pt-BR ;
+    rdfs:label "Data Service"@en ;
+    sh:property [
+        sh:class dct:RightsStatement ;
+        sh:path dct:accessRights ;
+        sh:severity sh:Violation
+    ], [
+        sh:class vcard:Kind ;
+        sh:path dcat:contactPoint ;
+        sh:severity sh:Violation
+    ], [
+        sh:class foaf:Document ;
+        sh:path dcat:landingPage ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dct:LicenseDocument ;
+        sh:path dct:license ;
+        sh:severity sh:Violation
+    ], [
+        sh:class foaf:Agent ;
+        sh:path dct:publisher ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dcat:Dataset ;
+        sh:path dcat:servesDataset ;
+        sh:severity sh:Violation
+    ], [
+        sh:class skos:Concept ;
+        sh:path dcat:theme ;
+        sh:severity sh:Violation
+    ] ;
+    sh:targetClass dcat:DataService .
+
+:Dataset_Shape
+    a sh:NodeShape ;
+    rdfs:label "Conjunto de Dados"@pt-BR ;
+    rdfs:label "Dataset"@en ;
+    sh:property [
+        sh:class dct:RightsStatement ;
+        sh:path dct:accessRights ;
+        sh:severity sh:Violation
+    ], [
+        sh:path dct:accrualPeriodicity ;
+        sh:class dct:Frequency ;
+        sh:severity sh:Violation
+    ], [
+        sh:class vcard:Kind ;
+        sh:path dcat:contactPoint ;
+        sh:severity sh:Violation
+    ], [
+        sh:class foaf:Agent ;
+        sh:path dct:creator ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dcat:Distribution ;
+        sh:path dcat:distribution ;
+        sh:severity sh:Violation
+    ], [
+        sh:class foaf:Document ;
+        sh:path foaf:page ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dct:Location ;
+        sh:path dct:spatial ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dcat:DatasetSeries ;
+        sh:path dcat:inSeries ;
+        sh:severity sh:Violation
+    ], [
+        sh:class foaf:Document ;
+        sh:path dcat:landingPage ;
+        sh:severity sh:Violation
+    ], [
+        sh:class foaf:Agent ;
+        sh:path dct:publisher ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dct:PeriodOfTime ;
+        sh:path dct:temporal ;
+        sh:severity sh:Violation
+    ], [
+        sh:class skos:Concept ;
+        sh:path dcat:theme ;
+        sh:severity sh:Violation
+    ], [
+        sh:class skos:Concept ;
+        sh:path dct:type ;
+        sh:severity sh:Violation
+    ], [
+        sh:class prov:Activity ;
+        sh:path prov:wasGeneratedBy ;
+        sh:severity sh:Violation
+    ] ;
+    sh:targetClass dcat:Dataset .
+
+:Distribution_Shape
+    a sh:NodeShape ;
+    rdfs:label "Distribuição"@pt-BR ;
+    rdfs:label "Distribution"@en ;
+    sh:property [
+        sh:class dcat:DataService ;
+        sh:path dcat:accessService ;
+        sh:severity sh:Violation
+    ], [
+        sh:class spdx:Checksum ;
+        sh:path spdx:checksum ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dct:MediaTypeOrExtent ;
+        sh:path dct:format ;
+        sh:severity sh:Violation
+    ], [
+        sh:class foaf:Document ;
+        sh:path foaf:page ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dct:LinguisticSystem ;
+        sh:path dct:language ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dct:LicenseDocument ;
+        sh:path dct:license ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dct:MediaType ;
+        sh:path dcat:mediaType ;
+        sh:severity sh:Violation
+    ], [
+        sh:class dct:RightsStatement ;
+        sh:path dct:rights ;
+        sh:severity sh:Violation
+    ], [
+        sh:class skos:Concept ;
+        sh:path dct:type ;
+        sh:severity sh:Violation
+    ] ;
+    sh:targetClass dcat:Distribution .
+
+:PeriodOfTime_Shape
+    a sh:NodeShape ;
+    rdfs:label "Período de Tempo"@pt-BR ;
+    rdfs:label "PeriodOfTime"@en ;
+    sh:property [
+        sh:class time:Instant ;
+        sh:path time:hasBeginning ;
+        sh:severity sh:Violation
+    ], [
+        sh:class time:Instant ;
+        sh:path time:hasEnd ;
+        sh:severity sh:Violation
+    ] ;
+    sh:targetClass dct:PeriodOfTime .
+
