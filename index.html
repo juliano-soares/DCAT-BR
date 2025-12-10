@@ -101,41 +101,7 @@
         </div>
     </footer>
 
-    <script>
-        // Detecta o caminho base automaticamente
-        (function() {
-            let basePath = window.location.pathname;
-            
-            // Se a URL termina com index.html ou /, remove
-            if (basePath.endsWith('index.html')) {
-                basePath = basePath.replace(/\/index\.html$/, '');
-            } else if (basePath.endsWith('/')) {
-                basePath = basePath.slice(0, -1);
-            }
-            
-            // Se não termina com /, adiciona
-            if (basePath && !basePath.endsWith('/')) {
-                basePath += '/';
-            }
-            
-            // Se for raiz, usa ./
-            if (!basePath || basePath === '/') {
-                basePath = './';
-            }
-            
-            // Cria a tag base
-            const baseTag = document.createElement('base');
-            baseTag.href = basePath;
-            document.head.insertBefore(baseTag, document.head.firstChild);
-            
-            // Log para debug (remover em produção se necessário)
-            console.log('Base path detectado:', basePath);
-            console.log('URL completa:', window.location.href);
-            console.log('Pathname:', window.location.pathname);
-        })();
-    </script>
     <script src="assets/js/releases.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
