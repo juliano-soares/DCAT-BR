@@ -1,0 +1,34 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# 
+# Este arquivo fornece as importações que são implicitamente o resultado
+# de reutilizá-las no perfil de aplicação DCAT-BR.
+# As importações apontam para a URL das serializações RDF (principalmente
+# as serializações turtle), pois nem todas as URIs de ontologia têm
+# negociação de conteúdo implementada.
+# O formato RDF é necessário para o validador ISA testbed.
+#
+# As seguintes importações foram comentadas:
+#   owl:imports <https://www.w3.org/ns/odrl/2/ODRL22.ttl> ; 
+#   importação excluída porque a shape SHACL para Category se aplica a todas
+#   as instâncias de skos:Concept e os skos:Concepts no ODRL não estão em
+#   conformidade com isso.
+#
+
+<http://purl.org/dcat-br>
+  rdf:type owl:Ontology ;
+  owl:imports <https://www.w3.org/ns/dcat2.ttl> ;
+  owl:imports <http://dublincore.org/2020/01/20/dublin_core_terms.ttl> ;
+  owl:imports <http://xmlns.com/foaf/spec/index.rdf> ;
+  owl:imports <https://www.w3.org/ns/locn.ttl> ;
+  owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> ;
+  owl:imports <https://schema.org/version/latest/schema.ttl> ;
+  owl:imports <http://www.w3.org/ns/prov-o.ttl> ;
+  owl:imports <http://www.w3.org/2006/time.ttl> ;
+  owl:imports <http://www.w3.org/2006/vcard/ns.ttl> ;
+  owl:imports <http://www.w3.org/ns/adms.ttl> 
+  .
+

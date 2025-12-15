@@ -1,0 +1,992 @@
+[
+    {
+        "@id": "http://www.w3.org/2002/07/owl#Ontology"
+    },
+    {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+        "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    },
+    {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/abastecimento",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Abastecimento",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a abastecimento.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "abastecimento"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/administracao",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Administração",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à administração pública.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "administracao"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/agropecuaria-pesca-e-extrativismo",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Agropecuária, Pesca e Extrativismo",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à agropecuária, pesca e extrativismo.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "agropecuaria-pesca-e-extrativismo"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/comercio-e-servicos",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Comércio e Serviços",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a comércio e serviços.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "comercio-e-servicos"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/comunicacoes",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Comunicações",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a comunicações.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "comunicacoes"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/cultura",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Cultura",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à cultura.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "cultura"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/defesa-nacional",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Defesa Nacional",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à defesa nacional.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "defesa-nacional"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/economia-e-financas",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Economia e Finanças",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à economia e finanças.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "economia-e-financas"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/educacao",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Educação",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à educação.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "educacao"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/energia",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Energia",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à energia.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "energia"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/esporte-e-lazer",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Esporte e Lazer",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a esporte e lazer.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "esporte-e-lazer"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/esquema",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+            "http://www.w3.org/2002/07/owl#Ontology"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "VCR-TEMA: Temas de catalogação (proposta DCAT-BR)",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Vocabulário controlado de referência (VCR) para classificação temática de conjuntos de dados no contexto do DCAT-BR.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://purl.org/dc/terms/issued": [
+            {
+                "@value": "2025-12-12",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/language": [
+            {
+                "@value": "pt-BR"
+            }
+        ],
+        "http://purl.org/dc/terms/license": [
+            {
+                "@id": "https://creativecommons.org/licenses/by/4.0/"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionInfo": [
+            {
+                "@value": "0.1.0"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/abastecimento"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/administracao"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/agropecuaria-pesca-e-extrativismo"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/comunicacoes"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/comercio-e-servicos"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/cultura"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/defesa-nacional"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/economia-e-financas"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/educacao"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/energia"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esporte-e-lazer"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/habitacao"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/industria"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/infraestrutura-e-fomento"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/meio-ambiente"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/pesquisa-e-desenvolvimento"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/planejamento-e-gestao"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/previdencia-social"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/protecao-social"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/relacoes-internacionais"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/saneamento"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/saude"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/seguranca-e-ordem-publica"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/trabalho"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/transportes"
+            },
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/urbanismo"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/habitacao",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Habitação",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à habitação.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "habitacao"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/industria",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Indústria",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à indústria.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "industria"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/infraestrutura-e-fomento",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Infraestrutura e Fomento",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à infraestrutura e fomento.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "infraestrutura-e-fomento"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/meio-ambiente",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Meio Ambiente",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados ao meio ambiente.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "meio-ambiente"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/pesquisa-e-desenvolvimento",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Pesquisa e Desenvolvimento",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à pesquisa e desenvolvimento.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "pesquisa-e-desenvolvimento"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/planejamento-e-gestao",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Planejamento e Gestão",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a planejamento e gestão.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "planejamento-e-gestao"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/previdencia-social",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Previdência Social",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à previdência social.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "previdencia-social"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/protecao-social",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Proteção Social",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à proteção social.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "protecao-social"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/relacoes-internacionais",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Relações Internacionais",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a relações internacionais.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "relacoes-internacionais"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/saneamento",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Saneamento",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a saneamento.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "saneamento"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/saude",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Saúde",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à saúde.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "saude"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/seguranca-e-ordem-publica",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Segurança e Ordem Pública",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados à segurança e ordem pública.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "seguranca-e-ordem-publica"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/trabalho",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Trabalho",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a trabalho.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "trabalho"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/transportes",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Transportes",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a transportes.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "transportes"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    },
+    {
+        "@id": "https://vocab.dcatbr.org/vcr/tema/urbanismo",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Urbanismo",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Tema para classificação de dados relacionados a urbanismo.",
+                "@language": "pt-BR"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#notation": [
+            {
+                "@value": "urbanismo"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://vocab.dcatbr.org/vcr/tema/esquema"
+            }
+        ]
+    }
+]

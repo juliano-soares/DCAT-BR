@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulário Controlado - Campo Tema Associado ao Conjunto de Dados</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ReSpec W3C -->
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
+  <script class="remove">
+    // Configuração básica ReSpec
+    var respecConfig = {
+      specStatus: "base",
+      shortName: "themes",
+      thisVersion: "https://dcat-br.gov.br/vocabularies/themes/",
+      latestVersion: "https://dcat-br.gov.br/vocabularies/themes/",
+      edDraftURI: "https://dcat-br.gov.br/vocabularies/themes/",
+      publishDate: "2025-12-11",
+      previousPublishDate: "2025-12-11",
+      previousMaturity: "base",
+      editors: [
+        {
+          name: "Juliano Leonardo Soares",
+          company: "CPQD",
+          url: "https://www.linkedin.com/in/juliano-leonardo-soares/"
+        }
+      ],
+      github: "https://github.com/juliano-soares/dcat-br",
+      license: "w3c-software-doc",
+      noRecTrack: true,
+      overrideStatus: true,
+      wg: "Grupo de Trabalho DCAT-BR",
+      wgURI: "https://dcat-br.gov.br/v1.0/gt/",
+      wgPublicList: "dcat-br",
+      subjectPrefix: "[DCAT-BR]",
+      lint: {
+        "no-unused-dfns": false,
+        "required-sections": false
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <!-- Resumo / Abstract -->
+  <section id="abstract">
+    <h2>Resumo</h2>
+    <p>
+      O campo Tema Associado ao Conjunto de Dados é usado para classificar e categorizar os temas 
+      dos conjuntos de dados em catálogos de dados públicos no Brasil. Este vocabulário controlado 
+      baseia-se no <a href="http://vocab.e.gov.br/id/governo/2016">Vocabulário Controlado do Governo 
+      Eletrônico - VCGE (Versão 2.1.0 - 2016)</a> e define termos padronizados para descrever os 
+      temas dos conjuntos de dados, facilitando a descoberta e o uso de dados governamentais 
+      brasileiros através de uma classificação temática consistente.
+    </p>
+  </section>
+
+  <!-- Status of This Document -->
+  <section id="sotd">
+    <h2>Status deste documento</h2>
+    <p>
+      Este documento descreve o vocabulário controlado para Tema Associado ao Conjunto de Dados 
+      mantido pelo Grupo de Trabalho DCAT-BR. Comentários e propostas de alteração devem ser enviados 
+      por meio do repositório público indicado na seção de governança.
+    </p>
+  </section>
+
+  <!-- Introdução (informativa) -->
+  <section id="intro" class="informative">
+    <h2>Introdução</h2>
+    <p>
+      O campo Tema Associado ao Conjunto de Dados é uma propriedade essencial no perfil DCAT-BR para 
+      classificar e categorizar os temas dos conjuntos de dados. Este campo utiliza a propriedade 
+      <code>dcat:theme</code> do vocabulário DCAT e permite associar um ou mais temas a cada conjunto 
+      de dados, facilitando a descoberta através de classificação temática.
+    </p>
+    <p>
+      Este vocabulário é um subconjunto de temas (top concepts) utilizado no Portal Brasileiro de 
+      Dados Abertos (dados.gov.br), alinhado ao VCGE versão 2.1.0 de 2016. O VCGE é o vocabulário 
+      oficial do governo brasileiro para classificação de informações governamentais.
+    </p>
+    <p>
+      <strong>Base:</strong> <a href="http://vocab.e.gov.br/id/governo/2016">Vocabulário Controlado 
+      do Governo Eletrônico - VCGE (Versão 2.1.0 - 2016)</a>
+    </p>
+  </section>
+
+  <!-- Termos do Vocabulário -->
+  <section id="termos">
+    <h2>Termos do Vocabulário</h2>
+    <p>
+      O vocabulário inclui os seguintes temas principais:
+    </p>
+
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Tema</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Abastecimento</code></td>
+          <td>Conjuntos de dados relacionados ao abastecimento</td>
+        </tr>
+        <tr>
+          <td><code>Administração</code></td>
+          <td>Conjuntos de dados relacionados à administração pública</td>
+        </tr>
+        <tr>
+          <td><code>Agropecuária, Pesca e Extrativismo</code></td>
+          <td>Conjuntos de dados relacionados à agropecuária, pesca e extrativismo</td>
+        </tr>
+        <tr>
+          <td><code>Comércio e Serviços</code></td>
+          <td>Conjuntos de dados relacionados ao comércio e serviços</td>
+        </tr>
+        <tr>
+          <td><code>Comunicações</code></td>
+          <td>Conjuntos de dados relacionados às comunicações</td>
+        </tr>
+        <tr>
+          <td><code>Cultura</code></td>
+          <td>Conjuntos de dados relacionados à cultura</td>
+        </tr>
+        <tr>
+          <td><code>Defesa Nacional</code></td>
+          <td>Conjuntos de dados relacionados à defesa nacional</td>
+        </tr>
+        <tr>
+          <td><code>Economia e Finanças</code></td>
+          <td>Conjuntos de dados relacionados à economia e finanças</td>
+        </tr>
+        <tr>
+          <td><code>Educação</code></td>
+          <td>Conjuntos de dados relacionados à educação</td>
+        </tr>
+        <tr>
+          <td><code>Energia</code></td>
+          <td>Conjuntos de dados relacionados à energia</td>
+        </tr>
+        <tr>
+          <td><code>Esporte e Lazer</code></td>
+          <td>Conjuntos de dados relacionados ao esporte e lazer</td>
+        </tr>
+        <tr>
+          <td><code>Habitação</code></td>
+          <td>Conjuntos de dados relacionados à habitação</td>
+        </tr>
+        <tr>
+          <td><code>Indústria</code></td>
+          <td>Conjuntos de dados relacionados à indústria</td>
+        </tr>
+        <tr>
+          <td><code>Infraestrutura e Fomento</code></td>
+          <td>Conjuntos de dados relacionados à infraestrutura e fomento</td>
+        </tr>
+        <tr>
+          <td><code>Meio Ambiente</code></td>
+          <td>Conjuntos de dados relacionados ao meio ambiente</td>
+        </tr>
+        <tr>
+          <td><code>Pesquisa e Desenvolvimento</code></td>
+          <td>Conjuntos de dados relacionados à pesquisa e desenvolvimento</td>
+        </tr>
+        <tr>
+          <td><code>Planejamento e Gestão</code></td>
+          <td>Conjuntos de dados relacionados ao planejamento e gestão</td>
+        </tr>
+        <tr>
+          <td><code>Previdência Social</code></td>
+          <td>Conjuntos de dados relacionados à previdência social</td>
+        </tr>
+        <tr>
+          <td><code>Proteção Social</code></td>
+          <td>Conjuntos de dados relacionados à proteção social</td>
+        </tr>
+        <tr>
+          <td><code>Relações Internacionais</code></td>
+          <td>Conjuntos de dados relacionados às relações internacionais</td>
+        </tr>
+        <tr>
+          <td><code>Saneamento</code></td>
+          <td>Conjuntos de dados relacionados ao saneamento</td>
+        </tr>
+        <tr>
+          <td><code>Saúde</code></td>
+          <td>Conjuntos de dados relacionados à saúde</td>
+        </tr>
+        <tr>
+          <td><code>Segurança e Ordem Pública</code></td>
+          <td>Conjuntos de dados relacionados à segurança e ordem pública</td>
+        </tr>
+        <tr>
+          <td><code>Trabalho</code></td>
+          <td>Conjuntos de dados relacionados ao trabalho</td>
+        </tr>
+        <tr>
+          <td><code>Transportes</code></td>
+          <td>Conjuntos de dados relacionados aos transportes</td>
+        </tr>
+        <tr>
+          <td><code>Urbanismo</code></td>
+          <td>Conjuntos de dados relacionados ao urbanismo</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Formatos Disponíveis -->
+  <section id="formatos" class="informative">
+    <h2>Formatos Disponíveis</h2>
+    <p>
+      O vocabulário está disponível nos seguintes formatos RDF:
+    </p>
+
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Formato</th>
+          <th>Descrição</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Turtle (TTL)</strong></td>
+          <td>Formato RDF em sintaxe Turtle, ideal para leitura humana e edição.</td>
+          <td>
+            <a href="themes.ttl" download>Baixar</a> | 
+            <a href="themes.ttl" target="_blank">Visualizar</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>RDF/XML</strong></td>
+          <td>Formato RDF em XML, amplamente suportado por ferramentas RDF.</td>
+          <td>
+            <a href="themes.rdf" download>Baixar</a> | 
+            <a href="themes.rdf" target="_blank">Visualizar</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>JSON-LD</strong></td>
+          <td>Formato JSON-LD para integração com aplicações web modernas.</td>
+          <td>
+            <a href="themes.jsonld" download>Baixar</a> | 
+            <a href="themes.jsonld" target="_blank">Visualizar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Exemplo de Uso -->
+  <section id="exemplo" class="informative">
+    <h2>Exemplo de Uso</h2>
+    <p>
+      Abaixo está um exemplo de como usar o campo Tema Associado ao Conjunto de Dados em um conjunto 
+      de dados DCAT-BR:
+    </p>
+    <pre class="example" title="Exemplo de conjunto de dados com tema">
+@prefix dcat: &lt;http://www.w3.org/ns/dcat#&gt; .
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+
+&lt;https://exemplo.gov.br/dataset/1&gt;
+    a dcat:Dataset ;
+    dct:title "Dados de Educação"@pt-BR ;
+    dcat:theme &lt;http://vocab.e.gov.br/id/governo/2016/EDUCACAO&gt; .
+    </pre>
+  </section>
+
+  <!-- Referências -->
+  <section id="referencias" class="informative">
+    <h2>Referências</h2>
+    <dl>
+      <dt><a href="http://vocab.e.gov.br/id/governo/2016">VCGE - Vocabulário Controlado do Governo Eletrônico</a></dt>
+      <dd>Vocabulário Controlado do Governo Eletrônico - Versão 2.1.0 (2016)</dd>
+      
+      <dt><a href="https://www.w3.org/TR/vocab-dcat-3/">DCAT 3.0</a></dt>
+      <dd>Data Catalog Vocabulary (DCAT) - Version 3.0</dd>
+      
+      <dt><a href="https://dados.gov.br/">Portal Brasileiro de Dados Abertos</a></dt>
+      <dd>Portal oficial de dados abertos do governo brasileiro</dd>
+    </dl>
+  </section>
+
+  <script>
+    // Adiciona target="_blank" a todos os links externos quando o documento estiver pronto
+    document.addEventListener('DOMContentLoaded', function() {
+      // Aguarda o ReSpec processar o documento
+      setTimeout(function() {
+        const links = document.querySelectorAll('a[href]');
+        links.forEach(function(link) {
+          const href = link.getAttribute('href');
+          // Se for um link externo (http/https) e não tiver target definido
+          if (href && (href.startsWith('http://') || href.startsWith('https://')) && !link.hasAttribute('target')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+          }
+        });
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

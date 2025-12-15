@@ -1,0 +1,417 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+  "@type": "skos:ConceptScheme",
+  "dct:title": {
+    "@value": "Vocabulário Controlado de Formatos - IANA Media Types para DCAT-BR",
+    "@language": "pt-BR"
+  },
+  "dct:description": {
+    "@value": "Vocabulário SKOS baseado em IANA Media Types para descrever formatos de arquivo em catálogos de dados públicos no Brasil.",
+    "@language": "pt-BR"
+  },
+  "dct:source": "https://www.iana.org/assignments/media-types/media-types.xhtml",
+  "dct:issued": {
+    "@value": "2025-12-11",
+    "@type": "xsd:date"
+  },
+  "dct:modified": {
+    "@value": "2025-12-11",
+    "@type": "xsd:date"
+  },
+  "dct:language": "pt-BR",
+  "dct:license": "https://creativecommons.org/licenses/by/4.0/",
+  "dct:publisher": "https://dcat-br.gov.br/",
+  "skos:hasTopConcept": [
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/x-7z-compressed",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/x-7z-compressed", "@language": "pt-BR"},
+        {"@value": "application/x-7z-compressed", "@language": "en"}
+      ],
+      "skos:notation": "7z",
+      "skos:definition": [
+        {
+          "@value": "Formato de compressão 7z. Arquivo compactado usando o algoritmo de compressão 7z.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "7z compression format. Compressed file using the 7z compression algorithm.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/x-7z-compressed"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/json",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/json", "@language": "pt-BR"},
+        {"@value": "application/json", "@language": "en"}
+      ],
+      "skos:notation": "json",
+      "skos:altLabel": [
+        {"@value": "api", "@language": "pt-BR"},
+        {"@value": "odata", "@language": "pt-BR"}
+      ],
+      "skos:definition": [
+        {
+          "@value": "JavaScript Object Notation. Formato de dados estruturados baseado em texto, amplamente utilizado em APIs web e serviços REST/OData.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "JavaScript Object Notation. Text-based data format widely used in web APIs and REST/OData services.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/json",
+      "rdfs:seeAlso": "https://www.rfc-editor.org/rfc/rfc8259"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/text/csv",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "text/csv", "@language": "pt-BR"},
+        {"@value": "text/csv", "@language": "en"}
+      ],
+      "skos:notation": "csv",
+      "skos:definition": [
+        {
+          "@value": "Valores separados por vírgula (Comma-Separated Values). Formato tabular amplamente utilizado para dados estruturados.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Comma-Separated Values. Widely used tabular format for structured data.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/text/csv",
+      "rdfs:seeAlso": "https://www.rfc-editor.org/rfc/rfc4180"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/msword",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/msword", "@language": "pt-BR"},
+        {"@value": "application/msword", "@language": "en"}
+      ],
+      "skos:notation": "doc",
+      "skos:definition": [
+        {
+          "@value": "Microsoft Word (formato binário legado). Documentos do Word na versão .doc.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Microsoft Word (legacy binary format). Word documents in .doc version.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/msword"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "@language": "pt-BR"},
+        {"@value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "@language": "en"}
+      ],
+      "skos:notation": "docx",
+      "skos:definition": [
+        {
+          "@value": "Microsoft Word (OpenXML). Documentos do Word na versão .docx (formato XML aberto).",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Microsoft Word (OpenXML). Word documents in .docx version (open XML format).",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/gzip",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/gzip", "@language": "pt-BR"},
+        {"@value": "application/gzip", "@language": "en"}
+      ],
+      "skos:notation": "gz",
+      "skos:definition": [
+        {
+          "@value": "GNU Zip. Formato de compressão gzip amplamente utilizado em sistemas Unix/Linux.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "GNU Zip. Gzip compression format widely used in Unix/Linux systems.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/gzip",
+      "rdfs:seeAlso": "https://www.rfc-editor.org/rfc/rfc1952"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/text/html",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "text/html", "@language": "pt-BR"},
+        {"@value": "text/html", "@language": "en"}
+      ],
+      "skos:notation": "html",
+      "skos:definition": [
+        {
+          "@value": "HyperText Markup Language. Formato padrão para páginas web e documentos HTML.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "HyperText Markup Language. Standard format for web pages and HTML documents.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/text/html"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/image/jpeg",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "image/jpeg", "@language": "pt-BR"},
+        {"@value": "image/jpeg", "@language": "en"}
+      ],
+      "skos:notation": "jpeg",
+      "skos:definition": [
+        {
+          "@value": "Joint Photographic Experts Group. Formato de imagem raster com compressão com perdas.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Joint Photographic Experts Group. Raster image format with lossy compression.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/image/jpeg"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/pdf",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/pdf", "@language": "pt-BR"},
+        {"@value": "application/pdf", "@language": "en"}
+      ],
+      "skos:notation": "pdf",
+      "skos:definition": [
+        {
+          "@value": "Portable Document Format. Formato de documento portátil amplamente utilizado para documentos oficiais.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Portable Document Format. Widely used portable document format for official documents.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/pdf"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/image/png",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "image/png", "@language": "pt-BR"},
+        {"@value": "image/png", "@language": "en"}
+      ],
+      "skos:notation": "png",
+      "skos:definition": [
+        {
+          "@value": "Portable Network Graphics. Formato de imagem raster com suporte a transparência.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Portable Network Graphics. Raster image format with transparency support.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/image/png"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/x-rar-compressed",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/x-rar-compressed", "@language": "pt-BR"},
+        {"@value": "application/x-rar-compressed", "@language": "en"}
+      ],
+      "skos:notation": "rar",
+      "skos:definition": [
+        {
+          "@value": "RAR Archive. Formato de compressão RAR desenvolvido por Eugene Roshal.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "RAR Archive. RAR compression format developed by Eugene Roshal.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/x-rar-compressed"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/rdf+xml",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/rdf+xml", "@language": "pt-BR"},
+        {"@value": "application/rdf+xml", "@language": "en"}
+      ],
+      "skos:notation": "rdf",
+      "skos:definition": [
+        {
+          "@value": "Resource Description Framework em XML. Formato RDF serializado em XML.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Resource Description Framework in XML. RDF format serialized in XML.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/rdf+xml"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/text/plain",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "text/plain", "@language": "pt-BR"},
+        {"@value": "text/plain", "@language": "en"}
+      ],
+      "skos:notation": "txt",
+      "skos:definition": [
+        {
+          "@value": "Texto plano. Formato de texto sem formatação ou marcação.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Plain text. Text format without formatting or markup.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/text/plain"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/wsdl+xml",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/wsdl+xml", "@language": "pt-BR"},
+        {"@value": "application/wsdl+xml", "@language": "en"}
+      ],
+      "skos:notation": "wsdl",
+      "skos:definition": [
+        {
+          "@value": "Web Services Description Language. Formato XML para descrever serviços web.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Web Services Description Language. XML format for describing web services.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/wsdl+xml"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/vnd.ms-excel",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/vnd.ms-excel", "@language": "pt-BR"},
+        {"@value": "application/vnd.ms-excel", "@language": "en"}
+      ],
+      "skos:notation": "xls",
+      "skos:definition": [
+        {
+          "@value": "Microsoft Excel (formato binário legado). Planilhas do Excel na versão .xls.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Microsoft Excel (legacy binary format). Excel spreadsheets in .xls version.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/vnd.ms-excel"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "@language": "pt-BR"},
+        {"@value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "@language": "en"}
+      ],
+      "skos:notation": "xlsx",
+      "skos:definition": [
+        {
+          "@value": "Microsoft Excel (OpenXML). Planilhas do Excel na versão .xlsx (formato XML aberto).",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Microsoft Excel (OpenXML). Excel spreadsheets in .xlsx version (open XML format).",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/xml",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/xml", "@language": "pt-BR"},
+        {"@value": "application/xml", "@language": "en"}
+      ],
+      "skos:notation": "xml",
+      "skos:definition": [
+        {
+          "@value": "Extensible Markup Language. Formato de marcação para documentos e dados estruturados.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "Extensible Markup Language. Markup format for documents and structured data.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/xml"
+    },
+    {
+      "@id": "https://www.iana.org/assignments/media-types/application/zip",
+      "@type": "skos:Concept",
+      "skos:inScheme": "https://dcat-br.gov.br/vocabularies/formato/esquema",
+      "skos:prefLabel": [
+        {"@value": "application/zip", "@language": "pt-BR"},
+        {"@value": "application/zip", "@language": "en"}
+      ],
+      "skos:notation": "zip",
+      "skos:definition": [
+        {
+          "@value": "Arquivo ZIP comprimido. Formato de compressão de arquivos amplamente utilizado.",
+          "@language": "pt-BR"
+        },
+        {
+          "@value": "ZIP compressed archive. Widely used file compression format.",
+          "@language": "en"
+        }
+      ],
+      "dct:source": "https://www.iana.org/assignments/media-types/application/zip"
+    }
+  ]
+}

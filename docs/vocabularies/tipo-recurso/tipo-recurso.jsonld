@@ -1,0 +1,306 @@
+[
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+  },
+  {
+    "@id": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "@id": "https://dcat-br.gov.br/"
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/API",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "API",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "API",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "API"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Interface de Programação de Aplicações (API) para acesso programático aos dados.",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Application Programming Interface (API) for programmatic access to data.",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "API"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/DADOS",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Dados",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Data",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "DADOS"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Recurso do tipo dados, contendo informações estruturadas ou não estruturadas.",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Data type resource, containing structured or unstructured information.",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "DADOS"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/DICIONARIO_DE_DADOS",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Dicionário de Dados",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Data Dictionary",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "DICIONARIO_DE_DADOS"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Dicionário de dados que descreve a estrutura e o significado dos campos de um conjunto de dados.",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Data dictionary that describes the structure and meaning of the fields in a dataset.",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "DICIONARIO_DE_DADOS"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/DOCUMENTACAO",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Documentação",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Documentation",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "DOCUMENTACAO"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Documentação relacionada ao conjunto de dados, incluindo manuais, guias e especificações.",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Documentation related to the dataset, including manuals, guides and specifications.",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "DOCUMENTACAO"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/OUTRO",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Outro",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Other",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "OUTRO"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Outro tipo de recurso não especificado nas categorias anteriores.",
+        "@language": "pt-BR"
+      },
+      {
+        "@value": "Other type of resource not specified in the previous categories.",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "OUTRO"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "Vocabulário Controlado de Tipo de Recurso - DCAT-BR",
+        "@language": "pt-BR"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "Vocabulário SKOS para classificar o tipo de recurso disponibilizado em uma distribuição de dados em catálogos de dados públicos no Brasil.",
+        "@language": "pt-BR"
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@value": "2025-12-11",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@value": "2025-12-11",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://purl.org/dc/terms/language": [
+      {
+        "@value": "pt-BR"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "https://dcat-br.gov.br/"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/DADOS"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/DICIONARIO_DE_DADOS"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/DOCUMENTACAO"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/API"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/tipo-recurso/OUTRO"
+      }
+    ]
+  }
+]

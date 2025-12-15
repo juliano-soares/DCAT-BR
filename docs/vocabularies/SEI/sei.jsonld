@@ -1,0 +1,1720 @@
+[
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/23",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "23"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a reserva do processo ético conforme Art. 13 do Decreto nº 6.029/2007 e Art. 14 da Resolução."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to ethical process reserve under Art. 13 of Decree No. 6.029/2007 and Art. 14 of Resolution."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "23"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Reserva do Processo Ético (Art. 13 do Decreto nº 6.029/2007 e Art. 14 da Reso)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Ethical Process Reserve (Art. 13 of Decree No. 6.029/2007 and Art. 14 of Resolution)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/11",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "11"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo contábil conforme Art. 1.190 da Lei nº 10.406/2002."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to accounting secrecy under Art. 1.190 of Law No. 10.406/2002."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "11"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo Contábil (Art. 1.190 da Lei nº 10.406/2002)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Accounting Secrecy (Art. 1.190 of Law No. 10.406/2002)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/27",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "27"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo fiscal conforme Art. 198, caput, da Lei nº 5.172/1966."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to tax secrecy under Art. 198, caput, of Law No. 5.172/1966."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "27"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo Fiscal (Art. 198, caput, da Lei nº 5.172/1966)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Tax Secrecy (Art. 198, caput, of Law No. 5.172/1966)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/26",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo bancário conforme Art. 1º da Lei Complementar nº 105/2001."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to banking secrecy under Art. 1 of Complementary Law No. 105/2001."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "26"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo Bancário (Art. 1º da Lei Complementar nº 105/2001b)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Banking Secrecy (Art. 1 of Complementary Law No. 105/2001)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/18",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "18"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo por possibilidade de risco ou dano conforme Art. 45 do Decreto nº 7.845/2012."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to secrecy for risk or damage possibility under Art. 45 of Decree No. 7.845/2012."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "18"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo por Possibilidade de Risco ou Dano (Art. 45 do Decreto nº 7.845/2012)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Secrecy due to Risk or Damage Possibility (Art. 45 of Decree No. 7.845/2012)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/34",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "34"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo da profissão de advogado conforme Art. 7°, inciso II, da Lei n°11.767/2008."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to lawyer profession secrecy under Art. 7, item II, of Law No. 11.767/2008."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "34"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo Profissão de Advogado (Art. 7°, inciso II, da Lei n°11.767/2008)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Lawyer Profession Secrecy (Art. 7, item II, of Law No. 11.767/2008)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/30",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "30"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo do inquérito policial conforme Art. 20 do Decreto-Lei 3.689/1941."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to police investigation secrecy under Art. 20 of Decree-Law 3.689/1941."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "30"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo do Inquérito Policial (Art. 20 do Decreto-Lei 3.689/1941)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Police Investigation Secrecy (Art. 20 of Decree-Law 3.689/1941)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/10",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "10"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo comercial de sociedades anônimas conforme Art. 155, § 2º da Lei nº 6.404/1976."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to commercial secrecy of corporations under Art. 155, § 2 of Law No. 6.404/1976."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "10"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo Comercial (Sociedades Anônimas) (Art. 155, § 2º da Lei nº 6.404/1976)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Commercial Secrecy (Corporations) (Art. 155, § 2 of Law No. 6.404/1976)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/7",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "7"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a segredo de justiça no processo civil conforme Art. 189 da Lei 13.105/2015."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to court secrecy in civil process under Art. 189 of Law 13.105/2015."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "7"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Segredo de Justiça no Processo Civil (Art. 189 da Lei 13.105/2015)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Court Secrecy in Civil Process (Art. 189 of Law 13.105/2015)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/5",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "5"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a protocolo pendente de análise de restrição conforme Art. 6º, III, da Lei nº 12.527/2011."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to protocol pending restriction analysis under Art. 6, III, of Law No. 12.527/2011."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "5"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Protocolo pendente de análise de restrição (Art. 6º, III, da Lei nº 12.527/2011)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Protocol pending restriction analysis (Art. 6, III, of Law No. 12.527/2011)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "2"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a direitos autorais conforme Lei nº 9.610/1998."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to copyright under Law No. 9.610/1998."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "2"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Direito Autoral (Lei nº 9.610/1998)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Copyright (Law No. 9.610/1998)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/9",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "9"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a segredo industrial conforme Lei nº 9.279/1996."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to industrial secret under Law No. 9.279/1996."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "9"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Segredo Industrial (Lei nº 9.279/1996)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Industrial Secret (Law No. 9.279/1996)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/1",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados públicos, sem restrições de acesso."
+      },
+      {
+        "@language": "en",
+        "@value": "Public data, without access restrictions."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Público"
+      },
+      {
+        "@language": "en",
+        "@value": "Public"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "3"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a informações pessoais conforme Art. 31 da Lei nº 12.527/2011."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to personal information under Art. 31 of Law No. 12.527/2011."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "3"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Informação Pessoal (Art. 31 da Lei nº 12.527/2011)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Personal Information (Art. 31 of Law No. 12.527/2011)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/6",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "6"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso a documento preparatório conforme Art. 7º, §3º, da Lei nº 12.527/2011."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction to preparatory document under Art. 7, §3, of Law No. 12.527/2011."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "6"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Restrição de Acesso a Documento Preparatório (Art. 7º, §3º, da Lei nº 12.527/2011)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Access Restriction to Preparatory Document (Art. 7, §3, of Law No. 12.527/2011)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/20",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "20"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo da profissão do advogado conforme Art. 7°, inciso II, da Lei n°11.767/2008."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to lawyer profession secrecy under Art. 7, item II, of Law No. 11.767/2008."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "20"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo Profissão do Advogado (Art. 7°, inciso II, da Lei n°11.767/2008)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Lawyer Profession Secrecy (Art. 7, item II, of Law No. 11.767/2008)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "pt-BR",
+        "@value": "Vocabulário SKOS para descrever a observância legal de distribuições de dados em catálogos de dados públicos no Brasil, baseado no Sistema Eletrônico de Informações (SEI)."
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-12-11"
+      }
+    ],
+    "http://purl.org/dc/terms/language": [
+      {
+        "@value": "pt-BR"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-12-11"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "https://dcat-br.gov.br/"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://dados.gov.br/dados/api/publico/conjuntos-dados/observancia-legal"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "pt-BR",
+        "@value": "Vocabulário Controlado de Observância Legal (SEI) - DCAT-BR"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/1"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/2"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/3"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/4"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/5"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/6"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/7"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/8"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/9"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/10"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/11"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/12"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/13"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/14"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/15"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/16"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/17"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/18"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/19"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/20"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/21"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/22"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/23"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/24"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/25"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/26"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/27"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/28"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/29"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/30"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/31"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/32"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/33"
+      },
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/34"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/24",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "24"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a segredo de justiça no processo civil conforme Art. 189 da Lei 13.105/2015."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to court secrecy in civil process under Art. 189 of Law 13.105/2015."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "24"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Segredo de Justiça no Processo Civil (Art. 189 da Lei 13.105/2015)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Court Secrecy in Civil Process (Art. 189 of Law 13.105/2015)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/13",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "13"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo do inquérito policial conforme Art. 20 do Decreto-Lei 3.689/1941."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to police investigation secrecy under Art. 20 of Decree-Law 3.689/1941."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "13"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo do Inquérito Policial (Art. 20 do Decreto-Lei 3.689/1941)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Police Investigation Secrecy (Art. 20 of Decree-Law 3.689/1941)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/17",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "17"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo funcional - SFC conforme Art. 26, §3º, da Lei nº 10.180/2001."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to functional secrecy - SFC under Art. 26, §3, of Law No. 10.180/2001."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "17"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo Funcional - SFC (Art. 26, §3º, da Lei nº 10.180/2001)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Functional Secrecy - SFC (Art. 26, §3, of Law No. 10.180/2001)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/19",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "19"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo do procedimento administrativo de responsabilização conforme Art. 5º do Decreto nº 11.129/2022."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to secrecy of administrative accountability procedure under Art. 5 of Decree No. 11.129/2022."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "19"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo Procedimento Admin. de Responsabilização (Art. 5º do Decreto nº 11.129/2022)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Secrecy of Administrative Accountability Procedure (Art. 5 of Decree No. 11.129/2022)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/21",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "21"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos de documento preparatório conforme Art. 7º, § 3º, da Lei nº 12.527/2001."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data of preparatory document under Art. 7, § 3, of Law No. 12.527/2001."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "21"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Documento Preparatório - Sigiloso (Art. 7º, § 3º, da Lei nº 12.527/2001)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Preparatory Document - Confidential (Art. 7, § 3, of Law No. 12.527/2001)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/8",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "8"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a segredo de justiça no processo penal conforme Art. 201, §6º, do Decreto-Lei 3.689/1941."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to court secrecy in criminal process under Art. 201, §6, of Decree-Law 3.689/1941."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "8"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Segredo de Justiça no Processo Penal (Art. 201, §6º, do Decreto-Lei 3.689/1941)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Court Secrecy in Criminal Process (Art. 201, §6, of Decree-Law 3.689/1941)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/16",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "16"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo empresarial conforme Art. 169 da Lei nº 11.101/2005."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to business secrecy under Art. 169 of Law No. 11.101/2005."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "16"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo Empresarial (Art. 169 da Lei nº 11.101/2005)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Business Secrecy (Art. 169 of Law No. 11.101/2005)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/14",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "14"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo do procedimento administrativo disciplinar em curso conforme Art. 150 da Lei nº 8.112/1990."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to secrecy of ongoing administrative disciplinary procedure under Art. 150 of Law No. 8.112/1990."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "14"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo do Procedimento Admin. Disciplinar em Curso (Art. 150 da Lei nº 8.112/1990)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Secrecy of Ongoing Administrative Disciplinary Procedure (Art. 150 of Law No. 8.112/1990)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/4",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "4"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a propriedade intelectual de software conforme Lei nº 9.609/1998."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to software intellectual property under Law No. 9.609/1998."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "4"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Propriedade Intelectual (software) (Lei nº 9.609/1998)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Intellectual Property (software) (Law No. 9.609/1998)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/22",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "22"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos de informação pessoal sensível conforme Art. 31 da Lei nº 12.527/2011."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data of sensitive personal information under Art. 31 of Law No. 12.527/2011."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "22"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Informação Pessoal Sensível (Art. 31 da Lei nº 12.527/2011)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Sensitive Personal Information (Art. 31 of Law No. 12.527/2011)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/12",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "12"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo de nome, imagem, qualificação e demais informações conforme Art. 5º, II da Lei 12.850/13."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to secrecy of name, image, qualification and other information under Art. 5, II of Law 12.850/13."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "12"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo de nome, imagem, qualificação e demais info (Art. 5º, II da Lei 12.850/13)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Secrecy of name, image, qualification and other info (Art. 5, II of Law 12.850/13)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/31",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "31"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo dos autos conforme Art. 7° da Resolução CNMP n° 23/2007."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to secrecy of case files under Art. 7 of CNMP Resolution No. 23/2007."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "31"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo dos autos (Art. 7° da Resolução CNMP n° 23/2007)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Secrecy of case files (Art. 7 of CNMP Resolution No. 23/2007)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/33",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "33"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo do procedimento administrativo de responsabilização conforme Art. 5º do Decreto nº 11.129/2022."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to secrecy of administrative accountability procedure under Art. 5 of Decree No. 11.129/2022."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "33"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo Procedimento Administ. de Responsabilização (Art. 5º do Decreto nº 11.129/2022)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Secrecy of Administrative Accountability Procedure (Art. 5 of Decree No. 11.129/2022)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/28",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "28"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo de acordo de leniência conforme Art. 31, §1º, do Decreto nº 8.420/2015."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to leniency agreement secrecy under Art. 31, §1, of Decree No. 8.420/2015."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "28"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo de Acordo de Leniência (Art. 31, §1º, do Decreto nº 8.420/2015)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Leniency Agreement Secrecy (Art. 31, §1, of Decree No. 8.420/2015)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/29",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "29"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo de PAD em curso para servidores da CGU conforme Art. 150 da Lei nº 8.112/1990."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to secrecy of ongoing PAD for CGU servants under Art. 150 of Law No. 8.112/1990."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "29"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo de PAD em curso p/ servidores da CGU (Art. 150 da Lei nº 8.112/1990)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Secrecy of Ongoing PAD for CGU Servants (Art. 150 of Law No. 8.112/1990)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/32",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "32"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a sigilo funcional - SFC conforme Art. 26, §3º, da Lei nº 10.180/2001."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to functional secrecy - SFC under Art. 26, §3, of Law No. 10.180/2001."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "32"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Sigilo Funcional - SFC (Art. 26, §3º, da Lei nº 10.180/2001)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Functional Secrecy - SFC (Art. 26, §3, of Law No. 10.180/2001)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/15",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "15"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados com restrição de acesso devido a sigilo dos autos conforme Art. 7° da Resolução CNMP n° 23/2007."
+      },
+      {
+        "@language": "en",
+        "@value": "Data with access restriction due to secrecy of case files under Art. 7 of CNMP Resolution No. 23/2007."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "15"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Restrito - Sigilo dos autos (Art. 7° da Resolução CNMP n° 23/2007)"
+      },
+      {
+        "@language": "en",
+        "@value": "Restricted - Secrecy of case files (Art. 7 of CNMP Resolution No. 23/2007)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  },
+  {
+    "@id": "https://dcat-br.gov.br/vocabularies/SEI/25",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "25"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "pt-BR",
+        "@value": "Dados sigilosos devido a segredo de justiça no processo penal conforme Art. 201, §6º, do Decreto-Lei 3.689/1941."
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential data due to court secrecy in criminal process under Art. 201, §6, of Decree-Law 3.689/1941."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "25"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "pt-BR",
+        "@value": "Sigiloso - Segredo de Justiça no Processo Penal (Art. 201, §6º, do Decreto-Lei 3.689/1941)"
+      },
+      {
+        "@language": "en",
+        "@value": "Confidential - Court Secrecy in Criminal Process (Art. 201, §6, of Decree-Law 3.689/1941)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://dcat-br.gov.br/vocabularies/SEI/esquema"
+      }
+    ]
+  }
+]

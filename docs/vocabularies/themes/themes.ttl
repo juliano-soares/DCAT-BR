@@ -1,0 +1,226 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix tema: <https://vocab.dcatbr.org/vcr/tema/> .
+
+################################################################################
+# ConceptScheme (controlado por você)
+################################################################################
+
+tema:esquema a skos:ConceptScheme, owl:Ontology ;
+  dct:title "VCR-TEMA: Temas de catalogação (proposta DCAT-BR)"@pt-BR ;
+  dct:description "Vocabulário controlado de referência (VCR) para classificação temática de conjuntos de dados no contexto do DCAT-BR."@pt-BR ;
+  dct:issued "2025-12-12"^^xsd:date ;
+  dct:language "pt-BR" ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  owl:versionInfo "0.1.0" ;
+  skos:hasTopConcept
+    tema:abastecimento,
+    tema:administracao,
+    tema:agropecuaria-pesca-e-extrativismo,
+    tema:comunicacoes,
+    tema:comercio-e-servicos,
+    tema:cultura,
+    tema:defesa-nacional,
+    tema:economia-e-financas,
+    tema:educacao,
+    tema:energia,
+    tema:esporte-e-lazer,
+    tema:habitacao,
+    tema:industria,
+    tema:infraestrutura-e-fomento,
+    tema:meio-ambiente,
+    tema:pesquisa-e-desenvolvimento,
+    tema:planejamento-e-gestao,
+    tema:previdencia-social,
+    tema:protecao-social,
+    tema:relacoes-internacionais,
+    tema:saneamento,
+    tema:saude,
+    tema:seguranca-e-ordem-publica,
+    tema:trabalho,
+    tema:transportes,
+    tema:urbanismo .
+
+tema:abastecimento a skos:Concept ;
+  skos:prefLabel "Abastecimento"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a abastecimento."@pt-BR ;
+  skos:notation "abastecimento" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:administracao a skos:Concept ;
+  skos:prefLabel "Administração"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à administração pública."@pt-BR ;
+  skos:notation "administracao" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:agropecuaria-pesca-e-extrativismo a skos:Concept ;
+  skos:prefLabel "Agropecuária, Pesca e Extrativismo"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à agropecuária, pesca e extrativismo."@pt-BR ;
+  skos:notation "agropecuaria-pesca-e-extrativismo" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:comunicacoes a skos:Concept ;
+  skos:prefLabel "Comunicações"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a comunicações."@pt-BR ;
+  skos:notation "comunicacoes" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:comercio-e-servicos a skos:Concept ;
+  skos:prefLabel "Comércio e Serviços"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a comércio e serviços."@pt-BR ;
+  skos:notation "comercio-e-servicos" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:cultura a skos:Concept ;
+  skos:prefLabel "Cultura"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à cultura."@pt-BR ;
+  skos:notation "cultura" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:defesa-nacional a skos:Concept ;
+  skos:prefLabel "Defesa Nacional"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à defesa nacional."@pt-BR ;
+  skos:notation "defesa-nacional" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:economia-e-financas a skos:Concept ;
+  skos:prefLabel "Economia e Finanças"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à economia e finanças."@pt-BR ;
+  skos:notation "economia-e-financas" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:educacao a skos:Concept ;
+  skos:prefLabel "Educação"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à educação."@pt-BR ;
+  skos:notation "educacao" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:energia a skos:Concept ;
+  skos:prefLabel "Energia"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à energia."@pt-BR ;
+  skos:notation "energia" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:esporte-e-lazer a skos:Concept ;
+  skos:prefLabel "Esporte e Lazer"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a esporte e lazer."@pt-BR ;
+  skos:notation "esporte-e-lazer" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:habitacao a skos:Concept ;
+  skos:prefLabel "Habitação"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à habitação."@pt-BR ;
+  skos:notation "habitacao" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:industria a skos:Concept ;
+  skos:prefLabel "Indústria"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à indústria."@pt-BR ;
+  skos:notation "industria" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:infraestrutura-e-fomento a skos:Concept ;
+  skos:prefLabel "Infraestrutura e Fomento"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à infraestrutura e fomento."@pt-BR ;
+  skos:notation "infraestrutura-e-fomento" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:meio-ambiente a skos:Concept ;
+  skos:prefLabel "Meio Ambiente"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados ao meio ambiente."@pt-BR ;
+  skos:notation "meio-ambiente" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:pesquisa-e-desenvolvimento a skos:Concept ;
+  skos:prefLabel "Pesquisa e Desenvolvimento"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à pesquisa e desenvolvimento."@pt-BR ;
+  skos:notation "pesquisa-e-desenvolvimento" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:planejamento-e-gestao a skos:Concept ;
+  skos:prefLabel "Planejamento e Gestão"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a planejamento e gestão."@pt-BR ;
+  skos:notation "planejamento-e-gestao" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:previdencia-social a skos:Concept ;
+  skos:prefLabel "Previdência Social"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à previdência social."@pt-BR ;
+  skos:notation "previdencia-social" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:protecao-social a skos:Concept ;
+  skos:prefLabel "Proteção Social"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à proteção social."@pt-BR ;
+  skos:notation "protecao-social" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:relacoes-internacionais a skos:Concept ;
+  skos:prefLabel "Relações Internacionais"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a relações internacionais."@pt-BR ;
+  skos:notation "relacoes-internacionais" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:saneamento a skos:Concept ;
+  skos:prefLabel "Saneamento"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a saneamento."@pt-BR ;
+  skos:notation "saneamento" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:saude a skos:Concept ;
+  skos:prefLabel "Saúde"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à saúde."@pt-BR ;
+  skos:notation "saude" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:seguranca-e-ordem-publica a skos:Concept ;
+  skos:prefLabel "Segurança e Ordem Pública"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados à segurança e ordem pública."@pt-BR ;
+  skos:notation "seguranca-e-ordem-publica" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:trabalho a skos:Concept ;
+  skos:prefLabel "Trabalho"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a trabalho."@pt-BR ;
+  skos:notation "trabalho" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:transportes a skos:Concept ;
+  skos:prefLabel "Transportes"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a transportes."@pt-BR ;
+  skos:notation "transportes" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .
+
+tema:urbanismo a skos:Concept ;
+  skos:prefLabel "Urbanismo"@pt-BR ;
+  skos:definition "Tema para classificação de dados relacionados a urbanismo."@pt-BR ;
+  skos:notation "urbanismo" ;
+  skos:topConceptOf tema:esquema ;
+  skos:inScheme tema:esquema .

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+  <skos:ConceptScheme rdf:about="https://vocab.dcatbr.org/vcr/tema/esquema">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dc:title xml:lang="pt-BR">VCR-TEMA: Temas de catalogação (proposta DCAT-BR)</dc:title>
+    <dc:description xml:lang="pt-BR">Vocabulário controlado de referência (VCR) para classificação temática de conjuntos de dados no contexto do DCAT-BR.</dc:description>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-12</dc:issued>
+    <dc:language>pt-BR</dc:language>
+    <dc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <owl:versionInfo>0.1.0</owl:versionInfo>
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/abastecimento">
+        <skos:prefLabel xml:lang="pt-BR">Abastecimento</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a abastecimento.</skos:definition>
+        <skos:notation>abastecimento</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/administracao">
+        <skos:prefLabel xml:lang="pt-BR">Administração</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à administração pública.</skos:definition>
+        <skos:notation>administracao</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/agropecuaria-pesca-e-extrativismo">
+        <skos:prefLabel xml:lang="pt-BR">Agropecuária, Pesca e Extrativismo</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à agropecuária, pesca e extrativismo.</skos:definition>
+        <skos:notation>agropecuaria-pesca-e-extrativismo</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/comunicacoes">
+        <skos:prefLabel xml:lang="pt-BR">Comunicações</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a comunicações.</skos:definition>
+        <skos:notation>comunicacoes</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/comercio-e-servicos">
+        <skos:prefLabel xml:lang="pt-BR">Comércio e Serviços</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a comércio e serviços.</skos:definition>
+        <skos:notation>comercio-e-servicos</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/cultura">
+        <skos:prefLabel xml:lang="pt-BR">Cultura</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à cultura.</skos:definition>
+        <skos:notation>cultura</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/defesa-nacional">
+        <skos:prefLabel xml:lang="pt-BR">Defesa Nacional</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à defesa nacional.</skos:definition>
+        <skos:notation>defesa-nacional</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/economia-e-financas">
+        <skos:prefLabel xml:lang="pt-BR">Economia e Finanças</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à economia e finanças.</skos:definition>
+        <skos:notation>economia-e-financas</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/educacao">
+        <skos:prefLabel xml:lang="pt-BR">Educação</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à educação.</skos:definition>
+        <skos:notation>educacao</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/energia">
+        <skos:prefLabel xml:lang="pt-BR">Energia</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à energia.</skos:definition>
+        <skos:notation>energia</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/esporte-e-lazer">
+        <skos:prefLabel xml:lang="pt-BR">Esporte e Lazer</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a esporte e lazer.</skos:definition>
+        <skos:notation>esporte-e-lazer</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/habitacao">
+        <skos:prefLabel xml:lang="pt-BR">Habitação</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à habitação.</skos:definition>
+        <skos:notation>habitacao</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/industria">
+        <skos:prefLabel xml:lang="pt-BR">Indústria</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à indústria.</skos:definition>
+        <skos:notation>industria</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/infraestrutura-e-fomento">
+        <skos:prefLabel xml:lang="pt-BR">Infraestrutura e Fomento</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à infraestrutura e fomento.</skos:definition>
+        <skos:notation>infraestrutura-e-fomento</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/meio-ambiente">
+        <skos:prefLabel xml:lang="pt-BR">Meio Ambiente</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados ao meio ambiente.</skos:definition>
+        <skos:notation>meio-ambiente</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/pesquisa-e-desenvolvimento">
+        <skos:prefLabel xml:lang="pt-BR">Pesquisa e Desenvolvimento</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à pesquisa e desenvolvimento.</skos:definition>
+        <skos:notation>pesquisa-e-desenvolvimento</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/planejamento-e-gestao">
+        <skos:prefLabel xml:lang="pt-BR">Planejamento e Gestão</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a planejamento e gestão.</skos:definition>
+        <skos:notation>planejamento-e-gestao</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/previdencia-social">
+        <skos:prefLabel xml:lang="pt-BR">Previdência Social</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à previdência social.</skos:definition>
+        <skos:notation>previdencia-social</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/protecao-social">
+        <skos:prefLabel xml:lang="pt-BR">Proteção Social</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à proteção social.</skos:definition>
+        <skos:notation>protecao-social</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/relacoes-internacionais">
+        <skos:prefLabel xml:lang="pt-BR">Relações Internacionais</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a relações internacionais.</skos:definition>
+        <skos:notation>relacoes-internacionais</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/saneamento">
+        <skos:prefLabel xml:lang="pt-BR">Saneamento</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a saneamento.</skos:definition>
+        <skos:notation>saneamento</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/saude">
+        <skos:prefLabel xml:lang="pt-BR">Saúde</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à saúde.</skos:definition>
+        <skos:notation>saude</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/seguranca-e-ordem-publica">
+        <skos:prefLabel xml:lang="pt-BR">Segurança e Ordem Pública</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados à segurança e ordem pública.</skos:definition>
+        <skos:notation>seguranca-e-ordem-publica</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/trabalho">
+        <skos:prefLabel xml:lang="pt-BR">Trabalho</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a trabalho.</skos:definition>
+        <skos:notation>trabalho</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/transportes">
+        <skos:prefLabel xml:lang="pt-BR">Transportes</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a transportes.</skos:definition>
+        <skos:notation>transportes</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+    <skos:hasTopConcept>
+      <skos:Concept rdf:about="https://vocab.dcatbr.org/vcr/tema/urbanismo">
+        <skos:prefLabel xml:lang="pt-BR">Urbanismo</skos:prefLabel>
+        <skos:definition xml:lang="pt-BR">Tema para classificação de dados relacionados a urbanismo.</skos:definition>
+        <skos:notation>urbanismo</skos:notation>
+        <skos:topConceptOf rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+        <skos:inScheme rdf:resource="https://vocab.dcatbr.org/vcr/tema/esquema"/>
+      </skos:Concept>
+    </skos:hasTopConcept>
+
+  </skos:ConceptScheme>
+
+</rdf:RDF>

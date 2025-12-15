@@ -1,0 +1,424 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://dcat-br.gov.br/vocabularies/SEI/esquema> a skos:ConceptScheme ;
+  dct:title "Vocabulário Controlado de Observância Legal (SEI) - DCAT-BR"@pt-BR ;
+  dct:description "Vocabulário SKOS para descrever a observância legal de distribuições de dados em catálogos de dados públicos no Brasil, baseado no Sistema Eletrônico de Informações (SEI)."@pt-BR ;
+  dct:issued "2025-12-11"^^xsd:date ;
+  dct:modified "2025-12-11"^^xsd:date ;
+  dct:language "pt-BR" ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dct:publisher <https://dcat-br.gov.br/> ;
+  dct:source <https://dados.gov.br/dados/api/publico/conjuntos-dados/observancia-legal> ;
+  skos:hasTopConcept
+    <https://dcat-br.gov.br/vocabularies/SEI/1>,
+    <https://dcat-br.gov.br/vocabularies/SEI/2>,
+    <https://dcat-br.gov.br/vocabularies/SEI/3>,
+    <https://dcat-br.gov.br/vocabularies/SEI/4>,
+    <https://dcat-br.gov.br/vocabularies/SEI/5>,
+    <https://dcat-br.gov.br/vocabularies/SEI/6>,
+    <https://dcat-br.gov.br/vocabularies/SEI/7>,
+    <https://dcat-br.gov.br/vocabularies/SEI/8>,
+    <https://dcat-br.gov.br/vocabularies/SEI/9>,
+    <https://dcat-br.gov.br/vocabularies/SEI/10>,
+    <https://dcat-br.gov.br/vocabularies/SEI/11>,
+    <https://dcat-br.gov.br/vocabularies/SEI/12>,
+    <https://dcat-br.gov.br/vocabularies/SEI/13>,
+    <https://dcat-br.gov.br/vocabularies/SEI/14>,
+    <https://dcat-br.gov.br/vocabularies/SEI/15>,
+    <https://dcat-br.gov.br/vocabularies/SEI/16>,
+    <https://dcat-br.gov.br/vocabularies/SEI/17>,
+    <https://dcat-br.gov.br/vocabularies/SEI/18>,
+    <https://dcat-br.gov.br/vocabularies/SEI/19>,
+    <https://dcat-br.gov.br/vocabularies/SEI/20>,
+    <https://dcat-br.gov.br/vocabularies/SEI/21>,
+    <https://dcat-br.gov.br/vocabularies/SEI/22>,
+    <https://dcat-br.gov.br/vocabularies/SEI/23>,
+    <https://dcat-br.gov.br/vocabularies/SEI/24>,
+    <https://dcat-br.gov.br/vocabularies/SEI/25>,
+    <https://dcat-br.gov.br/vocabularies/SEI/26>,
+    <https://dcat-br.gov.br/vocabularies/SEI/27>,
+    <https://dcat-br.gov.br/vocabularies/SEI/28>,
+    <https://dcat-br.gov.br/vocabularies/SEI/29>,
+    <https://dcat-br.gov.br/vocabularies/SEI/30>,
+    <https://dcat-br.gov.br/vocabularies/SEI/31>,
+    <https://dcat-br.gov.br/vocabularies/SEI/32>,
+    <https://dcat-br.gov.br/vocabularies/SEI/33>,
+    <https://dcat-br.gov.br/vocabularies/SEI/34> .
+
+# 1 - Público
+<https://dcat-br.gov.br/vocabularies/SEI/1> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Público"@pt-BR ;
+  skos:prefLabel "Public"@en ;
+  skos:notation "1" ;
+  skos:definition "Dados públicos, sem restrições de acesso."@pt-BR ;
+  skos:definition "Public data, without access restrictions."@en ;
+  dct:identifier "1" .
+
+# 2 - Restrito - Direito Autoral
+<https://dcat-br.gov.br/vocabularies/SEI/2> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Direito Autoral (Lei nº 9.610/1998)"@pt-BR ;
+  skos:prefLabel "Restricted - Copyright (Law No. 9.610/1998)"@en ;
+  skos:notation "2" ;
+  skos:definition "Dados com restrição de acesso devido a direitos autorais conforme Lei nº 9.610/1998."@pt-BR ;
+  skos:definition "Data with access restriction due to copyright under Law No. 9.610/1998."@en ;
+  dct:identifier "2" .
+
+# 3 - Restrito - Informação Pessoal
+<https://dcat-br.gov.br/vocabularies/SEI/3> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Informação Pessoal (Art. 31 da Lei nº 12.527/2011)"@pt-BR ;
+  skos:prefLabel "Restricted - Personal Information (Art. 31 of Law No. 12.527/2011)"@en ;
+  skos:notation "3" ;
+  skos:definition "Dados com restrição de acesso devido a informações pessoais conforme Art. 31 da Lei nº 12.527/2011."@pt-BR ;
+  skos:definition "Data with access restriction due to personal information under Art. 31 of Law No. 12.527/2011."@en ;
+  dct:identifier "3" .
+
+# 4 - Restrito - Propriedade Intelectual (software)
+<https://dcat-br.gov.br/vocabularies/SEI/4> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Propriedade Intelectual (software) (Lei nº 9.609/1998)"@pt-BR ;
+  skos:prefLabel "Restricted - Intellectual Property (software) (Law No. 9.609/1998)"@en ;
+  skos:notation "4" ;
+  skos:definition "Dados com restrição de acesso devido a propriedade intelectual de software conforme Lei nº 9.609/1998."@pt-BR ;
+  skos:definition "Data with access restriction due to software intellectual property under Law No. 9.609/1998."@en ;
+  dct:identifier "4" .
+
+# 5 - Restrito - Protocolo pendente de análise
+<https://dcat-br.gov.br/vocabularies/SEI/5> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Protocolo pendente de análise de restrição (Art. 6º, III, da Lei nº 12.527/2011)"@pt-BR ;
+  skos:prefLabel "Restricted - Protocol pending restriction analysis (Art. 6, III, of Law No. 12.527/2011)"@en ;
+  skos:notation "5" ;
+  skos:definition "Dados com restrição de acesso devido a protocolo pendente de análise de restrição conforme Art. 6º, III, da Lei nº 12.527/2011."@pt-BR ;
+  skos:definition "Data with access restriction due to protocol pending restriction analysis under Art. 6, III, of Law No. 12.527/2011."@en ;
+  dct:identifier "5" .
+
+# 6 - Restrito - Restrição de Acesso a Documento Preparatório
+<https://dcat-br.gov.br/vocabularies/SEI/6> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Restrição de Acesso a Documento Preparatório (Art. 7º, §3º, da Lei nº 12.527/2011)"@pt-BR ;
+  skos:prefLabel "Restricted - Access Restriction to Preparatory Document (Art. 7, §3, of Law No. 12.527/2011)"@en ;
+  skos:notation "6" ;
+  skos:definition "Dados com restrição de acesso a documento preparatório conforme Art. 7º, §3º, da Lei nº 12.527/2011."@pt-BR ;
+  skos:definition "Data with access restriction to preparatory document under Art. 7, §3, of Law No. 12.527/2011."@en ;
+  dct:identifier "6" .
+
+# 7 - Restrito - Segredo de Justiça no Processo Civil
+<https://dcat-br.gov.br/vocabularies/SEI/7> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Segredo de Justiça no Processo Civil (Art. 189 da Lei 13.105/2015)"@pt-BR ;
+  skos:prefLabel "Restricted - Court Secrecy in Civil Process (Art. 189 of Law 13.105/2015)"@en ;
+  skos:notation "7" ;
+  skos:definition "Dados com restrição de acesso devido a segredo de justiça no processo civil conforme Art. 189 da Lei 13.105/2015."@pt-BR ;
+  skos:definition "Data with access restriction due to court secrecy in civil process under Art. 189 of Law 13.105/2015."@en ;
+  dct:identifier "7" .
+
+# 8 - Restrito - Segredo de Justiça no Processo Penal
+<https://dcat-br.gov.br/vocabularies/SEI/8> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Segredo de Justiça no Processo Penal (Art. 201, §6º, do Decreto-Lei 3.689/1941)"@pt-BR ;
+  skos:prefLabel "Restricted - Court Secrecy in Criminal Process (Art. 201, §6, of Decree-Law 3.689/1941)"@en ;
+  skos:notation "8" ;
+  skos:definition "Dados com restrição de acesso devido a segredo de justiça no processo penal conforme Art. 201, §6º, do Decreto-Lei 3.689/1941."@pt-BR ;
+  skos:definition "Data with access restriction due to court secrecy in criminal process under Art. 201, §6, of Decree-Law 3.689/1941."@en ;
+  dct:identifier "8" .
+
+# 9 - Restrito - Segredo Industrial
+<https://dcat-br.gov.br/vocabularies/SEI/9> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Segredo Industrial (Lei nº 9.279/1996)"@pt-BR ;
+  skos:prefLabel "Restricted - Industrial Secret (Law No. 9.279/1996)"@en ;
+  skos:notation "9" ;
+  skos:definition "Dados com restrição de acesso devido a segredo industrial conforme Lei nº 9.279/1996."@pt-BR ;
+  skos:definition "Data with access restriction due to industrial secret under Law No. 9.279/1996."@en ;
+  dct:identifier "9" .
+
+# 10 - Restrito - Sigilo Comercial (Sociedades Anônimas)
+<https://dcat-br.gov.br/vocabularies/SEI/10> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo Comercial (Sociedades Anônimas) (Art. 155, § 2º da Lei nº 6.404/1976)"@pt-BR ;
+  skos:prefLabel "Restricted - Commercial Secrecy (Corporations) (Art. 155, § 2 of Law No. 6.404/1976)"@en ;
+  skos:notation "10" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo comercial de sociedades anônimas conforme Art. 155, § 2º da Lei nº 6.404/1976."@pt-BR ;
+  skos:definition "Data with access restriction due to commercial secrecy of corporations under Art. 155, § 2 of Law No. 6.404/1976."@en ;
+  dct:identifier "10" .
+
+# 11 - Restrito - Sigilo Contábil
+<https://dcat-br.gov.br/vocabularies/SEI/11> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo Contábil (Art. 1.190 da Lei nº 10.406/2002)"@pt-BR ;
+  skos:prefLabel "Restricted - Accounting Secrecy (Art. 1.190 of Law No. 10.406/2002)"@en ;
+  skos:notation "11" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo contábil conforme Art. 1.190 da Lei nº 10.406/2002."@pt-BR ;
+  skos:definition "Data with access restriction due to accounting secrecy under Art. 1.190 of Law No. 10.406/2002."@en ;
+  dct:identifier "11" .
+
+# 12 - Restrito - Sigilo de nome, imagem, qualificação e demais info
+<https://dcat-br.gov.br/vocabularies/SEI/12> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo de nome, imagem, qualificação e demais info (Art. 5º, II da Lei 12.850/13)"@pt-BR ;
+  skos:prefLabel "Restricted - Secrecy of name, image, qualification and other info (Art. 5, II of Law 12.850/13)"@en ;
+  skos:notation "12" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo de nome, imagem, qualificação e demais informações conforme Art. 5º, II da Lei 12.850/13."@pt-BR ;
+  skos:definition "Data with access restriction due to secrecy of name, image, qualification and other information under Art. 5, II of Law 12.850/13."@en ;
+  dct:identifier "12" .
+
+# 13 - Restrito - Sigilo do Inquérito Policial
+<https://dcat-br.gov.br/vocabularies/SEI/13> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo do Inquérito Policial (Art. 20 do Decreto-Lei 3.689/1941)"@pt-BR ;
+  skos:prefLabel "Restricted - Police Investigation Secrecy (Art. 20 of Decree-Law 3.689/1941)"@en ;
+  skos:notation "13" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo do inquérito policial conforme Art. 20 do Decreto-Lei 3.689/1941."@pt-BR ;
+  skos:definition "Data with access restriction due to police investigation secrecy under Art. 20 of Decree-Law 3.689/1941."@en ;
+  dct:identifier "13" .
+
+# 14 - Restrito - Sigilo do Procedimento Admin. Disciplinar em Curso
+<https://dcat-br.gov.br/vocabularies/SEI/14> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo do Procedimento Admin. Disciplinar em Curso (Art. 150 da Lei nº 8.112/1990)"@pt-BR ;
+  skos:prefLabel "Restricted - Secrecy of Ongoing Administrative Disciplinary Procedure (Art. 150 of Law No. 8.112/1990)"@en ;
+  skos:notation "14" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo do procedimento administrativo disciplinar em curso conforme Art. 150 da Lei nº 8.112/1990."@pt-BR ;
+  skos:definition "Data with access restriction due to secrecy of ongoing administrative disciplinary procedure under Art. 150 of Law No. 8.112/1990."@en ;
+  dct:identifier "14" .
+
+# 15 - Restrito - Sigilo dos autos
+<https://dcat-br.gov.br/vocabularies/SEI/15> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo dos autos (Art. 7° da Resolução CNMP n° 23/2007)"@pt-BR ;
+  skos:prefLabel "Restricted - Secrecy of case files (Art. 7 of CNMP Resolution No. 23/2007)"@en ;
+  skos:notation "15" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo dos autos conforme Art. 7° da Resolução CNMP n° 23/2007."@pt-BR ;
+  skos:definition "Data with access restriction due to secrecy of case files under Art. 7 of CNMP Resolution No. 23/2007."@en ;
+  dct:identifier "15" .
+
+# 16 - Restrito - Sigilo Empresarial
+<https://dcat-br.gov.br/vocabularies/SEI/16> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo Empresarial (Art. 169 da Lei nº 11.101/2005)"@pt-BR ;
+  skos:prefLabel "Restricted - Business Secrecy (Art. 169 of Law No. 11.101/2005)"@en ;
+  skos:notation "16" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo empresarial conforme Art. 169 da Lei nº 11.101/2005."@pt-BR ;
+  skos:definition "Data with access restriction due to business secrecy under Art. 169 of Law No. 11.101/2005."@en ;
+  dct:identifier "16" .
+
+# 17 - Restrito - Sigilo Funcional - SFC
+<https://dcat-br.gov.br/vocabularies/SEI/17> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo Funcional - SFC (Art. 26, §3º, da Lei nº 10.180/2001)"@pt-BR ;
+  skos:prefLabel "Restricted - Functional Secrecy - SFC (Art. 26, §3, of Law No. 10.180/2001)"@en ;
+  skos:notation "17" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo funcional - SFC conforme Art. 26, §3º, da Lei nº 10.180/2001."@pt-BR ;
+  skos:definition "Data with access restriction due to functional secrecy - SFC under Art. 26, §3, of Law No. 10.180/2001."@en ;
+  dct:identifier "17" .
+
+# 18 - Restrito - Sigilo por Possibilidade de Risco ou Dano
+<https://dcat-br.gov.br/vocabularies/SEI/18> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo por Possibilidade de Risco ou Dano (Art. 45 do Decreto nº 7.845/2012)"@pt-BR ;
+  skos:prefLabel "Restricted - Secrecy due to Risk or Damage Possibility (Art. 45 of Decree No. 7.845/2012)"@en ;
+  skos:notation "18" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo por possibilidade de risco ou dano conforme Art. 45 do Decreto nº 7.845/2012."@pt-BR ;
+  skos:definition "Data with access restriction due to secrecy for risk or damage possibility under Art. 45 of Decree No. 7.845/2012."@en ;
+  dct:identifier "18" .
+
+# 19 - Restrito - Sigilo Procedimento Admin. de Responsabilização
+<https://dcat-br.gov.br/vocabularies/SEI/19> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo Procedimento Admin. de Responsabilização (Art. 5º do Decreto nº 11.129/2022)"@pt-BR ;
+  skos:prefLabel "Restricted - Secrecy of Administrative Accountability Procedure (Art. 5 of Decree No. 11.129/2022)"@en ;
+  skos:notation "19" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo do procedimento administrativo de responsabilização conforme Art. 5º do Decreto nº 11.129/2022."@pt-BR ;
+  skos:definition "Data with access restriction due to secrecy of administrative accountability procedure under Art. 5 of Decree No. 11.129/2022."@en ;
+  dct:identifier "19" .
+
+# 20 - Restrito - Sigilo Profissão do Advogado
+<https://dcat-br.gov.br/vocabularies/SEI/20> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Restrito - Sigilo Profissão do Advogado (Art. 7°, inciso II, da Lei n°11.767/2008)"@pt-BR ;
+  skos:prefLabel "Restricted - Lawyer Profession Secrecy (Art. 7, item II, of Law No. 11.767/2008)"@en ;
+  skos:notation "20" ;
+  skos:definition "Dados com restrição de acesso devido a sigilo da profissão do advogado conforme Art. 7°, inciso II, da Lei n°11.767/2008."@pt-BR ;
+  skos:definition "Data with access restriction due to lawyer profession secrecy under Art. 7, item II, of Law No. 11.767/2008."@en ;
+  dct:identifier "20" .
+
+# 21 - Sigiloso - Documento Preparatório - Sigiloso
+<https://dcat-br.gov.br/vocabularies/SEI/21> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Documento Preparatório - Sigiloso (Art. 7º, § 3º, da Lei nº 12.527/2001)"@pt-BR ;
+  skos:prefLabel "Confidential - Preparatory Document - Confidential (Art. 7, § 3, of Law No. 12.527/2001)"@en ;
+  skos:notation "21" ;
+  skos:definition "Dados sigilosos de documento preparatório conforme Art. 7º, § 3º, da Lei nº 12.527/2001."@pt-BR ;
+  skos:definition "Confidential data of preparatory document under Art. 7, § 3, of Law No. 12.527/2001."@en ;
+  dct:identifier "21" .
+
+# 22 - Sigiloso - Informação Pessoal Sensível
+<https://dcat-br.gov.br/vocabularies/SEI/22> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Informação Pessoal Sensível (Art. 31 da Lei nº 12.527/2011)"@pt-BR ;
+  skos:prefLabel "Confidential - Sensitive Personal Information (Art. 31 of Law No. 12.527/2011)"@en ;
+  skos:notation "22" ;
+  skos:definition "Dados sigilosos de informação pessoal sensível conforme Art. 31 da Lei nº 12.527/2011."@pt-BR ;
+  skos:definition "Confidential data of sensitive personal information under Art. 31 of Law No. 12.527/2011."@en ;
+  dct:identifier "22" .
+
+# 23 - Sigiloso - Reserva do Processo Ético
+<https://dcat-br.gov.br/vocabularies/SEI/23> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Reserva do Processo Ético (Art. 13 do Decreto nº 6.029/2007 e Art. 14 da Reso)"@pt-BR ;
+  skos:prefLabel "Confidential - Ethical Process Reserve (Art. 13 of Decree No. 6.029/2007 and Art. 14 of Resolution)"@en ;
+  skos:notation "23" ;
+  skos:definition "Dados sigilosos devido a reserva do processo ético conforme Art. 13 do Decreto nº 6.029/2007 e Art. 14 da Resolução."@pt-BR ;
+  skos:definition "Confidential data due to ethical process reserve under Art. 13 of Decree No. 6.029/2007 and Art. 14 of Resolution."@en ;
+  dct:identifier "23" .
+
+# 24 - Sigiloso - Segredo de Justiça no Processo Civil
+<https://dcat-br.gov.br/vocabularies/SEI/24> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Segredo de Justiça no Processo Civil (Art. 189 da Lei 13.105/2015)"@pt-BR ;
+  skos:prefLabel "Confidential - Court Secrecy in Civil Process (Art. 189 of Law 13.105/2015)"@en ;
+  skos:notation "24" ;
+  skos:definition "Dados sigilosos devido a segredo de justiça no processo civil conforme Art. 189 da Lei 13.105/2015."@pt-BR ;
+  skos:definition "Confidential data due to court secrecy in civil process under Art. 189 of Law 13.105/2015."@en ;
+  dct:identifier "24" .
+
+# 25 - Sigiloso - Segredo de Justiça no Processo Penal
+<https://dcat-br.gov.br/vocabularies/SEI/25> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Segredo de Justiça no Processo Penal (Art. 201, §6º, do Decreto-Lei 3.689/1941)"@pt-BR ;
+  skos:prefLabel "Confidential - Court Secrecy in Criminal Process (Art. 201, §6, of Decree-Law 3.689/1941)"@en ;
+  skos:notation "25" ;
+  skos:definition "Dados sigilosos devido a segredo de justiça no processo penal conforme Art. 201, §6º, do Decreto-Lei 3.689/1941."@pt-BR ;
+  skos:definition "Confidential data due to court secrecy in criminal process under Art. 201, §6, of Decree-Law 3.689/1941."@en ;
+  dct:identifier "25" .
+
+# 26 - Sigiloso - Sigilo Bancário
+<https://dcat-br.gov.br/vocabularies/SEI/26> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo Bancário (Art. 1º da Lei Complementar nº 105/2001b)"@pt-BR ;
+  skos:prefLabel "Confidential - Banking Secrecy (Art. 1 of Complementary Law No. 105/2001)"@en ;
+  skos:notation "26" ;
+  skos:definition "Dados sigilosos devido a sigilo bancário conforme Art. 1º da Lei Complementar nº 105/2001."@pt-BR ;
+  skos:definition "Confidential data due to banking secrecy under Art. 1 of Complementary Law No. 105/2001."@en ;
+  dct:identifier "26" .
+
+# 27 - Sigiloso - Sigilo Fiscal
+<https://dcat-br.gov.br/vocabularies/SEI/27> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo Fiscal (Art. 198, caput, da Lei nº 5.172/1966)"@pt-BR ;
+  skos:prefLabel "Confidential - Tax Secrecy (Art. 198, caput, of Law No. 5.172/1966)"@en ;
+  skos:notation "27" ;
+  skos:definition "Dados sigilosos devido a sigilo fiscal conforme Art. 198, caput, da Lei nº 5.172/1966."@pt-BR ;
+  skos:definition "Confidential data due to tax secrecy under Art. 198, caput, of Law No. 5.172/1966."@en ;
+  dct:identifier "27" .
+
+# 28 - Sigiloso - Sigilo de Acordo de Leniência
+<https://dcat-br.gov.br/vocabularies/SEI/28> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo de Acordo de Leniência (Art. 31, §1º, do Decreto nº 8.420/2015)"@pt-BR ;
+  skos:prefLabel "Confidential - Leniency Agreement Secrecy (Art. 31, §1, of Decree No. 8.420/2015)"@en ;
+  skos:notation "28" ;
+  skos:definition "Dados sigilosos devido a sigilo de acordo de leniência conforme Art. 31, §1º, do Decreto nº 8.420/2015."@pt-BR ;
+  skos:definition "Confidential data due to leniency agreement secrecy under Art. 31, §1, of Decree No. 8.420/2015."@en ;
+  dct:identifier "28" .
+
+# 29 - Sigiloso - Sigilo de PAD em curso p/ servidores da CGU
+<https://dcat-br.gov.br/vocabularies/SEI/29> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo de PAD em curso p/ servidores da CGU (Art. 150 da Lei nº 8.112/1990)"@pt-BR ;
+  skos:prefLabel "Confidential - Secrecy of Ongoing PAD for CGU Servants (Art. 150 of Law No. 8.112/1990)"@en ;
+  skos:notation "29" ;
+  skos:definition "Dados sigilosos devido a sigilo de PAD em curso para servidores da CGU conforme Art. 150 da Lei nº 8.112/1990."@pt-BR ;
+  skos:definition "Confidential data due to secrecy of ongoing PAD for CGU servants under Art. 150 of Law No. 8.112/1990."@en ;
+  dct:identifier "29" .
+
+# 30 - Sigiloso - Sigilo do Inquérito Policial
+<https://dcat-br.gov.br/vocabularies/SEI/30> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo do Inquérito Policial (Art. 20 do Decreto-Lei 3.689/1941)"@pt-BR ;
+  skos:prefLabel "Confidential - Police Investigation Secrecy (Art. 20 of Decree-Law 3.689/1941)"@en ;
+  skos:notation "30" ;
+  skos:definition "Dados sigilosos devido a sigilo do inquérito policial conforme Art. 20 do Decreto-Lei 3.689/1941."@pt-BR ;
+  skos:definition "Confidential data due to police investigation secrecy under Art. 20 of Decree-Law 3.689/1941."@en ;
+  dct:identifier "30" .
+
+# 31 - Sigiloso - Sigilo dos autos
+<https://dcat-br.gov.br/vocabularies/SEI/31> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo dos autos (Art. 7° da Resolução CNMP n° 23/2007)"@pt-BR ;
+  skos:prefLabel "Confidential - Secrecy of case files (Art. 7 of CNMP Resolution No. 23/2007)"@en ;
+  skos:notation "31" ;
+  skos:definition "Dados sigilosos devido a sigilo dos autos conforme Art. 7° da Resolução CNMP n° 23/2007."@pt-BR ;
+  skos:definition "Confidential data due to secrecy of case files under Art. 7 of CNMP Resolution No. 23/2007."@en ;
+  dct:identifier "31" .
+
+# 32 - Sigiloso - Sigilo Funcional - SFC
+<https://dcat-br.gov.br/vocabularies/SEI/32> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo Funcional - SFC (Art. 26, §3º, da Lei nº 10.180/2001)"@pt-BR ;
+  skos:prefLabel "Confidential - Functional Secrecy - SFC (Art. 26, §3, of Law No. 10.180/2001)"@en ;
+  skos:notation "32" ;
+  skos:definition "Dados sigilosos devido a sigilo funcional - SFC conforme Art. 26, §3º, da Lei nº 10.180/2001."@pt-BR ;
+  skos:definition "Confidential data due to functional secrecy - SFC under Art. 26, §3, of Law No. 10.180/2001."@en ;
+  dct:identifier "32" .
+
+# 33 - Sigiloso - Sigilo Procedimento Administ. de Responsabilização
+<https://dcat-br.gov.br/vocabularies/SEI/33> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo Procedimento Administ. de Responsabilização (Art. 5º do Decreto nº 11.129/2022)"@pt-BR ;
+  skos:prefLabel "Confidential - Secrecy of Administrative Accountability Procedure (Art. 5 of Decree No. 11.129/2022)"@en ;
+  skos:notation "33" ;
+  skos:definition "Dados sigilosos devido a sigilo do procedimento administrativo de responsabilização conforme Art. 5º do Decreto nº 11.129/2022."@pt-BR ;
+  skos:definition "Confidential data due to secrecy of administrative accountability procedure under Art. 5 of Decree No. 11.129/2022."@en ;
+  dct:identifier "33" .
+
+# 34 - Sigiloso - Sigilo Profissão de Advogado
+<https://dcat-br.gov.br/vocabularies/SEI/34> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+  skos:prefLabel "Sigiloso - Sigilo Profissão de Advogado (Art. 7°, inciso II, da Lei n°11.767/2008)"@pt-BR ;
+  skos:prefLabel "Confidential - Lawyer Profession Secrecy (Art. 7, item II, of Law No. 11.767/2008)"@en ;
+  skos:notation "34" ;
+  skos:definition "Dados sigilosos devido a sigilo da profissão de advogado conforme Art. 7°, inciso II, da Lei n°11.767/2008."@pt-BR ;
+  skos:definition "Confidential data due to lawyer profession secrecy under Art. 7, item II, of Law No. 11.767/2008."@en ;
+  dct:identifier "34" .
+

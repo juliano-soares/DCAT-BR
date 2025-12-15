@@ -1,0 +1,75 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> a skos:ConceptScheme ;
+  dct:title "Vocabulário Controlado de Tipo de Recurso - DCAT-BR"@pt-BR ;
+  dct:description "Vocabulário SKOS para classificar o tipo de recurso disponibilizado em uma distribuição de dados em catálogos de dados públicos no Brasil."@pt-BR ;
+  dct:issued "2025-12-11"^^xsd:date ;
+  dct:modified "2025-12-11"^^xsd:date ;
+  dct:language "pt-BR" ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dct:publisher <https://dcat-br.gov.br/> ;
+  skos:hasTopConcept
+    <https://dcat-br.gov.br/vocabularies/tipo-recurso/DADOS>,
+    <https://dcat-br.gov.br/vocabularies/tipo-recurso/DICIONARIO_DE_DADOS>,
+    <https://dcat-br.gov.br/vocabularies/tipo-recurso/DOCUMENTACAO>,
+    <https://dcat-br.gov.br/vocabularies/tipo-recurso/API>,
+    <https://dcat-br.gov.br/vocabularies/tipo-recurso/OUTRO> .
+
+# Dados
+<https://dcat-br.gov.br/vocabularies/tipo-recurso/DADOS> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:prefLabel "Dados"@pt-BR ;
+  skos:prefLabel "Data"@en ;
+  skos:notation "DADOS" ;
+  skos:definition "Recurso do tipo dados, contendo informações estruturadas ou não estruturadas."@pt-BR ;
+  skos:definition "Data type resource, containing structured or unstructured information."@en ;
+  dct:identifier "DADOS" .
+
+# Dicionário de Dados
+<https://dcat-br.gov.br/vocabularies/tipo-recurso/DICIONARIO_DE_DADOS> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:prefLabel "Dicionário de Dados"@pt-BR ;
+  skos:prefLabel "Data Dictionary"@en ;
+  skos:notation "DICIONARIO_DE_DADOS" ;
+  skos:definition "Dicionário de dados que descreve a estrutura e o significado dos campos de um conjunto de dados."@pt-BR ;
+  skos:definition "Data dictionary that describes the structure and meaning of the fields in a dataset."@en ;
+  dct:identifier "DICIONARIO_DE_DADOS" .
+
+# Documentação
+<https://dcat-br.gov.br/vocabularies/tipo-recurso/DOCUMENTACAO> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:prefLabel "Documentação"@pt-BR ;
+  skos:prefLabel "Documentation"@en ;
+  skos:notation "DOCUMENTACAO" ;
+  skos:definition "Documentação relacionada ao conjunto de dados, incluindo manuais, guias e especificações."@pt-BR ;
+  skos:definition "Documentation related to the dataset, including manuals, guides and specifications."@en ;
+  dct:identifier "DOCUMENTACAO" .
+
+# API
+<https://dcat-br.gov.br/vocabularies/tipo-recurso/API> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:prefLabel "API"@pt-BR ;
+  skos:prefLabel "API"@en ;
+  skos:notation "API" ;
+  skos:definition "Interface de Programação de Aplicações (API) para acesso programático aos dados."@pt-BR ;
+  skos:definition "Application Programming Interface (API) for programmatic access to data."@en ;
+  dct:identifier "API" .
+
+# Outro
+<https://dcat-br.gov.br/vocabularies/tipo-recurso/OUTRO> a skos:Concept ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/tipo-recurso/esquema> ;
+  skos:prefLabel "Outro"@pt-BR ;
+  skos:prefLabel "Other"@en ;
+  skos:notation "OUTRO" ;
+  skos:definition "Outro tipo de recurso não especificado nas categorias anteriores."@pt-BR ;
+  skos:definition "Other type of resource not specified in the previous categories."@en ;
+  dct:identifier "OUTRO" .
+

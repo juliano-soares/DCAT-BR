@@ -1,0 +1,344 @@
+{
+    "dcat-br": {
+        "version": 1.0,
+        "name": "DCAT-BR v1.0",
+        "icon": "",
+        "url": "",
+        "shaclFiles": [
+            "shacl/dcat-br/shapes.ttl",
+            "shacl/dcat-br/range.ttl",
+            "shacl/dcat-br/shapes_recommended.ttl",
+            "shacl/dcat-br/mdr-vocabularies.shape.ttl",
+            "shacl/dcat-br/mdr_imports.ttl"
+        ],
+        "maxScore": 405,
+        "dimensions": {
+            "encontrabilidade": {
+                "maxScore": 100
+            },
+            "acessibilidade": {
+                "maxScore": 100
+            },
+            "interoperabilidade": {
+                "maxScore": 110
+            },
+            "reutilizabilidade": {
+                "maxScore": 75
+            },
+            "contextualidade": {
+                "maxScore": 20
+            }
+        },
+        "profile_metrics": {
+            "encontrabilidade": [
+                {
+                    "id": "dcat_keyword",
+                    "property": "dcat:keyword",
+                    "validations": [
+                        {
+                            "id": "dcat_keyword_is_present",
+                            "label": "Utilização de palavra-chave",
+                            "description": "As palavras-chave apoiam diretamente a pesquisa e aumentam a capacidade de descoberta. Verifica se dcat:keyword está definido.",
+                            "weight": 20
+                        },
+                        {
+                            "id": "dcat_keyword_is_required",
+                            "label": "Vocabulário de palavra-chave",
+                            "description": "Verifica se algum dos Vocabulários Controlados de Referência (VCR) foi usado para palavra-chave.",
+                            "weight": 10
+                        }
+                    ]
+                },
+                {
+                    "id": "dcat_theme",
+                    "property": "dcat:theme",
+                    "validations": [
+                        {
+                            "id": "dcat_theme_is_present",
+                            "label": "Tema",
+                            "description": "As categorias ajudam os usuários a explorar tematicamente os conjuntos de dados. Verifica se dcat:theme foi atribuído.",
+                            "weight": 30
+                        }
+                    ]
+                },
+                {
+                    "id": "dct_spatial",
+                    "property": "dct:spatial",
+                    "validations": [
+                        {
+                            "id": "dct_spatial_is_present",
+                            "label": "Pesquisa espacial",
+                            "description": "A informação espacial habilita os usuários a encontrar o conjunto de dados com uma pesquisa espacial. Verifica se dct:spatial foi definido.",
+                            "weight": 20
+                        }
+                    ]
+                },
+                {
+                    "id": "dct_temporal",
+                    "property": "dct:temporal",
+                    "validations": [
+                        {
+                            "id": "dct_temporal_is_present",
+                            "label": "Pesquisa temporal",
+                            "description": "Verifica se metadados temporais (ex: dct:temporal) foram definidos, permitindo a filtragem de dados por período.",
+                            "weight": 20
+                        }
+                    ]
+                }
+            ],
+            "acessibilidade": [
+                {
+                    "id": "dcat_accessURL",
+                    "property": "dcat:accessURL",
+                    "validations": [
+                        {
+                            "id": "dcat_accessURL_is_valid",
+                            "label": "Acessibilidade da URL de acesso",
+                            "description": "A URL de acesso (dcat:accessURL) pode levar diretamente aos dados ou a uma página com mais informações. A URL é verificada via requisição HTTP, esperando um código de estado entre 200 e 300.",
+                            "weight": 50
+                        }
+                    ]
+                },
+                {
+                    "id": "dcat_downloadURL",
+                    "property": "dcat:downloadURL",
+                    "validations": [
+                        {
+                            "id": "dcat_downloadURL_is_present",
+                            "label": "URL de transferência",
+                            "description": "A URL de transferência (dcat:downloadURL) deve ser um link direto para o download dos dados. Verifica se a propriedade foi definida.",
+                            "weight": 50
+                        }
+                    ]
+                }
+            ],
+            "interoperabilidade": [
+                {
+                    "id": "interoperability_format",
+                    "property": "dcat:format",
+                    "validations": [
+                        {
+                            "id": "dcat_format_is_present",
+                            "label": "Formato",
+                            "description": "Especifica o formato do arquivo da distribuição (dct:format). Verifica se a propriedade está definida.",
+                            "weight": 50
+                        },
+                        {
+                            "id": "dcat_format_is_valid",
+                            "label": "Formato/tipo de mídia de vocabulário",
+                            "description": "Verifica se o formato e o tipo de mídia pertencem ao padrão IANA.",
+                            "weight": 10,
+                            "vocabulary": "format"
+                        },
+                        {
+                            "id": "dcat_format_is_nonproprietary",
+                            "label": "Não proprietário",
+                            "description": "Verifica se o formato da distribuição é não proprietário, utilizando um vocabulário de referência.",
+                            "weight": 20,
+                            "vocabulary": "non_proprietary"
+                        },
+                        {
+                            "id": "dcat_format_is_machine_readable",
+                            "label": "Legível por máquina",
+                            "description": "Verifica se o formato da distribuição é legível por máquina, utilizando um vocabulário de referência.",
+                            "weight": 20,
+                            "vocabulary": "machine_readable"
+                        }
+                    ]
+                },
+                {
+                    "id": "dcat_mediaType",
+                    "property": "dcat:mediaType",
+                    "validations": [
+                        {
+                            "id": "dcat_mediaType_is_present",
+                            "label": "Tipo de mídia",
+                            "description": "Especifica o tipo de mídia da distribuição (dcat:mediaType). Verifica se a propriedade está definida.",
+                            "weight": 10
+                        },
+                        {
+                            "id": "dcat_mediaType_is_valid",
+                            "label": "Formato/tipo de mídia de vocabulário",
+                            "description": "Verifica se o formato e o tipo de mídia pertencem ao padrão IANA.",
+                            "weight": 10,
+                            "vocabulary": "resource_type"
+                        }
+                    ]
+                },
+                {
+                    "id": "dcat_br_compliance",
+                    "property": "rdf:type",
+                    "validations": [
+                        {
+                            "id": "dcat_br_compliance_is_present",
+                            "label": "Conformidade com o DCAT-BR",
+                            "description": "Valida se os metadados estão em conformidade com as regras do DCAT-BR, usando o serviço de validação SHACL.",
+                            "weight": 30
+                        }
+                    ]
+                }
+            ],
+            "reutilizabilidade": [
+                {
+                    "id": "reusability_license",
+                    "property": "dct:license",
+                    "validations": [
+                        {
+                            "id": "dct_license_is_present",
+                            "label": "Informações da licença",
+                            "description": "Uma licença (dct:license) é informação valiosa para a reutilização. Verifica se a propriedade está definida.",
+                            "weight": 20
+                        },
+                        {
+                            "id": "dct_license_is_valid",
+                            "label": "Vocabulário da licença",
+                            "description": "Incentiva o uso do VCR para licenças para evitar informações incorretas.",
+                            "weight": 10,
+                            "vocabulary": "license"
+                        }
+                    ]
+                },
+                {
+                    "id": "reusability_access_rights",
+                    "property": "dct:accessRights",
+                    "validations": [
+                        {
+                            "id": "dct_accessRights_is_present",
+                            "label": "Restrições de acesso",
+                            "description": "Indica se o acesso aos dados (dct:accessRights) é público ou restrito. Verifica se a propriedade está definida.",
+                            "weight": 10
+                        },
+                        {
+                            "id": "dct_accessRights_is_valid",
+                            "label": "Vocabulário das restrições de acesso",
+                            "description": "Verifica se o VCR para direitos de acesso é utilizado.",
+                            "weight": 5,
+                            "vocabulary": "access_rights"
+                        }
+                    ]
+                },
+                {
+                    "id": "reusability_contactPoint",
+                    "property": "dcat:contactPoint",
+                    "validations": [
+                        {
+                            "id": "dcat_contactPoint_is_present",
+                            "label": "Ponto de contato",
+                            "description": "Contém informações sobre quem consultar em caso de dúvidas (dcat:contactPoint). Verifica se a propriedade está definida.",
+                            "weight": 20
+                        }
+                    ]
+                },
+                {
+                    "id": "reusability_publisher",
+                    "property": "dct:publisher",
+                    "validations": [
+                        {
+                            "id": "dct_publisher_is_present",
+                            "label": "Publicador",
+                            "description": "A pessoa ou organização que publicou os dados (dct:publisher). Verifica se a propriedade está definida.",
+                            "weight": 10
+                        }
+                    ]
+                }
+            ],
+            "contextualidade": [
+                {
+                    "id": "contextuality_rights",
+                    "property": "dct:rights",
+                    "validations": [
+                        {
+                            "id": "dct_rights_is_present",
+                            "label": "Direitos de uso",
+                            "description": "O campo 'Direitos' (dct:rights) pode ser utilizado para indicar referências adicionais sobre as condições de uso. Verifica se a propriedade está definida.",
+                            "weight": 5
+                        }
+                    ]
+                },
+                {
+                    "id": "contextuality_byteSize",
+                    "property": "dct:byteSize",
+                    "validations": [
+                        {
+                            "id": "dct_byteSize_is_present",
+                            "label": "Tamanho do arquivo",
+                            "description": "Especifica o tamanho do arquivo em bytes (dct:byteSize). Verifica se a propriedade está definida.",
+                            "weight": 5
+                        }
+                    ]
+                },
+                {
+                    "id": "contextuality_issued",
+                    "property": "dct:issued",
+                    "validations": [
+                        {
+                            "id": "dct_issued_is_present",
+                            "label": "Data de publicação",
+                            "description": "A data em que o conjunto de dados ou a distribuição foi divulgado (dct:issued). Verifica se a propriedade está definida.",
+                            "weight": 5
+                        }
+                    ]
+                },
+                {
+                    "id": "contextuality_modified",
+                    "property": "dct:modified",
+                    "validations": [
+                        {
+                            "id": "dct_modified_is_present",
+                            "label": "Data de modificação",
+                            "description": "A data em que o conjunto de dados ou a distribuição foi alterado pela última vez (dct:modified). Verifica se a propriedade está definida.",
+                            "weight": 5
+                        }
+                    ]
+                }
+            ]
+        },
+        "vocabularies": [
+            {
+                "name": "theme",
+                "url": "https://dcat-br.gov.br/vocabularies/theme",
+                "property": "dct:theme"
+            },
+            {
+                "name": "resource_type",
+                "url": "https://dcat-br.gov.br/vocabularies/resource_type",
+                "property": "dct:resourceType"
+            },
+            {
+                "name": "access_rights",
+                "url": "https://dcat-br.gov.br/vocabularies/access_rights",
+                "property": "dct:accessRights"
+            },
+            {
+                "name": "periodicity",
+                "url": "https://dcat-br.gov.br/vocabularies/periodicity",
+                "property": "dct:periodicity"
+            },
+            {
+                "name": "language",
+                "url": "https://dcat-br.gov.br/vocabularies/language",
+                "property": "dct:language"
+            },
+            {
+                "name": "format",
+                "url": "https://dcat-br.gov.br/vocabularies/format",
+                "property": "dct:format"
+            },
+            {
+                "name": "license",
+                "url": "https://dcat-br.gov.br/vocabularies/license",
+                "property": "dct:license"
+            },
+            {
+                "name": "non_proprietary",
+                "url": "https://dcat-br.gov.br/vocabularies/non_proprietary",
+                "property": "dct:format"
+            },
+            {
+                "name": "machine_readable",
+                "url": "https://dcat-br.gov.br/vocabularies/machine_readable",
+                "property": "dct:format"
+            }
+        ]
+    }
+}

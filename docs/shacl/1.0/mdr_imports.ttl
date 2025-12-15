@@ -1,0 +1,85 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# 
+# Este arquivo fornece as importações das listas de códigos recomendadas pelo
+# perfil de aplicação DCAT-BR.
+#
+# NOTA: Algumas URIs abaixo ainda não existem e precisam ser criadas.
+# As URIs seguem o padrão: http://purl.org/dcat-br/vocabularies/{vocab-name}
+#
+# Para criar os vocabulários SKOS, consulte a documentação em:
+# https://www.w3.org/TR/skos-primer/
+#
+
+<http://purl.org/dcat-br/vocabularies/codelist_imports>
+  rdf:type owl:Ontology ;
+  rdfs:comment "Importações de listas de códigos do DCAT-BR"@pt-BR ;
+  rdfs:comment "DCAT-BR codelist imports"@en ;
+  
+  # Vocabulários do DCAT-BR (a serem criados)
+  # TODO: Criar vocabulários SKOS para os seguintes:
+  owl:imports <http://purl.org/dcat-br/vocabularies/periodicity> ;
+  owl:imports <http://purl.org/dcat-br/vocabularies/access-rights> ;
+  owl:imports <http://purl.org/dcat-br/vocabularies/theme> ;
+  owl:imports <http://purl.org/dcat-br/vocabularies/resource-type> ;
+  
+  # Vocabulários padrão que podem ser reutilizados
+  owl:imports <http://publications.europa.eu/resource/authority/language> ;
+  owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> 
+  .
+
+#-------------------------------------------------------------------------
+# Estrutura esperada dos vocabulários SKOS a serem criados:
+#-------------------------------------------------------------------------
+#
+# 1. Vocabulário de Periodicidade
+#    URI: http://purl.org/dcat-br/vocabularies/periodicity
+#    Valores: DIARIA, SEMANAL, QUINZENAL, MENSAL, TRIMESTRAL, 
+#             QUADRIMESTRAL, SEMESTRAL, ANUAL, SOB_DEMANDA, OUTRAS
+#
+# 2. Vocabulário de Observância Legal / Direitos de Acesso
+#    URI: http://purl.org/dcat-br/vocabularies/access-rights
+#    Valores: Público, Restrito (vários tipos), Sigiloso (vários tipos)
+#    Ver INTEGRACAO-DCAT-BR.md para lista completa
+#
+# 3. Vocabulário de Temas
+#    URI: http://purl.org/dcat-br/vocabularies/theme
+#    Valores: Abastecimento, Administração, Agropecuária, Pesca e Extrativismo,
+#             Comércio e Serviços, Comunicações, Cultura, Defesa Nacional,
+#             Economia e Finanças, Educação, Energia, Esporte e Lazer,
+#             Habitação, Indústria, Infraestrutura e Fomento, Meio Ambiente,
+#             Pesquisa e Desenvolvimento, Planejamento e Gestão,
+#             Previdência Social, Proteção Social, Relações Internacionais,
+#             Saneamento, Saúde, Segurança e Ordem Pública, Trabalho,
+#             Transportes, Urbanismo
+#
+# 4. Vocabulário de Tipo de Recurso
+#    URI: http://purl.org/dcat-br/vocabularies/resource-type
+#    Valores: DADOS, DICIONARIO_DE_DADOS, DOCUMENTACAO, API, OUTRO
+#
+#-------------------------------------------------------------------------
+# Exemplo de estrutura SKOS para um vocabulário:
+#-------------------------------------------------------------------------
+#
+# @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+# @prefix dct: <http://purl.org/dc/terms/> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+#
+# <http://purl.org/dcat-br/vocabularies/periodicity>
+#     a skos:ConceptScheme ;
+#     dct:title "Periodicidade de Atualização - DCAT-BR"@pt-BR ;
+#     dct:description "Vocabulário controlado para periodicidade de atualização de conjuntos de dados"@pt-BR .
+#
+# <http://purl.org/dcat-br/vocabularies/periodicity/MENSAL>
+#     a skos:Concept ;
+#     skos:inScheme <http://purl.org/dcat-br/vocabularies/periodicity> ;
+#     skos:prefLabel "MENSAL"@pt-BR ;
+#     skos:prefLabel "MONTHLY"@en ;
+#     skos:definition "Atualização mensal dos dados"@pt-BR .
+#
+#-------------------------------------------------------------------------
+

@@ -1,0 +1,105 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCAT-BR - Perfil de Aplicação DCAT para Catálogos de Dados no Brasil</title>
+    <meta name="description" content="DCAT-BR é um perfil de aplicação baseado no vocabulário DCAT da W3C para descrever catálogos de dados públicos no Brasil.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DCAT-BR</h1>
+            <p class="subtitle">Perfil de Aplicação DCAT para Catálogos de Dados no Brasil</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#versoes">Versões</a></li>
+                <li><a href="#documentacao">Documentação</a></li>
+                <li><a href="#contribuir">Contribuir</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="sobre">
+            <h2>Sobre o DCAT-BR</h2>
+            <p>
+                O DCAT-BR é um perfil de aplicação baseado no vocabulário <a href="https://www.w3.org/TR/vocab-dcat-3/" target="_blank">Data Catalogue Vocabulary (DCAT)</a> 
+                da W3C, desenvolvido especificamente para descrever catálogos de dados públicos no Brasil. 
+                Seu objetivo principal é facilitar a descoberta e o reuso de dados governamentais brasileiros.
+            </p>
+            <p>
+                O perfil foi desenvolvido no contexto do <a href="https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados" target="_blank">Catálogo Nacional de Dados</a>, 
+                uma iniciativa do governo brasileiro para centralizar e padronizar a descrição de conjuntos de dados públicos.
+            </p>
+        </section>
+
+        <section id="versoes">
+            <h2>Versões</h2>
+            <div id="releases-list" class="releases-grid">
+                <!-- Releases serão carregados dinamicamente via JavaScript -->
+            </div>
+        </section>
+
+        <section id="documentacao">
+            <h2>Documentação</h2>
+            <p>
+                A documentação do DCAT-BR inclui especificações técnicas, guias de uso e vocabulários controlados 
+                utilizados para padronizar a descrição de metadados em catálogos de dados públicos no Brasil.
+            </p>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <h3>Vocabulários Controlados</h3>
+                    <p>
+                        Acesse os vocabulários controlados utilizados no perfil DCAT-BR, incluindo frequência de atualização, 
+                        licenças de uso, temas e outros campos padronizados.
+                    </p>
+                    <div class="links">
+                        <a href="docs/vocabularies/index.html" class="btn">Ver Vocabulários</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contribuir">
+            <h2>Como Contribuir</h2>
+            <p>
+                Problemas encontrados ou sugestões para novas funcionalidades podem ser submetidos como 
+                <em>issues</em> no repositório do DCAT-BR no GitHub.
+            </p>
+            <p>
+                Para contribuir com o desenvolvimento:
+            </p>
+            <ol>
+                <li>Faça um <em>fork</em> do repositório</li>
+                <li>Crie uma <em>branch</em> para sua contribuição</li>
+                <li>Faça suas alterações e testes</li>
+                <li>Submeta um <em>Pull Request</em></li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                Copyright © 2025 DCAT-BR. Todo o material neste repositório é publicado sob a licença 
+                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>, 
+                salvo menção explícita em contrário.
+            </p>
+            <p>
+                <a href="CHANGELOG.md">Histórico de Mudanças</a> | 
+                <a href="https://github.com/juliano-soares/DCAT-BR/issues" target="_blank">Reportar Problema</a> |
+                <a href="https://github.com/juliano-soares/DCAT-BR" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/releases.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
