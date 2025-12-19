@@ -1,34 +1,58 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-# 
-# Este arquivo fornece as importações que são implicitamente o resultado
-# de reutilizá-las no perfil de aplicação DCAT-BR.
-# As importações apontam para a URL das serializações RDF (principalmente
-# as serializações turtle), pois nem todas as URIs de ontologia têm
-# negociação de conteúdo implementada.
-# O formato RDF é necessário para o validador ISA testbed.
 #
-# As seguintes importações foram comentadas:
-#   owl:imports <https://www.w3.org/ns/odrl/2/ODRL22.ttl> ; 
-#   importação excluída porque a shape SHACL para Category se aplica a todas
-#   as instâncias de skos:Concept e os skos:Concepts no ODRL não estão em
-#   conformidade com isso.
+# DCAT-BR 1.0.0 — imports.ttl
+#
+# Este arquivo fornece as importações (não transitivas) necessárias para suportar
+# a validação SHACL do DCAT-BR no Interoperable Europe Testbed / ISA² SHACL Validator.
+#
+# As importações apontam para URLs de serializações RDF (preferencialmente Turtle),
+# pois nem todas as URIs de ontologia oferecem negociação de conteúdo.
+#
+# Observação sobre ODRL:
+# - A importação do ODRL (ODRL22.ttl) foi mantida comentada por compatibilidade,
+#   pois algumas shapes genéricas aplicadas a skos:Concept podem conflitar com
+#   conceitos definidos em ODRL.
 #
 
 <http://purl.org/dcat-br>
-  rdf:type owl:Ontology ;
-  owl:imports <https://www.w3.org/ns/dcat2.ttl> ;
-  owl:imports <http://dublincore.org/2020/01/20/dublin_core_terms.ttl> ;
-  owl:imports <http://xmlns.com/foaf/spec/index.rdf> ;
-  owl:imports <https://www.w3.org/ns/locn.ttl> ;
-  owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> ;
-  owl:imports <https://schema.org/version/latest/schema.ttl> ;
-  owl:imports <http://www.w3.org/ns/prov-o.ttl> ;
-  owl:imports <http://www.w3.org/2006/time.ttl> ;
-  owl:imports <http://www.w3.org/2006/vcard/ns.ttl> ;
-  owl:imports <http://www.w3.org/ns/adms.ttl> 
-  .
+    a owl:Ontology ;
+    rdfs:label "DCAT-BR — imports for SHACL validation"@en ;
+    rdfs:label "DCAT-BR — importações para validação SHACL"@pt-BR ;
 
+    # Vocabulário DCAT (W3C) — perfil DCAT2 em Turtle
+    owl:imports <https://www.w3.org/ns/dcat2.ttl> ;
+
+    # Dublin Core Terms — Turtle (Dublin Core Metadata Initiative)
+    owl:imports <http://dublincore.org/2020/01/20/dublin_core_terms.ttl> ;
+
+    # FOAF — (nota: esta URL pode variar em disponibilidade; mantida conforme seu modelo)
+    owl:imports <http://xmlns.com/foaf/spec/index.rdf> ;
+
+    # LOCN — Core Location Vocabulary (W3C / SEMIC) em Turtle
+    owl:imports <https://www.w3.org/ns/locn.ttl> ;
+
+    # SPDX — ontologia (XML/RDF)
+    owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> ;
+
+    # schema.org — Turtle (versão mais recente)
+    owl:imports <https://schema.org/version/latest/schema.ttl> ;
+
+    # PROV-O — Turtle
+    owl:imports <http://www.w3.org/ns/prov-o.ttl> ;
+
+    # OWL-Time — Turtle
+    owl:imports <http://www.w3.org/2006/time.ttl> ;
+
+    # vCard RDF — Turtle
+    owl:imports <http://www.w3.org/2006/vcard/ns.ttl> ;
+
+    # ADMS — Turtle
+    owl:imports <http://www.w3.org/ns/adms.ttl> ;
+
+    # ODRL (comentado por compatibilidade com shapes genéricas em skos:Concept)
+    # owl:imports <https://www.w3.org/ns/odrl/2/ODRL22.ttl> ;
+    .

@@ -15,14 +15,14 @@ DCAT-BR/
 ├── releases.json           # Informações sobre releases
 ├── assets/                 # Recursos estáticos
 │   ├── css/
-│   │   └── style.css      # Estilos do site
+│   │   └── style.css       # Estilos do site
 │   └── js/
 │       ├── main.js         # Scripts principais
-│       └── releases.js    # Carregamento de releases
+│       └── releases.js     # Carregamento de releases
 ├── docs/
 │   ├── releases/           # Versões do DCAT-BR
 │   │   └── 1.0/
-│   │       ├── index.html # Página da versão
+│   │       ├── index.html  # Página da versão
 │   │       ├── dcat-br.html
 │   │       ├── dcat-br.pdf
 │   │       └── dcat-br.rdf
@@ -51,7 +51,7 @@ DCAT-BR/
    ```json
    {
      "version": "1.1",
-     "date": "2025-10-12",
+     "date": "2025-12-12",
      "status": "Recommendation",
      "description": "Descrição da nova versão...",
      "links": {
@@ -72,22 +72,13 @@ DCAT-BR/
 7. **Atualizar versão mais recente**:
    - Atualizar o campo `latest` em `releases.json`
 
-## Configuração do GitHub Pages
-
-1. Vá para **Settings** > **Pages** no repositório
-2. Em **Source**, selecione a branch `main` (ou `master`)
-3. Selecione a pasta `/ (root)`
-4. Clique em **Save**
-
-O site estará disponível em: `https://seu-usuario.github.io/dcat-br/`
-
 ## Desenvolvimento Local
 
 Para visualizar o site localmente:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/dcat-br.git
+   git clone https://github.com/dcat-br/dcat-br.git
    cd dcat-br
    ```
 
@@ -104,7 +95,7 @@ Para visualizar o site localmente:
 
 ## Contribuindo
 
-Problemas encontrados ou sugestões podem ser submetidos como [issues](https://github.com/seu-usuario/dcat-br/issues) no GitHub.
+Problemas encontrados ou sugestões podem ser submetidos como [issues](https://github.com/dcat-br/dcat-br/issues) no GitHub.
 
 ## Licença
 

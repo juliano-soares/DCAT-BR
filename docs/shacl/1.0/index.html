@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <title>Arquivos SHACL - DCAT-BR 1.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ReSpec W3C -->
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
+  <script class="remove">
+    // Configuração básica ReSpec
+    var respecConfig = {
+      specStatus: "base",
+      shortName: "dcat-br-shacl",
+      thisVersion: "https://dcat-br.github.io/dcat-br/docs/shacl/1.0/",
+      latestVersion: "https://dcat-br.github.io/dcat-br/docs/shacl/1.0/",
+      edDraftURI: "https://dcat-br.github.io/dcat-br/docs/shacl/1.0/",
+      publishDate: "2025-12-12",
+      editors: [
+        {
+          name: "Juliano Leonardo Soares",
+          company: "CPQD",
+          url: "https://www.linkedin.com/in/juliano-leonardo-soares/"
+        }
+      ],
+      github: "https://github.com/dcat-br/dcat-br",
+      license: "w3c-software-doc",
+      noRecTrack: true,
+      overrideStatus: true,
+      wg: "Grupo de Trabalho DCAT-BR",
+      wgURI: "https://dcat-br.github.io/dcat-br/v1.0/gt/",
+      wgPublicList: "dcat-br",
+      subjectPrefix: "[DCAT-BR]",
+      lint: {
+        "no-unused-dfns": false,
+        "required-sections": false
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <!-- Resumo / Abstract -->
+  <section id="abstract">
+    <h2>Resumo</h2>
+    <p>
+      Esta página fornece acesso aos arquivos SHACL (Shapes Constraint Language) utilizados para 
+      validar a conformidade de catálogos e conjuntos de dados com o perfil DCAT-BR versão 1.0. 
+      Estes arquivos definem as restrições de cardinalidade, tipos de dados e uso de vocabulários 
+      controlados.
+    </p>
+    <p>
+      Para auxiliar na verificação se um catálogo atende ou não às restrições expressas neste Perfil 
+      de Aplicação, as restrições nesta especificação são expressas usando SHACL. Cada restrição 
+      que pôde ser convertida em uma expressão SHACL foi incluída, permitindo construir uma 
+      verificação de validação para a troca de dados entre sistemas.
+    </p>
+  </section>
+
+  <!-- Status of This Document -->
+  <section id="sotd">
+    <h2>Status deste documento</h2>
+    <p>
+      Este documento lista as definições SHACL oficiais para a versão 1.0 do perfil DCAT-BR.
+    </p>
+  </section>
+
+  <!-- Introdução (informativa) -->
+  <section id="intro" class="informative">
+    <h2>Introdução</h2>
+    <p>
+      Cabe aos implementadores da troca de dados definir a validação que esperam. Cada troca de dados 
+      ocorre dentro de um contexto, e esse contexto está além das expressões SHACL aqui apresentadas.
+    </p>
+    <p>
+      Por exemplo, pode-se saber que os dados trocados não contêm os detalhes das organizações, pois 
+      todas são identificadas exclusivamente por um URI deferenciável. Nesse caso, as regras relativas 
+      à verificação da existência obrigatória de um nome para cada organização provavelmente não são 
+      relevantes. Uma execução estrita das expressões SHACL do DCAT-BR gerará erros, embora os dados 
+      estejam disponíveis por meio de um canal diferente.
+    </p>
+    <p>
+      Para obter a experiência de usuário adequada em um processo de validação, é preciso considerar 
+      o que é efetivamente transferido entre os sistemas e utilizar as restrições que estão dentro do 
+      escopo da troca de dados. Para auxiliar nesse processo, as expressões SHACL são agrupadas em 
+      arquivos distintos, seguindo as configurações típicas de validação.
+    </p>
+  </section>
+
+  <!-- Arquivos SHACL -->
+  <section id="arquivos">
+    <h2>Arquivos de Validação SHACL</h2>
+    <p>
+      Os arquivos abaixo podem ser baixados individualmente ou referenciados em ferramentas de 
+      validação SHACL.
+    </p>
+
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Arquivo</th>
+          <th>Descrição</th>
+          <th>Link Direto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>shapes.ttl</code></td>
+          <td>Restrições relativas à existência, domínio, intervalo literal e cardinalidades obrigatórias.</td>
+          <td><a href="shapes.ttl">Turtle</a></td>
+        </tr>
+        <tr>
+          <td><code>range.ttl</code></td>
+          <td>Restrições relativas ao intervalo de objetos (classes) para todas as propriedades no DCAT-BR.</td>
+          <td><a href="range.ttl">Turtle</a></td>
+        </tr>
+        <tr>
+          <td><code>shapes_recommended.ttl</code></td>
+          <td>Restrições para propriedades recomendadas (geram avisos/warnings em vez de erros).</td>
+          <td><a href="shapes_recommended.ttl">Turtle</a></td>
+        </tr>
+        <tr>
+          <td><code>mdr-vocabularies.shape.ttl</code></td>
+          <td>Restrições que validam se os valores usados em propriedades específicas pertencem aos vocabulários controlados do DCAT-BR.</td>
+          <td><a href="mdr-vocabularies.shape.ttl">Turtle</a></td>
+        </tr>
+        <tr>
+          <td><code>imports.ttl</code></td>
+          <td>Fornece as importações que são o resultado de reutilizá-las no perfil DCAT-BR (ontologias externas).</td>
+          <td><a href="imports.ttl">Turtle</a></td>
+        </tr>
+        <tr>
+          <td><code>mdr_imports.ttl</code></td>
+          <td>Importa as listas de códigos e vocabulários controlados (SKOS) necessários para validação completa.</td>
+          <td><a href="mdr_imports.ttl">Turtle</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Classes Validadas -->
+  <section id="classes">
+    <h2>Classes Validadas</h2>
+    <p>Os arquivos SHACL validam as seguintes classes do DCAT-BR:</p>
+    <ul>
+      <li><code>dcat:Dataset</code> - Conjunto de Dados</li>
+      <li><code>dcat:Distribution</code> - Distribuição</li>
+      <li><code>dcat:DataService</code> - Serviço de Dados</li>
+      <li><code>dcat:Resource</code> - Recurso Catalogado</li>
+      <li><code>foaf:Agent</code> - Agente (Organização/Pessoa)</li>
+      <li><code>dct:Location</code> - Local</li>
+      <li><code>dct:PeriodOfTime</code> - Período de Tempo</li>
+      <li><code>vcard:Organization</code> - vCard (Ponto de Contato)</li>
+      <li><code>spdx:Checksum</code> - Verificação de Integridade</li>
+    </ul>
+  </section>
+
+  <!-- Propriedades -->
+  <section id="propriedades">
+    <h2>Propriedades Obrigatórias vs Recomendadas</h2>
+    
+    <h3>Obrigatórias (Violation)</h3>
+    <p>As propriedades obrigatórias geram erros (Violation) quando ausentes ou inválidas:</p>
+    <ul>
+      <li><code>dct:title</code> - Título</li>
+      <li><code>dct:description</code> - Descrição</li>
+      <li><code>dcat:accessURL</code> - URL de acesso (para Distribution)</li>
+      <li><code>dcat:endpointURL</code> - URL do endpoint (para DataService)</li>
+    </ul>
+
+    <h3>Recomendadas (Warning)</h3>
+    <p>As propriedades recomendadas geram avisos (Warning) quando ausentes:</p>
+    <ul>
+      <li><code>dcat:contactPoint</code> - Ponto de contato</li>
+      <li><code>dcat:distribution</code> - Distribuições</li>
+      <li><code>dcat:keyword</code> - Palavras-chave</li>
+      <li><code>dcat:theme</code> - Temas</li>
+      <li><code>dct:spatial</code> - Cobertura espacial</li>
+      <li><code>dct:temporal</code> - Cobertura temporal</li>
+    </ul>
+  </section>
+
+  <!-- Vocabulários Controlados -->
+  <section id="vocabularios">
+    <h2>Vocabulários Controlados</h2>
+    <p>O DCAT-BR define vocabulários controlados para as seguintes propriedades:</p>
+    <ul>
+      <li><strong>Periodicidade</strong> (<code>dct:accrualPeriodicity</code>): DIARIA, SEMANAL, MENSAL, etc.</li>
+      <li><strong>Observância Legal</strong> (<code>dct:accessRights</code>): Público, Restrito, Sigiloso (vários tipos)</li>
+      <li><strong>Temas</strong> (<code>dcat:theme</code>): Economia e Finanças, Saúde, Educação, etc.</li>
+      <li><strong>Tipo de Recurso</strong> (<code>dct:type</code>): DADOS, API, DOCUMENTACAO, etc.</li>
+    </ul>
+  </section>
+
+  <section id="uso" class="informative">
+    <h2>Como utilizar</h2>
+    <p>
+      Os arquivos SHACL estão configurados para uso com validadores padrão, como o 
+      <a href="https://shacl.org/playground/">SHACL Playground</a>, 
+      <a href="https://github.com/RDFLib/pySHACL">PySHACL</a> ou 
+      TopBraid SHACL Validator.
+    </p>
+    <p>
+      Para validar um catálogo usando <code>pyshacl</code> (Python), você pode executar:
+    </p>
+    <pre class="example">
+pyshacl -s shapes.ttl -r range.ttl -i imports.ttl seu_catalogo.ttl
+    </pre>
+    <p>
+      Usando <code>shaclvalidate</code> (Java):
+    </p>
+    <pre class="example">
+shaclvalidate.sh -datafile seu_catalogo.ttl -shapesfile shapes.ttl
+    </pre>
+  </section>
+
+  <script>
+    // Adiciona target="_blank" a todos os links externos quando o documento estiver pronto
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        const links = document.querySelectorAll('a[href]');
+        links.forEach(function(link) {
+          const href = link.getAttribute('href');
+          if (href && (href.startsWith('http://') || href.startsWith('https://')) && !link.hasAttribute('target')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+          }
+        });
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
+

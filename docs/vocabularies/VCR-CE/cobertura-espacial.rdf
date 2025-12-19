@@ -1,54 +1,48 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xmlns:dc="http://purl.org/dc/terms/"
-         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:dc11="http://purl.org/dc/elements/1.1/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
-  <skos:ConceptScheme rdf:about="https://dcat-br.gov.br/vocabularies/VCR-CE/esquema">
-    <dc:title xml:lang="pt-BR">Vocabulário Controlado de Cobertura Espacial (VCR-CE) - DCAT-BR</dc:title>
-    <dc:description xml:lang="pt-BR">Vocabulário SKOS para descrever a cobertura espacial de distribuições de dados em catálogos de dados públicos no Brasil, classificando a abrangência territorial em níveis federais, estaduais e municipais.</dc:description>
-    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-11</dc:issued>
-    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-11</dc:modified>
-    <dc:language>pt-BR</dc:language>
-    <dc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dc:publisher rdf:resource="https://dcat-br.gov.br/"/>
-    
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/FEDERAL"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/ESTADUAL"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/MUNICIPAL"/>
-  </skos:ConceptScheme>
+  <!-- ConceptScheme (publicação no estilo DCAT-AP CH / EU) -->
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
 
-  <skos:Concept rdf:about="https://dcat-br.gov.br/vocabularies/VCR-CE/FEDERAL">
-    <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/esquema"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/esquema"/>
-    <skos:prefLabel xml:lang="pt-BR">Federal</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">Federal</skos:prefLabel>
-    <skos:notation>FEDERAL</skos:notation>
-    <skos:definition xml:lang="pt-BR">Cobertura espacial de abrangência federal, referente a dados que se aplicam a todo o território nacional brasileiro.</skos:definition>
-    <skos:definition xml:lang="en">Federal spatial coverage, referring to data that applies to the entire Brazilian national territory.</skos:definition>
-    <dc:identifier>FEDERAL</dc:identifier>
-  </skos:Concept>
+    <dc11:title xml:lang="pt-BR">Vocabulário Controlado de Cobertura Espacial (VCR-CE) - DCAT-BR</dc11:title>
+    <dc11:title xml:lang="en">Spatial Coverage Controlled Vocabulary (VCR-CE) - DCAT-BR</dc11:title>
 
-  <skos:Concept rdf:about="https://dcat-br.gov.br/vocabularies/VCR-CE/ESTADUAL">
-    <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/esquema"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/esquema"/>
-    <skos:prefLabel xml:lang="pt-BR">Estadual/Distrital</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">State</skos:prefLabel>
-    <skos:notation>ESTADUAL</skos:notation>
-    <skos:definition xml:lang="pt-BR">Cobertura espacial de abrangência estadual ou distrital, referente a dados que se aplicam a um ou mais estados brasileiros ou ao Distrito Federal.</skos:definition>
-    <skos:definition xml:lang="en">State-level or district-level spatial coverage, referring to data that applies to one or more Brazilian states or to the Federal District.</skos:definition>
-    <dc:identifier>ESTADUAL</dc:identifier>
-  </skos:Concept>
+    <dc11:description xml:lang="pt-BR">
+      Vocabulário SKOS para descrever a cobertura espacial de distribuições de dados em catálogos de dados públicos no Brasil, classificando a abrangência territorial em níveis federais, estaduais e municipais.
+    </dc11:description>
+    <dc11:description xml:lang="en">
+      SKOS vocabulary to describe the spatial coverage of data distributions in public data catalogs in Brazil, classifying territorial coverage at federal, state and municipal levels.
+    </dc11:description>
 
-  <skos:Concept rdf:about="https://dcat-br.gov.br/vocabularies/VCR-CE/MUNICIPAL">
-    <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/esquema"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-CE/esquema"/>
-    <skos:prefLabel xml:lang="pt-BR">Municipal</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">Municipal</skos:prefLabel>
-    <skos:notation>MUNICIPAL</skos:notation>
-    <skos:definition xml:lang="pt-BR">Cobertura espacial de abrangência municipal, referente a dados que se aplicam a um ou mais municípios brasileiros.</skos:definition>
-    <skos:definition xml:lang="en">Municipal spatial coverage, referring to data that applies to one or more Brazilian municipalities.</skos:definition>
-    <dc:identifier>MUNICIPAL</dc:identifier>
-  </skos:Concept>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-12</dcterms:issued>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-12</dcterms:modified>
+
+    <!-- Editor/Publisher -->
+    <dcterms:creator rdf:parseType="Resource">
+      <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+      <foaf:name>Grupo de Trabalho DCAT-BR</foaf:name>
+    </dcterms:creator>
+
+    <!-- Licença do vocabulário -->
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+
+    <!-- Versionamento no estilo EU/CH -->
+    <owl:versionInfo>2025-12-12</owl:versionInfo>
+    <owl:versionIRI rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/2025-12-12/"/>
+
+    <!-- Top concepts: referenciar por rdf:resource (sem "aninhamento") -->
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/FEDERAL"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/ESTADUAL"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/MUNICIPAL"/>
+  </rdf:Description>
 
 </rdf:RDF>

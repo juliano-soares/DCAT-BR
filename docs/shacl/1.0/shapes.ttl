@@ -3,12 +3,13 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatbr: <http://purl.org/dcat-br/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -16,473 +17,567 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix wdrs: <http://www.w3.org/2007/05/powder-s#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcatbr: <http://purl.org/dcat-br/> .
 
-<https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/shapes.ttl> 
-    dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+<https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/shapes.ttl>
+    a owl:Ontology ;
     dct:conformsTo <https://www.w3.org/TR/shacl> ;
-    dct:description "Este arquivo especifica as restrições principais sobre propriedades e classes expressas pelo DCAT-BR em SHACL."@pt-BR ;
-    dct:description "This file specifies the core constraints on properties and classes expressed by DCAT-BR in SHACL."@en .
+    dct:title "DCAT-BR 1.0.0 - SHACL shapes (core)"@en ;
+    dct:title "DCAT-BR 1.0.0 - SHACL shapes (núcleo)"@pt-BR ;
+    dct:description "Este arquivo especifica as restrições principais sobre propriedades e classes expressas pelo DCAT-BR em SHACL. Aqui ficam cardinalidades, existência, tipo literal e nodeKind. Restrições de range por classe ficam em range.ttl."@pt-BR ;
+    dct:description "This file specifies the core constraints on properties and classes expressed by DCAT-BR in SHACL. Cardinalities, existence, literal datatype and nodeKind are here. Class-range constraints belong in range.ttl."@en ;
+    owl:versionInfo "1.0.0" .
 
-#-------------------------------------------------------------------------
-# As shapes neste arquivo cobrem todas as classes no DCAT-BR 1.0.0
-# Cobre todas as restrições que devem ser satisfeitas, exceto aquelas
-# que verificam os intervalos de classe. Isso pode ser encontrado em um arquivo separado.
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
+# Helper shapes
+# -------------------------------------------------------------------------
+
+:NonEmptyText_Shape
+    a sh:NodeShape ;
+    rdfs:label "Texto não vazio"@pt-BR ;
+    rdfs:label "Non-empty text"@en ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:nodeKind sh:Literal
+    ] .
+
+:DateOrDateTimeDataType_Shape
+    a sh:NodeShape ;
+    rdfs:label "Disjunção de data/hora"@pt-BR ;
+    rdfs:label "Date/time disjunction"@en ;
+    rdfs:comment "Verifica que um valor literal é tipado como xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth."@pt-BR ;
+    rdfs:comment "Checks that a literal value is typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth."@en ;
+    sh:message "Os valores devem ser tipados como xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth."@pt-BR ;
+    sh:message "Values must be typed as xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth."@en ;
+    sh:or (
+        [ sh:datatype xsd:date ]
+        [ sh:datatype xsd:dateTime ]
+        [ sh:datatype xsd:gYear ]
+        [ sh:datatype xsd:gYearMonth ]
+    ) .
+
+# -------------------------------------------------------------------------
+# Agent (foaf:Agent)
+# -------------------------------------------------------------------------
 
 :Agent_Shape
     a sh:NodeShape ;
     rdfs:label "Agente"@pt-BR ;
     rdfs:label "Agent"@en ;
+    sh:targetClass foaf:Agent ;
     sh:property [
+        sh:path foaf:name ;
         sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
-        sh:path foaf:name ;
         sh:minLength 2 ;
         sh:and (
             [ sh:not [ sh:pattern "^\\s+$" ] ]
             [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
         ) ;
         sh:severity sh:Violation ;
-        sh:message "A propriedade foaf:name é obrigatória e deve ter pelo menos um valor literal (texto) com o nome do agente. O valor não pode ser apenas espaços ou caracteres repetidos."@pt-BR
-    ] ;
-    sh:targetClass foaf:Agent .
+        sh:message "foaf:name é obrigatório e deve ser um literal com pelo menos 2 caracteres (não pode ser apenas espaços ou caracteres repetidos)."@pt-BR
+    ] .
 
-:Checksum_Shape
-    a sh:NodeShape ;
-    rdfs:label "Verificação de Integridade"@pt-BR ;
-    rdfs:label "Checksum"@en ;
-    sh:property [
-        sh:maxCount 1 ;
-        sh:minCount 1 ;
-        sh:path spdx:algorithm ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade spdx:algorithm é obrigatória e deve ter exatamente um valor representando o algoritmo de checksum usado (ex: spdx:checksumAlgorithm_sha1)."@pt-BR
-    ], [
-        sh:datatype xsd:hexBinary ;
-        sh:maxCount 1 ;
-        sh:minCount 1 ;
-        sh:path spdx:checksumValue ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade spdx:checksumValue é obrigatória e deve ter exatamente um valor do tipo xsd:hexBinary representando o valor do checksum."@pt-BR
-    ] ;
-    sh:targetClass spdx:Checksum .
-
-:DataService_Shape
-    a sh:NodeShape ;
-    rdfs:label "Serviço de Dados"@pt-BR ;
-    rdfs:label "Data Service"@en ;
-    sh:property [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:accessRights ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:accessRights deve ser um recurso (URI ou nó anônimo) que representa os direitos de acesso ao serviço de dados. Use um conceito do vocabulário controlado de direitos de acesso."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:contactPoint ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:contactPoint deve ser um recurso vcard:Organization com informações de contato (vcard:fn e vcard:hasEmail)."@pt-BR
-    ], [
-        sh:nodeKind sh:Literal ;
-        sh:path dct:description ;
-        sh:minLength 10 ;
-        sh:and (
-            [ sh:not [ sh:pattern "^\\s+$" ] ]
-            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
-        ) ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:description deve ser um valor literal (texto) descrevendo o serviço de dados. Deve ter pelo menos 10 caracteres e não pode ser apenas espaços ou caracteres repetidos."@pt-BR
-    ], [
-        sh:minCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:endpointURL ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:endpointURL é obrigatória e deve ter pelo menos um valor que seja um recurso (URI) apontando para a URL do endpoint do serviço de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:endpointDescription ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:endpointDescription deve ser um recurso (URI) que aponta para a documentação ou descrição do endpoint do serviço de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:Literal ;
-        sh:path dcat:keyword ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:keyword deve ser um valor literal (texto) representando uma palavra-chave ou tag para o serviço de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:landingPage ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:landingPage deve ser um recurso (URI) que aponta para a página web principal do serviço de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:maxCount 1 ;
-        sh:path dct:license ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:license deve ser um recurso (URI) que representa a licença do serviço de dados. Use no máximo um valor."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:maxCount 1 ;
-        sh:path dct:publisher ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:publisher deve ser um recurso (URI ou nó anônimo) que representa a organização publicadora do serviço de dados, tipicamente um foaf:Agent ou foaf:Organization. Use no máximo um valor."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:servesDataset ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:servesDataset deve ser um recurso dcat:Dataset que representa o conjunto de dados servido por este serviço de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:IRI ;
-        sh:path dcat:theme ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:theme deve ser um IRI (URI absoluto) que representa o tema ou categoria do serviço de dados. Use um conceito do vocabulário controlado de temas DCAT-BR."@pt-BR
-    ], [
-        sh:minCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path dct:title ;
-        sh:minLength 3 ;
-        sh:and (
-            [ sh:not [ sh:pattern "^\\s+$" ] ]
-            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
-        ) ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:title é obrigatória e deve ter pelo menos um valor literal (texto) com o título do serviço de dados. Deve ter pelo menos 3 caracteres e não pode ser apenas espaços ou caracteres repetidos."@pt-BR
-    ] ;
-    sh:targetClass dcat:DataService .
-
-:Dataset_Shape
-    a sh:NodeShape ;
-    rdfs:label "Conjunto de Dados"@pt-BR ;
-    rdfs:label "Dataset"@en ;
-    sh:property [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:maxCount 1 ;
-        sh:path dct:accessRights ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:accessRights é obrigatória e deve ser um recurso (URI ou nó anônimo) que representa os direitos de acesso ao conjunto de dados. Use um conceito do vocabulário controlado de direitos de acesso."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:maxCount 1 ;
-        sh:path dct:accrualPeriodicity ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:accrualPeriodicity é obrigatória e deve ser um recurso (URI) que representa a frequência de atualização do conjunto de dados. Use um conceito do vocabulário controlado de periodicidade DCAT-BR (ex: http://purl.org/dcat-br/vocabularies/periodicity#mensal)."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:contactPoint ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:contactPoint é obrigatória e deve ser um recurso vcard:Organization com informações de contato (vcard:fn e vcard:hasEmail)."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:creator ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:creator deve ser um recurso (URI ou nó anônimo) que representa o criador do conjunto de dados, tipicamente um foaf:Agent ou foaf:Organization."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:distribution ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:distribution deve ser um recurso dcat:Distribution que representa uma distribuição específica do conjunto de dados."@pt-BR
-    ], [
-        sh:minCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path dct:description ;
-        sh:minLength 10 ;
-        sh:and (
-            [ sh:not [ sh:pattern "^\\s+$" ] ]
-            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
-        ) ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:description é obrigatória e deve ter pelo menos um valor literal (texto) descrevendo o conjunto de dados. Deve ter pelo menos 10 caracteres e não pode ser apenas espaços ou caracteres repetidos."@pt-BR
-    ], [
-        sh:nodeKind sh:Literal ;
-        sh:path dct:identifier ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:identifier deve ser um valor literal (texto) que identifica unicamente o conjunto de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:Literal ;
-        sh:path dcat:keyword ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:keyword deve ser um valor literal (texto) representando uma palavra-chave ou tag para o conjunto de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:landingPage ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:landingPage deve ser um recurso (URI) que aponta para a página web principal do conjunto de dados."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:path dct:modified ;
-        sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape ;
-        sh:message "A propriedade dct:modified deve ter no máximo um valor e ser uma data no formato xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:maxCount 1 ;
-        sh:path dct:license ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:license deve ser um recurso (URI) que representa a licença do conjunto de dados. Use no máximo um valor."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:maxCount 1 ;
-        sh:path dct:publisher ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:publisher é obrigatória e deve ser um recurso (URI ou nó anônimo) que representa a organização publicadora do conjunto de dados, tipicamente um foaf:Agent ou foaf:Organization. Use no máximo um valor."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:spatial ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:spatial deve ser um recurso dct:Location que representa a cobertura geográfica do conjunto de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:temporal ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:temporal deve ser um recurso dct:PeriodOfTime que representa a cobertura temporal do conjunto de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:IRI ;
-        sh:path dcat:theme ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:theme deve ser um IRI (URI absoluto) que representa o tema ou categoria do conjunto de dados. Use um conceito do vocabulário controlado de temas DCAT-BR."@pt-BR
-    ], [
-        sh:minCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path dct:title ;
-        sh:minLength 3 ;
-        sh:and (
-            [ sh:not [ sh:pattern "^\\s+$" ] ]
-            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
-        ) ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:title é obrigatória e deve ter pelo menos um valor literal (texto) com o título do conjunto de dados. Deve ter pelo menos 3 caracteres e não pode ser apenas espaços ou caracteres repetidos."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:type ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:type deve ser um recurso (URI) que representa o tipo do conjunto de dados. Use um conceito do vocabulário controlado de tipos de recurso DCAT-BR."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path dcat:version ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:version deve ser um valor literal (texto) representando a versão do conjunto de dados. Use no máximo um valor."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path prov:wasGeneratedBy ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade prov:wasGeneratedBy deve ser um recurso prov:Activity que representa a atividade que gerou o conjunto de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:inSeries ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:inSeries deve ser um recurso dcat:Dataset que representa a série à qual este conjunto de dados pertence."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:path dct:issued ;
-        sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape ;
-        sh:message "A propriedade dct:issued deve ter no máximo um valor e ser uma data no formato xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth representando a data de publicação do conjunto de dados."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path foaf:page ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade foaf:page deve ser um recurso (URI) que aponta para uma página web relacionada ao conjunto de dados."@pt-BR
-    ] ;
-    sh:targetClass dcat:Dataset .
-
-:DateOrDateTimeDataType_Shape
-    a sh:NodeShape ;
-    rdfs:comment "Shape de disjunção de data/hora verifica que uma propriedade de tipo de dados recebe um valor temporal: date, dateTime, gYear ou gYearMonth literal"@pt-BR ;
-    rdfs:comment "Date time date disjunction shape checks that a datatype property receives a temporal value: date, dateTime, gYear or gYearMonth literal"@en ;
-    rdfs:label "Disjunção de data/hora"@pt-BR ;
-    rdfs:label "Date time date disjunction"@en ;
-    sh:message "Os valores devem ser tipados como xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth"@pt-BR ;
-    sh:message "The values must be data typed as either xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth"@en ;
-    sh:or ([
-            sh:datatype xsd:date
-        ]
-        [
-            sh:datatype xsd:dateTime
-        ]
-        [
-            sh:datatype xsd:gYear
-        ]
-        [
-            sh:datatype xsd:gYearMonth
-        ]
-    ) .
-
-:Distribution_Shape
-    a sh:NodeShape ;
-    rdfs:label "Distribuição"@pt-BR ;
-    rdfs:label "Distribution"@en ;
-    sh:property [
-        sh:minCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:accessURL ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:accessURL é obrigatória e deve ter pelo menos um valor que seja um recurso (URI) apontando para a URL de acesso à distribuição."@pt-BR
-    ], [
-        sh:datatype xsd:decimal ;
-        sh:maxCount 1 ;
-        sh:path dcat:byteSize ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:byteSize deve ser um valor decimal (xsd:decimal) representando o tamanho do arquivo em bytes. Use no máximo um valor."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path spdx:checksum ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade spdx:checksum deve ser um recurso spdx:Checksum que representa a verificação de integridade da distribuição. Use no máximo um valor."@pt-BR
-    ], [
-        sh:nodeKind sh:Literal ;
-        sh:path dct:description ;
-        sh:minLength 10 ;
-        sh:and (
-            [ sh:not [ sh:pattern "^\\s+$" ] ]
-            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
-        ) ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:description deve ser um valor literal (texto) descrevendo a distribuição. Deve ter pelo menos 10 caracteres e não pode ser apenas espaços ou caracteres repetidos."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path foaf:page ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade foaf:page deve ser um recurso (URI) que aponta para uma página web relacionada à distribuição."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:downloadURL ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:downloadURL deve ser um recurso (URI) que aponta para a URL de download direto da distribuição."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:format ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:format deve ser um recurso (URI) que representa o formato do arquivo. Use um conceito do vocabulário controlado de formatos. Use no máximo um valor."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:language ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:language deve ser um recurso (URI) que representa o idioma da distribuição. Use um conceito do vocabulário controlado de idiomas."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:license ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:license deve ser um recurso (URI) que representa a licença da distribuição. Use no máximo um valor."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dcat:mediaType ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:mediaType deve ser um recurso (URI) que representa o tipo MIME da distribuição (ex: http://www.iana.org/assignments/media-types/text/csv). Use no máximo um valor."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:node :DateOrDateTimeDataType_Shape ;
-        sh:path dct:modified ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:modified deve ter no máximo um valor e ser uma data no formato xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth representando a data da última modificação da distribuição."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:node :DateOrDateTimeDataType_Shape ;
-        sh:path dct:issued ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:issued deve ter no máximo um valor e ser uma data no formato xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth representando a data de publicação da distribuição."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:rights ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:rights deve ser um recurso (URI) que representa os direitos sobre a distribuição. Use no máximo um valor."@pt-BR
-    ], [
-        sh:nodeKind sh:Literal ;
-        sh:path dct:title ;
-        sh:minLength 3 ;
-        sh:and (
-            [ sh:not [ sh:pattern "^\\s+$" ] ]
-            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
-        ) ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:title deve ser um valor literal (texto) com o título da distribuição. Deve ter pelo menos 3 caracteres e não pode ser apenas espaços ou caracteres repetidos."@pt-BR
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:type ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dct:type deve ser um recurso (URI) que representa o tipo da distribuição. Use um conceito do vocabulário controlado de tipos de recurso."@pt-BR
-    ] ;
-    sh:targetClass dcat:Distribution .
-
-:Location_Shape
-    a sh:NodeShape ;
-    rdfs:label "Local"@pt-BR ;
-    rdfs:label "Location"@en ;
-    sh:property [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path dcat:bbox ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:bbox deve ser um valor literal (texto) representando a caixa delimitadora (bounding box) da localização no formato WKT ou similar. Use no máximo um valor."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path dcat:centroid ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade dcat:centroid deve ser um valor literal (texto) representando o centroide da localização. Use no máximo um valor."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path locn:geometry ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade locn:geometry deve ser um valor literal (texto) representando a geometria da localização, tipicamente em formato WKT ou GeoJSON. Use no máximo um valor."@pt-BR
-    ] ;
-    sh:targetClass dct:Location .
-
-:PeriodOfTime_Shape
-    a sh:NodeShape ;
-    rdfs:label "Período de Tempo"@pt-BR ;
-    rdfs:label "PeriodOfTime"@en ;
-    sh:property [
-        sh:maxCount 1 ;
-        sh:path dcat:endDate ;
-        sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape ;
-        sh:message "A propriedade dcat:endDate deve ter no máximo um valor e ser uma data no formato xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth representando a data final do período."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:path time:hasBeginning ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade time:hasBeginning deve ser um recurso time:Instant que representa o início do período temporal. Use no máximo um valor."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:path time:hasEnd ;
-        sh:severity sh:Violation ;
-        sh:message "A propriedade time:hasEnd deve ser um recurso time:Instant que representa o fim do período temporal. Use no máximo um valor."@pt-BR
-    ], [
-        sh:maxCount 1 ;
-        sh:path dcat:startDate ;
-        sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape ;
-        sh:message "A propriedade dcat:startDate deve ter no máximo um valor e ser uma data no formato xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth representando a data inicial do período."@pt-BR
-    ] ;
-    sh:targetClass dct:PeriodOfTime .
+# -------------------------------------------------------------------------
+# vCard contact point (vcard:Organization)
+# -------------------------------------------------------------------------
 
 :VCard_Shape
     a sh:NodeShape ;
     rdfs:label "vCard"@pt-BR ;
     rdfs:label "vCard"@en ;
+    sh:targetClass vcard:Organization ;
     sh:property [
-        sh:nodeKind sh:Literal ;
         sh:path vcard:fn ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
         sh:minLength 2 ;
         sh:and (
             [ sh:not [ sh:pattern "^\\s+$" ] ]
             [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
         ) ;
         sh:severity sh:Violation ;
-        sh:message "A propriedade vcard:fn deve ser um valor literal (texto) com o nome completo da organização ou pessoa de contato. Deve ter pelo menos 2 caracteres e não pode ser apenas espaços ou caracteres repetidos."@pt-BR
+        sh:message "vcard:fn é obrigatório e deve ser um literal com pelo menos 2 caracteres (não pode ser apenas espaços ou caracteres repetidos)."@pt-BR
     ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:path vcard:hasEmail ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:severity sh:Violation ;
-        sh:message "A propriedade vcard:hasEmail deve ser um recurso (URI mailto: ou nó anônimo) que representa o endereço de e-mail de contato."@pt-BR
-    ] ;
-    sh:targetClass vcard:Organization .
+        sh:message "vcard:hasEmail é obrigatório e deve ser um recurso (IRI ou nó anônimo), tipicamente um mailto:."@pt-BR
+    ] .
 
+# -------------------------------------------------------------------------
+# spdx:Checksum
+# -------------------------------------------------------------------------
+
+:Checksum_Shape
+    a sh:NodeShape ;
+    rdfs:label "Verificação de Integridade"@pt-BR ;
+    rdfs:label "Checksum"@en ;
+    sh:targetClass spdx:Checksum ;
+    sh:property [
+        sh:path spdx:algorithm ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "spdx:algorithm é obrigatório e deve ter exatamente um valor (recurso) representando o algoritmo usado."@pt-BR
+    ], [
+        sh:path spdx:checksumValue ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:hexBinary ;
+        sh:severity sh:Violation ;
+        sh:message "spdx:checksumValue é obrigatório e deve ter exatamente um valor do tipo xsd:hexBinary."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dct:Location
+# -------------------------------------------------------------------------
+
+:Location_Shape
+    a sh:NodeShape ;
+    rdfs:label "Local"@pt-BR ;
+    rdfs:label "Location"@en ;
+    sh:targetClass dct:Location ;
+    sh:property [
+        sh:path dcat:bbox ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:bbox deve ser um literal (use no máximo 1 valor)."@pt-BR
+    ], [
+        sh:path dcat:centroid ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:centroid deve ser um literal (use no máximo 1 valor)."@pt-BR
+    ], [
+        sh:path locn:geometry ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "locn:geometry deve ser um recurso (IRI ou nó anônimo) representando a geometria (use no máximo 1 valor)."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dct:PeriodOfTime
+# -------------------------------------------------------------------------
+
+:PeriodOfTime_Shape
+    a sh:NodeShape ;
+    rdfs:label "Período de Tempo"@pt-BR ;
+    rdfs:label "PeriodOfTime"@en ;
+    sh:targetClass dct:PeriodOfTime ;
+    sh:property [
+        sh:path dcat:startDate ;
+        sh:maxCount 1 ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:startDate deve ter no máximo 1 valor e ser uma data (xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth)."@pt-BR
+    ], [
+        sh:path dcat:endDate ;
+        sh:maxCount 1 ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:endDate deve ter no máximo 1 valor e ser uma data (xsd:date, xsd:dateTime, xsd:gYear ou xsd:gYearMonth)."@pt-BR
+    ], [
+        sh:path time:hasBeginning ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "time:hasBeginning deve ser um recurso (use no máximo 1 valor)."@pt-BR
+    ], [
+        sh:path time:hasEnd ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "time:hasEnd deve ser um recurso (use no máximo 1 valor)."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:Distribution
+# -------------------------------------------------------------------------
+
+:Distribution_Shape
+    a sh:NodeShape ;
+    rdfs:label "Distribuição"@pt-BR ;
+    rdfs:label "Distribution"@en ;
+    sh:targetClass dcat:Distribution ;
+    sh:property [
+        sh:path dcat:accessURL ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:accessURL é obrigatório e deve ter pelo menos 1 valor (recurso/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dct:title ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:minLength 3 ;
+        sh:and (
+            [ sh:not [ sh:pattern "^\\s+$" ] ]
+            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
+        ) ;
+        sh:severity sh:Violation ;
+        sh:message "dct:title é obrigatório e deve ser um literal com pelo menos 3 caracteres (não pode ser vazio/repetitivo)."@pt-BR
+    ], [
+        sh:path dct:description ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:minLength 10 ;
+        sh:and (
+            [ sh:not [ sh:pattern "^\\s+$" ] ]
+            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
+        ) ;
+        sh:severity sh:Violation ;
+        sh:message "dct:description é obrigatório e deve ser um literal com pelo menos 10 caracteres (não pode ser vazio/repetitivo)."@pt-BR
+    ], [
+        sh:path dcat:downloadURL ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:downloadURL deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dct:format ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:format deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dcat:mediaType ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:mediaType deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dcat:compressFormat ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:compressFormat deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dct:language ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:language deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dct:license ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:license deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dct:rights ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:rights deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dcat:byteSize ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:byteSize deve ter no máximo 1 valor do tipo xsd:decimal (bytes)."@pt-BR
+    ], [
+        sh:path spdx:checksum ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "spdx:checksum deve ter no máximo 1 valor e ser um recurso spdx:Checksum."@pt-BR
+    ], [
+        sh:path dct:issued ;
+        sh:maxCount 1 ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dct:issued deve ter no máximo 1 valor e ser uma data válida."@pt-BR
+    ], [
+        sh:path dct:modified ;
+        sh:maxCount 1 ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dct:modified deve ter no máximo 1 valor e ser uma data válida."@pt-BR
+    ], [
+        sh:path dct:type ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:type deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path foaf:page ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "foaf:page deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:DataService
+# -------------------------------------------------------------------------
+
+:DataService_Shape
+    a sh:NodeShape ;
+    rdfs:label "Serviço de Dados"@pt-BR ;
+    rdfs:label "Data Service"@en ;
+    sh:targetClass dcat:DataService ;
+    sh:property [
+        sh:path dct:title ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:minLength 3 ;
+        sh:and (
+            [ sh:not [ sh:pattern "^\\s+$" ] ]
+            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
+        ) ;
+        sh:severity sh:Violation ;
+        sh:message "dct:title é obrigatório e deve ser um literal com pelo menos 3 caracteres (não pode ser vazio/repetitivo)."@pt-BR
+    ], [
+        sh:path dct:description ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:minLength 10 ;
+        sh:and (
+            [ sh:not [ sh:pattern "^\\s+$" ] ]
+            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
+        ) ;
+        sh:severity sh:Violation ;
+        sh:message "dct:description é obrigatório e deve ser um literal com pelo menos 10 caracteres (não pode ser vazio/repetitivo)."@pt-BR
+    ], [
+        sh:path dcat:endpointURL ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:endpointURL é obrigatório e deve ter pelo menos 1 valor (recurso/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dcat:endpointDescription ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:endpointDescription deve ser um recurso (URI/IRI ou nó anônimo) apontando para documentação técnica."@pt-BR
+    ], [
+        sh:path dcat:contactPoint ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:contactPoint deve ser um recurso vcard:Organization (com vcard:fn e vcard:hasEmail)."@pt-BR
+    ], [
+        sh:path dct:publisher ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:publisher deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo) representando o publicador."@pt-BR
+    ], [
+        sh:path dct:license ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:license deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dct:accessRights ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:accessRights deve ser um recurso (URI/IRI ou nó anônimo) representando direitos de acesso."@pt-BR
+    ], [
+        sh:path dcat:landingPage ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:landingPage deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dcat:keyword ;
+        sh:nodeKind sh:Literal ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:keyword deve ser um literal (texto) representando palavra-chave."@pt-BR
+    ], [
+        sh:path dcat:theme ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:theme deve ser um recurso (URI/IRI ou nó anônimo) representando um conceito de tema."@pt-BR
+    ], [
+        sh:path dcat:servesDataset ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:servesDataset deve ser um recurso (URI/IRI ou nó anônimo) apontando para o dataset servido."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:Dataset
+# -------------------------------------------------------------------------
+
+:Dataset_Shape
+    a sh:NodeShape ;
+    rdfs:label "Conjunto de Dados"@pt-BR ;
+    rdfs:label "Dataset"@en ;
+    sh:targetClass dcat:Dataset ;
+    sh:property [
+        sh:path dct:title ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:minLength 3 ;
+        sh:and (
+            [ sh:not [ sh:pattern "^\\s+$" ] ]
+            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
+        ) ;
+        sh:severity sh:Violation ;
+        sh:message "dct:title é obrigatório e deve ser um literal com pelo menos 3 caracteres (não pode ser vazio/repetitivo)."@pt-BR
+    ], [
+        sh:path dct:description ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:minLength 10 ;
+        sh:and (
+            [ sh:not [ sh:pattern "^\\s+$" ] ]
+            [ sh:not [ sh:pattern "^(.)\\1{3,}$" ] ]
+        ) ;
+        sh:severity sh:Violation ;
+        sh:message "dct:description é obrigatório e deve ser um literal com pelo menos 10 caracteres (não pode ser vazio/repetitivo)."@pt-BR
+    ], [
+        sh:path dct:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:severity sh:Violation ;
+        sh:message "dct:identifier deve ser um literal (texto) que identifica unicamente o conjunto de dados."@pt-BR
+    ], [
+        sh:path dct:accessRights ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:accessRights é obrigatório, deve ter exatamente 1 valor e deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dct:accrualPeriodicity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:accrualPeriodicity é obrigatório, deve ter exatamente 1 valor e deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dcat:contactPoint ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:contactPoint é obrigatório e deve ser um recurso vcard:Organization (com vcard:fn e vcard:hasEmail)."@pt-BR
+    ], [
+        sh:path dct:publisher ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:publisher é obrigatório, deve ter exatamente 1 valor e deve ser um recurso (URI/IRI ou nó anônimo) representando o publicador."@pt-BR
+    ], [
+        sh:path dct:creator ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:creator deve ser um recurso (URI/IRI ou nó anônimo) representando o criador do conjunto de dados."@pt-BR
+    ], [
+        sh:path dct:license ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:license deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dct:issued ;
+        sh:maxCount 1 ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dct:issued deve ter no máximo 1 valor e ser uma data válida."@pt-BR
+    ], [
+        sh:path dct:modified ;
+        sh:maxCount 1 ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dct:modified deve ter no máximo 1 valor e ser uma data válida."@pt-BR
+    ], [
+        sh:path dct:spatial ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:spatial deve ser um recurso (URI/IRI ou nó anônimo) representando a cobertura geográfica."@pt-BR
+    ], [
+        sh:path dct:temporal ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:temporal deve ser um recurso (URI/IRI ou nó anônimo) representando a cobertura temporal."@pt-BR
+    ], [
+        sh:path dcat:distribution ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:distribution deve ser um recurso (URI/IRI ou nó anônimo) apontando para uma distribuição."@pt-BR
+    ], [
+        sh:path dcat:keyword ;
+        sh:nodeKind sh:Literal ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:keyword deve ser um literal (texto) representando palavra-chave."@pt-BR
+    ], [
+        sh:path dcat:landingPage ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:landingPage deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+    ], [
+        sh:path dcat:theme ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:theme deve ser um recurso (URI/IRI ou nó anônimo) representando um conceito de tema."@pt-BR
+    ], [
+        sh:path dct:type ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:type deve ser um recurso (URI/IRI ou nó anônimo) representando o tipo do conjunto de dados."@pt-BR
+    ], [
+        sh:path dcat:version ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:version deve ter no máximo 1 valor e ser um literal (texto)."@pt-BR
+    ], [
+        sh:path prov:wasGeneratedBy ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "prov:wasGeneratedBy deve ser um recurso (URI/IRI ou nó anônimo) representando a atividade que gerou o conjunto de dados."@pt-BR
+    ], [
+        sh:path dcat:inSeries ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:inSeries deve ser um recurso (URI/IRI ou nó anônimo) representando a série (normalmente um dcat:Dataset)."@pt-BR
+    ], [
+        sh:path foaf:page ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "foaf:page deve ser um recurso (URI/IRI ou nó anônimo) apontando para uma página web relacionada."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# Extras DCAT-BR (campos adicionais)
+# -------------------------------------------------------------------------
+
+:DCATBR_Extras_Shape
+    a sh:NodeShape ;
+    rdfs:label "Extensões DCAT-BR"@pt-BR ;
+    rdfs:label "DCAT-BR extensions"@en ;
+    sh:targetClass dcat:Resource ;
+    sh:property [
+        sh:path dcatbr:relacionadoODS ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:severity sh:Violation ;
+        sh:message "dcatbr:relacionadoODS deve ter no máximo 1 valor do tipo xsd:boolean."@pt-BR
+    ], [
+        sh:path dcatbr:dadosRacaEtnia ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:severity sh:Violation ;
+        sh:message "dcatbr:dadosRacaEtnia deve ter no máximo 1 valor do tipo xsd:boolean."@pt-BR
+    ], [
+        sh:path dcatbr:dadosGenero ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:severity sh:Violation ;
+        sh:message "dcatbr:dadosGenero deve ter no máximo 1 valor do tipo xsd:boolean."@pt-BR
+    ], [
+        sh:path dcatbr:ods ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dcatbr:ods deve ser um recurso (URI/IRI ou nó anônimo), recomendado como skos:Concept."@pt-BR
+    ], [
+        sh:path dcat:spatialResolutionInMeters ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:spatialResolutionInMeters deve ter no máximo 1 valor do tipo xsd:decimal."@pt-BR
+    ] .

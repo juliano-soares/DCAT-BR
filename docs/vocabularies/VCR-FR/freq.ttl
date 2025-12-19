@@ -1,198 +1,148 @@
-@prefix cld: <http://purl.org/cld/terms/> .
-@prefix dcam: <http://purl.org/dc/dcam/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix freq: <http://purl.org/cld/freq/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
 
-freq:annual a skos:Concept ;
-    rdfs:label "Annual"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs once a year."@en,
-        "O evento ocorre uma vez por ano."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Annual"@en,
-        "Anual"@pt-BR .
+@prefix vcrfr: <http://purl.org/dcat-br/vocabularies/VCR-FR/> .
+@prefix freq:  <http://purl.org/cld/freq/> .
 
-freq:biennial a skos:Concept ;
-    rdfs:label "Biennial"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs every two years."@en,
-        "O evento ocorre a cada dois anos."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Biennial"@en,
-        "Bienal"@pt-BR .
+#######################################################################
+# VCR-FR — Frequência (DCAT-BR)
+#######################################################################
 
-freq:bimonthly a skos:Concept ;
-    rdfs:label "Bimonthly"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs every two months."@en,
-        "O evento ocorre a cada dois meses."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Bimonthly"@en,
-        "Bimestral"@pt-BR .
+<http://purl.org/dcat-br/vocabularies/VCR-FR>
+  a owl:Ontology, skos:ConceptScheme ;
+  dct:title "Vocabulário Controlado de Referência — Frequência (VCR-FR)"@pt-BR ;
+  dct:title "Reference Controlled Vocabulary — Frequency (VCR-FR)"@en ;
+  dct:description "Vocabulário controlado para descrever a frequência/periodicidade de atualização de conjuntos de dados no perfil DCAT-BR."@pt-BR ;
+  dct:source <http://purl.org/cld/freq/> ;
+  dct:issued "2025-12-18"^^xsd:date ;
+  owl:versionInfo "1.0.0" ;
+.
 
-freq:biweekly a skos:Concept ;
-    rdfs:label "Biweekly"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs every two weeks."@en,
-        "O evento ocorre a cada duas semanas."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Biweekly"@en,
-        "Quinzenal"@pt-BR .
+#######################################################################
+# Termos (URIs DCAT-BR) + mapeamento (skos:exactMatch) para CLD Frequency
+#######################################################################
 
-freq:continuous a skos:Concept ;
-    rdfs:label "Continuous"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event repeats without interruption."@en,
-        "O evento se repete de forma contínua, sem interrupção."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Continuous"@en,
-        "Contínuo"@pt-BR .
+vcrfr:ANUAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Anual"@pt-BR ;
+  skos:exactMatch freq:annual ;
+.
 
-freq:daily a skos:Concept ;
-    rdfs:label "Daily"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs once a day."@en,
-        "O evento ocorre uma vez por dia."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Daily"@en,
-        "Diária"@pt-BR .
+vcrfr:DIARIA
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Diária"@pt-BR ;
+  skos:exactMatch freq:daily ;
+.
 
-freq:irregular a skos:Concept ;
-    rdfs:label "Irregular"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs at uneven intervals."@en,
-        "O evento ocorre em intervalos irregulares."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Irregular"@en,
-        "Irregular"@pt-BR .
+vcrfr:MENSAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Mensal"@pt-BR ;
+  skos:exactMatch freq:monthly ;
+.
 
-freq:monthly a skos:Concept ;
-    rdfs:label "Monthly"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs once a month."@en,
-        "O evento ocorre uma vez por mês."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Monthly"@en,
-        "Mensal"@pt-BR .
+vcrfr:QUINZENAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Quinzenal"@pt-BR ;
+  skos:exactMatch freq:biweekly ;
+.
 
-freq:quarterly a skos:Concept ;
-    rdfs:label "Quarterly"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs every three months."@en,
-        "O evento ocorre a cada três meses."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Quarterly"@en,
-        "Trimestral"@pt-BR .
+vcrfr:SEMANAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Semanal"@pt-BR ;
+  skos:exactMatch freq:weekly ;
+.
 
-freq:semiannual a skos:Concept ;
-    rdfs:label "Semiannual"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs twice a year."@en,
-        "O evento ocorre duas vezes por ano."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Semiannual"@en,
-        "Semestral"@pt-BR .
+vcrfr:SEMESTRAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Semestral"@pt-BR ;
+  skos:exactMatch freq:semiannual ;
+.
 
-freq:semimonthly a skos:Concept ;
-    rdfs:label "Semimonthly"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs twice a month."@en,
-        "O evento ocorre duas vezes por mês."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Semimonthly"@en,
-        "Semimensal"@pt-BR .
+vcrfr:TRIMESTRAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Trimestral"@pt-BR ;
+  skos:exactMatch freq:quarterly ;
+.
 
-freq:semiweekly a skos:Concept ;
-    rdfs:label "Semiweekly"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs twice a week."@en,
-        "O evento ocorre duas vezes por semana."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Semiweekly"@en,
-        "Semissemanal"@pt-BR .
+vcrfr:BIENAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Bienal"@pt-BR ;
+  skos:exactMatch freq:biennial ;
+.
 
-freq:threeTimesAMonth a skos:Concept ;
-    rdfs:label "Three times a month"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs three times a month."@en,
-        "O evento ocorre três vezes por mês."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Three times a month"@en,
-        "Três vezes por mês"@pt-BR .
+vcrfr:BIMESTRAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Bimestral"@pt-BR ;
+  skos:exactMatch freq:bimonthly ;
+.
 
-freq:threeTimesAWeek a skos:Concept ;
-    rdfs:label "Three times a week"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs three times a week."@en,
-        "O evento ocorre três vezes por semana."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Three times a week"@en,
-        "Três vezes por semana"@pt-BR .
+vcrfr:CONTINUO
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Contínuo"@pt-BR ;
+  skos:exactMatch freq:continuous ;
+.
 
-freq:threeTimesAYear a skos:Concept ;
-    rdfs:label "Three times a year"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs three times a year."@en,
-        "O evento ocorre três vezes por ano."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Three times a year"@en,
-        "Três vezes ao ano"@pt-BR .
+vcrfr:IRREGULAR
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Irregular"@pt-BR ;
+  skos:exactMatch freq:irregular ;
+.
 
-freq:triennial a skos:Concept ;
-    rdfs:label "Triennial"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs every three years."@en,
-        "O evento ocorre a cada três anos."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Triennial"@en,
-        "Trienal"@pt-BR .
+vcrfr:SEMIMENSAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Semimensal"@pt-BR ;
+  skos:exactMatch freq:semimonthly ;
+.
 
-freq:weekly a skos:Concept ;
-    rdfs:label "Weekly"@en ;
-    dcam:memberOf cld:Frequency ;
-    rdfs:comment "The event occurs once a week."@en,
-        "O evento ocorre uma vez por semana."@pt-BR ;
-    rdfs:isDefinedBy freq: ;
-    rdfs:seeAlso <http://www.loc.gov/marc/holdings/echdcapt.html> ;
-    skos:inScheme cld:Frequency ;
-    skos:prefLabel "Weekly"@en,
-        "Semanal"@pt-BR .
+vcrfr:SEMISSEMANAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Semissemanal"@pt-BR ;
+  skos:exactMatch freq:semiweekly ;
+.
 
-freq: dcterms:creator [ rdfs:label "Dublin Core Collection Description Task Group" ] ;
-    dcterms:modified "2013-05-10"^^dcterms:W3CDTF ;
-    dcterms:title "The Collection Description Frequency Namespace"@en .
+vcrfr:TRES_VEZES_POR_MES
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Três vezes por mês"@pt-BR ;
+  skos:exactMatch freq:threeTimesAMonth ;
+.
 
+vcrfr:TRES_VEZES_POR_SEMANA
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Três vezes por semana"@pt-BR ;
+  skos:exactMatch freq:threeTimesAWeek ;
+.
+
+vcrfr:TRES_VEZES_AO_ANO
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Três vezes ao ano"@pt-BR ;
+  skos:exactMatch freq:threeTimesAYear ;
+.
+
+vcrfr:TRIENAL
+  a skos:Concept ;
+  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:prefLabel "Trienal"@pt-BR ;
+  skos:exactMatch freq:triennial ;
+.
+    

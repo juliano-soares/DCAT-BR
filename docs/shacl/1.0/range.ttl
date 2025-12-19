@@ -4,12 +4,13 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatbr: <http://purl.org/dcat-br/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -19,184 +20,332 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcatbr: <http://purl.org/dcat-br/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix wdrs: <http://www.w3.org/2007/05/powder-s#> .
 
-<https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/range.ttl> 
-    dct:description "Este arquivo contém as restrições de intervalo de classe para todas as propriedades no DCAT-BR."@pt-BR ;
-    dct:description "This file contains the class range constraints for all properties in DCAT-BR."@en .
+<https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/range.ttl>
+    a owl:Ontology ;
+    dct:title "DCAT-BR 1.0.0 - SHACL ranges (class constraints)"@en ;
+    dct:title "DCAT-BR 1.0.0 - SHACL ranges (restrições de classe)"@pt-BR ;
+    dct:description "Este arquivo contém as restrições de intervalo de classe (sh:class) para propriedades no DCAT-BR. Use junto com shapes.ttl conforme o contexto de validação."@pt-BR ;
+    dct:description "This file contains class range constraints (sh:class) for properties in DCAT-BR. Use it with shapes.ttl depending on validation context."@en ;
+    owl:versionInfo "1.0.0" .
 
 #-------------------------------------------------------------------------
-# As shapes neste arquivo cobrem todas as restrições de intervalo de classe no DCAT-BR
-#
-# Dependendo dos acordos de troca, essas podem ser necessárias para fazer parte
-# do processo de validação. No entanto, elas figuram principalmente no entendimento
-# semântico dos intervalos.
+# Este arquivo contém apenas restrições de intervalo de CLASSE (sh:class).
+# Regras de cardinalidade, existência e tipo literal/nodeKind ficam em shapes.ttl.
 #-------------------------------------------------------------------------
+
+# -------------------------------------------------------------------------
+# foaf:Agent
+# -------------------------------------------------------------------------
 
 :Agent_Shape
     a sh:NodeShape ;
     rdfs:label "Agente"@pt-BR ;
     rdfs:label "Agent"@en ;
+    sh:targetClass foaf:Agent ;
     sh:property [
-        sh:class skos:Concept ;
         sh:path dct:type ;
-        sh:severity sh:Violation
-    ] ;
-    sh:targetClass foaf:Agent .
+        sh:class skos:Concept ;
+        sh:severity sh:Violation ;
+        sh:message "dct:type, quando presente em foaf:Agent, deve apontar para um skos:Concept."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# vcard:Organization (contact point)
+# -------------------------------------------------------------------------
+
+:VCard_Shape
+    a sh:NodeShape ;
+    rdfs:label "vCard"@pt-BR ;
+    rdfs:label "vCard"@en ;
+    sh:targetClass vcard:Organization ;
+    sh:property [
+        sh:path vcard:hasEmail ;
+        sh:class vcard:Email ;
+        sh:severity sh:Info ;
+        sh:message "Opcional: vcard:hasEmail pode apontar para um recurso vcard:Email (além de mailto:)."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:DataService
+# -------------------------------------------------------------------------
 
 :DataService_Shape
     a sh:NodeShape ;
     rdfs:label "Serviço de Dados"@pt-BR ;
     rdfs:label "Data Service"@en ;
+    sh:targetClass dcat:DataService ;
     sh:property [
-        sh:class dct:RightsStatement ;
         sh:path dct:accessRights ;
-        sh:severity sh:Violation
+        sh:class dct:RightsStatement ;
+        sh:severity sh:Violation ;
+        sh:message "dct:accessRights (DataService) deve apontar para dct:RightsStatement."@pt-BR
     ], [
-        sh:class vcard:Kind ;
         sh:path dcat:contactPoint ;
-        sh:severity sh:Violation
+        sh:class vcard:Kind ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:contactPoint (DataService) deve apontar para vcard:Kind (ex.: vcard:Organization)."@pt-BR
     ], [
-        sh:class foaf:Document ;
         sh:path dcat:landingPage ;
-        sh:severity sh:Violation
+        sh:class foaf:Document ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:landingPage (DataService) deve apontar para foaf:Document."@pt-BR
     ], [
-        sh:class dct:LicenseDocument ;
         sh:path dct:license ;
-        sh:severity sh:Violation
+        sh:class dct:LicenseDocument ;
+        sh:severity sh:Violation ;
+        sh:message "dct:license (DataService) deve apontar para dct:LicenseDocument."@pt-BR
     ], [
-        sh:class foaf:Agent ;
         sh:path dct:publisher ;
-        sh:severity sh:Violation
+        sh:class foaf:Agent ;
+        sh:severity sh:Violation ;
+        sh:message "dct:publisher (DataService) deve apontar para foaf:Agent."@pt-BR
     ], [
-        sh:class dcat:Dataset ;
         sh:path dcat:servesDataset ;
-        sh:severity sh:Violation
+        sh:class dcat:Dataset ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:servesDataset (DataService) deve apontar para dcat:Dataset."@pt-BR
     ], [
-        sh:class skos:Concept ;
         sh:path dcat:theme ;
-        sh:severity sh:Violation
-    ] ;
-    sh:targetClass dcat:DataService .
+        sh:class skos:Concept ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:theme (DataService) deve apontar para skos:Concept."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:Dataset
+# -------------------------------------------------------------------------
 
 :Dataset_Shape
     a sh:NodeShape ;
     rdfs:label "Conjunto de Dados"@pt-BR ;
     rdfs:label "Dataset"@en ;
+    sh:targetClass dcat:Dataset ;
     sh:property [
-        sh:class dct:RightsStatement ;
         sh:path dct:accessRights ;
-        sh:severity sh:Violation
+        sh:class dct:RightsStatement ;
+        sh:severity sh:Violation ;
+        sh:message "dct:accessRights (Dataset) deve apontar para dct:RightsStatement."@pt-BR
     ], [
         sh:path dct:accrualPeriodicity ;
         sh:class dct:Frequency ;
-        sh:severity sh:Violation
+        sh:severity sh:Violation ;
+        sh:message "dct:accrualPeriodicity (Dataset) deve apontar para dct:Frequency."@pt-BR
     ], [
-        sh:class vcard:Kind ;
         sh:path dcat:contactPoint ;
-        sh:severity sh:Violation
+        sh:class vcard:Kind ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:contactPoint (Dataset) deve apontar para vcard:Kind (ex.: vcard:Organization)."@pt-BR
     ], [
-        sh:class foaf:Agent ;
         sh:path dct:creator ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dcat:Distribution ;
-        sh:path dcat:distribution ;
-        sh:severity sh:Violation
-    ], [
-        sh:class foaf:Document ;
-        sh:path foaf:page ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dct:Location ;
-        sh:path dct:spatial ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dcat:DatasetSeries ;
-        sh:path dcat:inSeries ;
-        sh:severity sh:Violation
-    ], [
-        sh:class foaf:Document ;
-        sh:path dcat:landingPage ;
-        sh:severity sh:Violation
-    ], [
         sh:class foaf:Agent ;
+        sh:severity sh:Violation ;
+        sh:message "dct:creator (Dataset) deve apontar para foaf:Agent."@pt-BR
+    ], [
         sh:path dct:publisher ;
-        sh:severity sh:Violation
+        sh:class foaf:Agent ;
+        sh:severity sh:Violation ;
+        sh:message "dct:publisher (Dataset) deve apontar para foaf:Agent."@pt-BR
     ], [
-        sh:class dct:PeriodOfTime ;
+        sh:path dcat:distribution ;
+        sh:class dcat:Distribution ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:distribution (Dataset) deve apontar para dcat:Distribution."@pt-BR
+    ], [
+        sh:path dct:spatial ;
+        sh:class dct:Location ;
+        sh:severity sh:Violation ;
+        sh:message "dct:spatial (Dataset) deve apontar para dct:Location."@pt-BR
+    ], [
         sh:path dct:temporal ;
-        sh:severity sh:Violation
+        sh:class dct:PeriodOfTime ;
+        sh:severity sh:Violation ;
+        sh:message "dct:temporal (Dataset) deve apontar para dct:PeriodOfTime."@pt-BR
     ], [
-        sh:class skos:Concept ;
+        sh:path dcat:landingPage ;
+        sh:class foaf:Document ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:landingPage (Dataset) deve apontar para foaf:Document."@pt-BR
+    ], [
+        sh:path foaf:page ;
+        sh:class foaf:Document ;
+        sh:severity sh:Violation ;
+        sh:message "foaf:page (Dataset) deve apontar para foaf:Document."@pt-BR
+    ], [
         sh:path dcat:theme ;
-        sh:severity sh:Violation
-    ], [
         sh:class skos:Concept ;
-        sh:path dct:type ;
-        sh:severity sh:Violation
+        sh:severity sh:Violation ;
+        sh:message "dcat:theme (Dataset) deve apontar para skos:Concept."@pt-BR
     ], [
-        sh:class prov:Activity ;
+        sh:path dct:type ;
+        sh:class skos:Concept ;
+        sh:severity sh:Violation ;
+        sh:message "dct:type (Dataset) deve apontar para skos:Concept."@pt-BR
+    ], [
         sh:path prov:wasGeneratedBy ;
-        sh:severity sh:Violation
-    ] ;
-    sh:targetClass dcat:Dataset .
+        sh:class prov:Activity ;
+        sh:severity sh:Violation ;
+        sh:message "prov:wasGeneratedBy (Dataset) deve apontar para prov:Activity."@pt-BR
+    ], [
+        sh:path dcat:inSeries ;
+        sh:class dcat:Dataset ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:inSeries (Dataset) deve apontar para um dcat:Dataset (série/coleção representada como Dataset)."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:Distribution
+# -------------------------------------------------------------------------
 
 :Distribution_Shape
     a sh:NodeShape ;
     rdfs:label "Distribuição"@pt-BR ;
     rdfs:label "Distribution"@en ;
+    sh:targetClass dcat:Distribution ;
     sh:property [
-        sh:class dcat:DataService ;
         sh:path dcat:accessService ;
-        sh:severity sh:Violation
+        sh:class dcat:DataService ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:accessService (Distribution) deve apontar para dcat:DataService."@pt-BR
     ], [
-        sh:class spdx:Checksum ;
         sh:path spdx:checksum ;
-        sh:severity sh:Violation
+        sh:class spdx:Checksum ;
+        sh:severity sh:Violation ;
+        sh:message "spdx:checksum (Distribution) deve apontar para spdx:Checksum."@pt-BR
     ], [
-        sh:class dct:MediaTypeOrExtent ;
         sh:path dct:format ;
-        sh:severity sh:Violation
+        sh:class dct:MediaTypeOrExtent ;
+        sh:severity sh:Violation ;
+        sh:message "dct:format (Distribution) deve apontar para dct:MediaTypeOrExtent."@pt-BR
     ], [
-        sh:class foaf:Document ;
-        sh:path foaf:page ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dct:LinguisticSystem ;
         sh:path dct:language ;
-        sh:severity sh:Violation
+        sh:class dct:LinguisticSystem ;
+        sh:severity sh:Violation ;
+        sh:message "dct:language (Distribution) deve apontar para dct:LinguisticSystem."@pt-BR
     ], [
-        sh:class dct:LicenseDocument ;
         sh:path dct:license ;
-        sh:severity sh:Violation
+        sh:class dct:LicenseDocument ;
+        sh:severity sh:Violation ;
+        sh:message "dct:license (Distribution) deve apontar para dct:LicenseDocument."@pt-BR
     ], [
-        sh:class dct:MediaType ;
         sh:path dcat:mediaType ;
-        sh:severity sh:Violation
+        sh:class dct:MediaType ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:mediaType (Distribution) deve apontar para dct:MediaType."@pt-BR
     ], [
-        sh:class dct:RightsStatement ;
+        sh:path dcat:compressFormat ;
+        sh:class dct:MediaType ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:compressFormat (Distribution) deve apontar para dct:MediaType."@pt-BR
+    ], [
         sh:path dct:rights ;
-        sh:severity sh:Violation
+        sh:class dct:RightsStatement ;
+        sh:severity sh:Violation ;
+        sh:message "dct:rights (Distribution) deve apontar para dct:RightsStatement."@pt-BR
     ], [
-        sh:class skos:Concept ;
         sh:path dct:type ;
-        sh:severity sh:Violation
-    ] ;
-    sh:targetClass dcat:Distribution .
+        sh:class skos:Concept ;
+        sh:severity sh:Violation ;
+        sh:message "dct:type (Distribution) deve apontar para skos:Concept."@pt-BR
+    ], [
+        sh:path foaf:page ;
+        sh:class foaf:Document ;
+        sh:severity sh:Violation ;
+        sh:message "foaf:page (Distribution) deve apontar para foaf:Document."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dct:PeriodOfTime
+# -------------------------------------------------------------------------
 
 :PeriodOfTime_Shape
     a sh:NodeShape ;
     rdfs:label "Período de Tempo"@pt-BR ;
     rdfs:label "PeriodOfTime"@en ;
+    sh:targetClass dct:PeriodOfTime ;
     sh:property [
-        sh:class time:Instant ;
         sh:path time:hasBeginning ;
-        sh:severity sh:Violation
-    ], [
         sh:class time:Instant ;
+        sh:severity sh:Violation ;
+        sh:message "time:hasBeginning deve apontar para time:Instant."@pt-BR
+    ], [
         sh:path time:hasEnd ;
-        sh:severity sh:Violation
-    ] ;
-    sh:targetClass dct:PeriodOfTime .
+        sh:class time:Instant ;
+        sh:severity sh:Violation ;
+        sh:message "time:hasEnd deve apontar para time:Instant."@pt-BR
+    ] .
 
+# -------------------------------------------------------------------------
+# dcat:Resource (relações / extensões)
+# -------------------------------------------------------------------------
+
+:Resource_Relations_Shape
+    a sh:NodeShape ;
+    rdfs:label "Relações entre recursos"@pt-BR ;
+    rdfs:label "Resource relations"@en ;
+    sh:targetClass dcat:Resource ;
+    sh:property [
+        sh:path dct:relation ;
+        sh:class dcat:Resource ;
+        sh:severity sh:Violation ;
+        sh:message "dct:relation deve apontar para dcat:Resource."@pt-BR
+    ], [
+        sh:path dct:hasPart ;
+        sh:class dcat:Resource ;
+        sh:severity sh:Violation ;
+        sh:message "dct:hasPart deve apontar para dcat:Resource."@pt-BR
+    ], [
+        sh:path dct:isReferencedBy ;
+        sh:class dcat:Resource ;
+        sh:severity sh:Violation ;
+        sh:message "dct:isReferencedBy deve apontar para dcat:Resource."@pt-BR
+    ], [
+        sh:path dct:replaces ;
+        sh:class dcat:Resource ;
+        sh:severity sh:Violation ;
+        sh:message "dct:replaces deve apontar para dcat:Resource."@pt-BR
+    ], [
+        sh:path dcat:hasVersion ;
+        sh:class dcat:Resource ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:hasVersion deve apontar para dcat:Resource."@pt-BR
+    ], [
+        sh:path dcat:previousVersion ;
+        sh:class dcat:Resource ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:previousVersion deve apontar para dcat:Resource."@pt-BR
+    ], [
+        sh:path dcat:first ;
+        sh:class dcat:Resource ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:first deve apontar para dcat:Resource."@pt-BR
+    ], [
+        sh:path adms:status ;
+        sh:class skos:Concept ;
+        sh:severity sh:Violation ;
+        sh:message "adms:status deve apontar para skos:Concept."@pt-BR
+    ], [
+        sh:path dcat:qualifiedRelation ;
+        sh:class dcat:Relationship ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:qualifiedRelation deve apontar para dcat:Relationship."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:Relationship (qualificação de relação)
+# -------------------------------------------------------------------------
+
+:Relationship_Shape
+    a sh:NodeShape ;
+    rdfs:label "Relacionamento (Qualificado)"@pt-BR ;
+    rdfs:label "Relationship"@en ;
+    sh:targetClass dcat:Relationship ;
+    sh:property [
+        sh:path dct:relation ;
+        sh:class dcat:Resource ;
+        sh:severity sh:Violation ;
+        sh:message "dct:relation (Relationship) deve apontar para dcat:Resource (recurso relacionado)."@pt-BR
+    ] .

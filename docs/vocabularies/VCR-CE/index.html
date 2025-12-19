@@ -12,11 +12,11 @@
     var respecConfig = {
       specStatus: "base",
       shortName: "vcr-ce",
-      thisVersion: "https://dcat-br.gov.br/vocabularies/VCR-CE/",
-      latestVersion: "https://dcat-br.gov.br/vocabularies/VCR-CE/",
-      edDraftURI: "https://dcat-br.gov.br/vocabularies/VCR-CE/",
-      publishDate: "2025-12-11",
-      previousPublishDate: "2025-12-11",
+      thisVersion: "https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/",
+      latestVersion: "https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/",
+      edDraftURI: "https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/",
+      publishDate: "2025-12-12",
+      previousPublishDate: "2025-12-12",
       previousMaturity: "base",
       editors: [
         {
@@ -25,12 +25,12 @@
           url: "https://www.linkedin.com/in/juliano-leonardo-soares/"
         }
       ],
-      github: "https://github.com/juliano-soares/dcat-br",
+      github: "https://github.com/dcat-br/dcat-br",
       license: "w3c-software-doc",
       noRecTrack: true,
       overrideStatus: true,
       wg: "Grupo de Trabalho DCAT-BR",
-      wgURI: "https://dcat-br.gov.br/v1.0/gt/",
+      wgURI: "https://dcat-br.github.io/dcat-br/v1.0/gt/",
       wgPublicList: "dcat-br",
       subjectPrefix: "[DCAT-BR]",
       lint: {
@@ -83,7 +83,7 @@
     <p>
       <strong>Selo de Conformidade:</strong> Bronze<br>
       <strong>Base:</strong> Personalizado<br>
-      <strong>URI Base:</strong> <code>https://dcat-br.gov.br/vocabularies/VCR-CE/esquema</code>
+      <strong>URI Base:</strong> <code>https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/</code>
     </p>
     <p>
       O vocabulário está disponível nos formatos Turtle, RDF/XML e JSON-LD (consulte a seção 
@@ -105,26 +105,30 @@
           <th>Notação</th>
           <th>URI</th>
           <th>Descrição</th>
+          <th>Formatos</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Federal</strong></td>
           <td><code>FEDERAL</code></td>
-          <td><code>https://dcat-br.gov.br/vocabularies/VCR-CE/FEDERAL</code></td>
+          <td><code>https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/FEDERAL</code></td>
           <td>Cobertura espacial de abrangência federal, referente a dados que se aplicam a todo o território nacional brasileiro.</td>
+          <td><a href="vcr/federal.ttl">Turtle</a> | <a href="vcr/federal.rdf">RDF</a></td>
         </tr>
         <tr>
           <td><strong>Estadual/Distrital</strong></td>
           <td><code>ESTADUAL</code></td>
-          <td><code>https://dcat-br.gov.br/vocabularies/VCR-CE/ESTADUAL</code></td>
+          <td><code>https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/ESTADUAL</code></td>
           <td>Cobertura espacial de abrangência estadual ou distrital, referente a dados que se aplicam a um ou mais estados brasileiros ou ao Distrito Federal.</td>
+          <td><a href="vcr/estadual.ttl">Turtle</a> | <a href="vcr/estadual.rdf">RDF</a></td>
         </tr>
         <tr>
           <td><strong>Municipal</strong></td>
           <td><code>MUNICIPAL</code></td>
-          <td><code>https://dcat-br.gov.br/vocabularies/VCR-CE/MUNICIPAL</code></td>
+          <td><code>https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/MUNICIPAL</code></td>
           <td>Cobertura espacial de abrangência municipal, referente a dados que se aplicam a um ou mais municípios brasileiros.</td>
+          <td><a href="vcr/municipal.ttl">Turtle</a> | <a href="vcr/municipal.rdf">RDF</a></td>
         </tr>
       </tbody>
     </table>
@@ -187,7 +191,7 @@
 &lt;https://exemplo.gov.br/dataset/1/distribution/1&gt;
     a dcat:Distribution ;
     dct:title "Dados Nacionais"@pt-BR ;
-    dct:spatial &lt;https://dcat-br.gov.br/vocabularies/VCR-CE/FEDERAL&gt; ;
+    dct:spatial &lt;https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/FEDERAL&gt; ;
     dcat:downloadURL &lt;https://exemplo.gov.br/dados-nacionais.csv&gt; .
     </pre>
     
@@ -198,7 +202,7 @@
 &lt;https://exemplo.gov.br/dataset/1/distribution/2&gt;
     a dcat:Distribution ;
     dct:title "Dados Estaduais"@pt-BR ;
-    dct:spatial &lt;https://dcat-br.gov.br/vocabularies/VCR-CE/ESTADUAL&gt; ;
+    dct:spatial &lt;https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/ESTADUAL&gt; ;
     dcat:downloadURL &lt;https://exemplo.gov.br/dados-estaduais.csv&gt; .
     </pre>
     
@@ -209,7 +213,7 @@
 &lt;https://exemplo.gov.br/dataset/1/distribution/3&gt;
     a dcat:Distribution ;
     dct:title "Dados Municipais"@pt-BR ;
-    dct:spatial &lt;https://dcat-br.gov.br/vocabularies/VCR-CE/MUNICIPAL&gt; ;
+    dct:spatial &lt;https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/MUNICIPAL&gt; ;
     dcat:downloadURL &lt;https://exemplo.gov.br/dados-municipais.csv&gt; .
     </pre>
   </section>

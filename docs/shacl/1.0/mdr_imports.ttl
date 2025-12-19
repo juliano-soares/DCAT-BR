@@ -1,85 +1,60 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
 
-# 
-# Este arquivo fornece as importações das listas de códigos recomendadas pelo
-# perfil de aplicação DCAT-BR.
 #
-# NOTA: Algumas URIs abaixo ainda não existem e precisam ser criadas.
-# As URIs seguem o padrão: http://purl.org/dcat-br/vocabularies/{vocab-name}
+# DCAT-BR 1.0.0 — mdr_imports.ttl
 #
-# Para criar os vocabulários SKOS, consulte a documentação em:
-# https://www.w3.org/TR/skos-primer/
-#
+# Este arquivo fornece as importações das listas de códigos recomendadas
+# pelo perfil de aplicação DCAT-BR (VCR – Vocabulários Controlados de Referência),
+# para uso em validações SHACL (MDR – Managed Data References).
 
-<http://purl.org/dcat-br/vocabularies/codelist_imports>
-  rdf:type owl:Ontology ;
-  rdfs:comment "Importações de listas de códigos do DCAT-BR"@pt-BR ;
-  rdfs:comment "DCAT-BR codelist imports"@en ;
-  
-  # Vocabulários do DCAT-BR (a serem criados)
-  # TODO: Criar vocabulários SKOS para os seguintes:
-  owl:imports <http://purl.org/dcat-br/vocabularies/periodicity> ;
-  owl:imports <http://purl.org/dcat-br/vocabularies/access-rights> ;
-  owl:imports <http://purl.org/dcat-br/vocabularies/theme> ;
-  owl:imports <http://purl.org/dcat-br/vocabularies/resource-type> ;
-  
-  # Vocabulários padrão que podem ser reutilizados
-  owl:imports <http://publications.europa.eu/resource/authority/language> ;
-  owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> 
-  .
 
-#-------------------------------------------------------------------------
-# Estrutura esperada dos vocabulários SKOS a serem criados:
-#-------------------------------------------------------------------------
-#
-# 1. Vocabulário de Periodicidade
-#    URI: http://purl.org/dcat-br/vocabularies/periodicity
-#    Valores: DIARIA, SEMANAL, QUINZENAL, MENSAL, TRIMESTRAL, 
-#             QUADRIMESTRAL, SEMESTRAL, ANUAL, SOB_DEMANDA, OUTRAS
-#
-# 2. Vocabulário de Observância Legal / Direitos de Acesso
-#    URI: http://purl.org/dcat-br/vocabularies/access-rights
-#    Valores: Público, Restrito (vários tipos), Sigiloso (vários tipos)
-#    Ver INTEGRACAO-DCAT-BR.md para lista completa
-#
-# 3. Vocabulário de Temas
-#    URI: http://purl.org/dcat-br/vocabularies/theme
-#    Valores: Abastecimento, Administração, Agropecuária, Pesca e Extrativismo,
-#             Comércio e Serviços, Comunicações, Cultura, Defesa Nacional,
-#             Economia e Finanças, Educação, Energia, Esporte e Lazer,
-#             Habitação, Indústria, Infraestrutura e Fomento, Meio Ambiente,
-#             Pesquisa e Desenvolvimento, Planejamento e Gestão,
-#             Previdência Social, Proteção Social, Relações Internacionais,
-#             Saneamento, Saúde, Segurança e Ordem Pública, Trabalho,
-#             Transportes, Urbanismo
-#
-# 4. Vocabulário de Tipo de Recurso
-#    URI: http://purl.org/dcat-br/vocabularies/resource-type
-#    Valores: DADOS, DICIONARIO_DE_DADOS, DOCUMENTACAO, API, OUTRO
-#
-#-------------------------------------------------------------------------
-# Exemplo de estrutura SKOS para um vocabulário:
-#-------------------------------------------------------------------------
-#
-# @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-# @prefix dct: <http://purl.org/dc/terms/> .
-# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-#
-# <http://purl.org/dcat-br/vocabularies/periodicity>
-#     a skos:ConceptScheme ;
-#     dct:title "Periodicidade de Atualização - DCAT-BR"@pt-BR ;
-#     dct:description "Vocabulário controlado para periodicidade de atualização de conjuntos de dados"@pt-BR .
-#
-# <http://purl.org/dcat-br/vocabularies/periodicity/MENSAL>
-#     a skos:Concept ;
-#     skos:inScheme <http://purl.org/dcat-br/vocabularies/periodicity> ;
-#     skos:prefLabel "MENSAL"@pt-BR ;
-#     skos:prefLabel "MONTHLY"@en ;
-#     skos:definition "Atualização mensal dos dados"@pt-BR .
-#
-#-------------------------------------------------------------------------
+<http://purl.org/dcat-br/vocabularies/mdr_imports>
+    a owl:Ontology ;
+    rdfs:label "DCAT-BR — MDR imports (VCR)"@en ;
+    rdfs:label "DCAT-BR — Importações MDR (VCR)"@pt-BR ;
+    rdfs:comment "Importações (MDR) de listas de códigos do DCAT-BR / VCR."@pt-BR ;
+    rdfs:comment "DCAT-BR VCR code list imports (MDR)."@en ;
+    dct:issued "2025-12-05"^^xsd:date ;
+    owl:versionInfo "1.0.0" ;
 
+    #####################################################################
+    # Vocabulários VCR — Perfil Brasileiro (DCAT-BR)
+    #####################################################################
+
+    # Frequência de atualização (VCR-FR)
+    # Baseado/compatível com CLD Frequency (Dublin Core Collection Description)
+    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-FR.ttl> ;
+
+    # Licença de uso (VCR-LU)
+    # Inclui CC (Creative Commons), ODbL e conceitos nacionais (ex.: uso restrito)
+    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-LU.ttl> ;
+
+    # Idioma (VCR-LN)
+    # Mapeado a ISO 639-1 / ISO 639-2 (Library of Congress)
+    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-LN.ttl> ;
+
+    # Cobertura espacial / abrangência administrativa (VCR-CE)
+    # Federal / Estadual / Municipal
+    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-CE.ttl> ;
+
+    # Tipo de recurso (VCR-TR)
+    # Ex.: Dados, Dicionário de Dados, Documentação, API, Outro
+    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-TR.ttl> ;
+
+    #####################################################################
+    # Vocabulários externos de referência (bases semânticas)
+    #####################################################################
+
+    # ISO 639-1 — Library of Congress
+    # Base canônica para idiomas
+    owl:imports <https://id.loc.gov/vocabulary/iso639-1.rdf> ;
+
+    # SPDX Ontology
+    # Usada para checksum (spdx:Checksum) e apoio a licenças
+    owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> ;
+
+    .

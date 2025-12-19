@@ -22,10 +22,10 @@
     <!ENTITY schema "http://schema.org/">
     <!ENTITY spdx "http://spdx.org/rdf/terms#">
     <!ENTITY dcatbr "http://purl.org/dcat-br/">
-    <!ENTITY documentation "https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados">
-    <!ENTITY documentationTitle "Catálogo Nacional de Dados – Padrão DCAT-BR">
-    <!ENTITY methodology "https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados">
-    <!ENTITY methodologyTitle "Metodologia para Desenvolvimento de Vocabulários Core">
+    <!ENTITY dcterms "http://purl.org/dc/terms/">
+
+    <!ENTITY documentation "https://dcat-br.gov.br/releases/1.0/dcat-br.html">
+    <!ENTITY documentationTitle "DCAT-BR 1.0.0">
 ]>
 <rdf:RDF
     xmlns:rdf="&rdf;"
@@ -34,6 +34,7 @@
     xmlns:owl="&owl;"
     xmlns:dct="&dct;"
     xmlns:dcat="&dcat;"
+    xmlns:dcterms="&dcterms;"
     xmlns:adms="&adms;"
     xmlns:foaf="&foaf;"
     xmlns:skos="&skos;"
@@ -55,7 +56,7 @@
     <!-- Ontologia do Perfil de Aplicação DCAT-BR                  -->
     <!-- ========================================================= -->
 
-    <owl:Ontology rdf:about="http://purl.org/dcat-br/">
+    <owl:Ontology>
         <rdfs:label xml:lang="pt-BR">Vocabulário Padrão DCAT-BR</rdfs:label>
         <rdfs:label xml:lang="en">DCAT-BR Application Profile</rdfs:label>
 
@@ -70,7 +71,7 @@
             metadata for Brazilian public sector data.
         </dct:abstract>
 
-        <dct:modified rdf:datatype="&xsd;date">2025-12-05</dct:modified>
+        <dct:modified rdf:datatype="&xsd;date">2025-12-12</dct:modified>
         <owl:versionInfo>1.0.0</owl:versionInfo>
 
         <cc:attributionName xml:lang="pt-BR">Governo Federal do Brasil</cc:attributionName>
@@ -110,19 +111,14 @@
     <!-- ========================================================= -->
     <!-- CLASSES DCAT-BR                                           -->
     <!-- ========================================================= -->
-
+        
     <!-- Conjunto de Dados (dcat:Dataset) -->
     <rdf:Description rdf:about="&dcat;Dataset">
         <dct:identifier>dcat:Dataset</dct:identifier>
         <rdfs:label xml:lang="pt-BR">Conjunto de Dados</rdfs:label>
         <rdfs:label xml:lang="en">Dataset</rdfs:label>
         <rdfs:comment xml:lang="pt-BR">
-            Uma coleção de dados, publicada ou curada por um único agente e disponível
-            para acesso ou download em uma ou mais representações.
-        </rdfs:comment>
-        <rdfs:comment xml:lang="en">
-            A collection of data, published or curated by a single agent and made
-            available for access or download in one or more representations.
+            Uma coleção de dados, publicada ou com curadoria de um único agente, e disponível para acesso ou download em uma ou mais representações.
         </rdfs:comment>
     </rdf:Description>
 
@@ -130,14 +126,9 @@
     <rdf:Description rdf:about="&dcat;Resource">
         <dct:identifier>dcat:Resource</dct:identifier>
         <rdfs:label xml:lang="pt-BR">Recurso (Conjunto de Dados)</rdfs:label>
-        <rdfs:label xml:lang="en">Catalogued Resource</rdfs:label>
+        <rdfs:label xml:lang="en">Resource (Dataset)</rdfs:label>
         <rdfs:comment xml:lang="pt-BR">
-            Recurso publicado ou curado por um único agente, incluindo conjuntos de
-            dados, serviços de dados e outras entidades catalogadas.
-        </rdfs:comment>
-        <rdfs:comment xml:lang="en">
-            A resource published or curated by a single agent, including datasets,
-            data services and other catalogued entities.
+            Recurso publicado ou curado por um único agente.
         </rdfs:comment>
     </rdf:Description>
 
@@ -147,48 +138,36 @@
         <rdfs:label xml:lang="pt-BR">Distribuição</rdfs:label>
         <rdfs:label xml:lang="en">Distribution</rdfs:label>
         <rdfs:comment xml:lang="pt-BR">
-            Representação específica de um conjunto de dados em um formato,
-            mídia ou perfil particular.
-        </rdfs:comment>
-        <rdfs:comment xml:lang="en">
-            A specific representation of a dataset in a particular format, media
-            type or profile.
+            Uma representação específica de um conjunto de dados. Um conjunto de dados pode estar disponível em várias serializações que podem diferir de várias maneiras, incluindo linguagem natural, tipo ou formato de mídia, organização esquemática, resolução temporal e espacial, nível de detalhe ou perfis (que podem especificar qualquer um ou todos os itens acima).
         </rdfs:comment>
     </rdf:Description>
 
     <!-- Período de Tempo (dct:PeriodOfTime) -->
     <rdf:Description rdf:about="&dct;PeriodOfTime">
-        <dct:identifier>dct:PeriodOfTime</dct:identifier>
+        <dct:identifier>dcterms:PeriodOfTime</dct:identifier>
         <rdfs:label xml:lang="pt-BR">Período de Tempo</rdfs:label>
         <rdfs:label xml:lang="en">Period of Time</rdfs:label>
         <rdfs:comment xml:lang="pt-BR">
-            Intervalo de tempo definido pelo seu início e fim.
-        </rdfs:comment>
-        <rdfs:comment xml:lang="en">
-            A time interval defined by its start and end.
+            Um intervalo de tempo que é nomeado ou definido por seu início e fim.
         </rdfs:comment>
     </rdf:Description>
 
     <!-- Organização / Pessoa (foaf:Organization / foaf:Person) -->
-    <rdf:Description rdf:about="&foaf;Organization">
-        <dct:identifier>foaf:Organization</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Organização</rdfs:label>
-        <rdfs:label xml:lang="en">Organization</rdfs:label>
-    </rdf:Description>
-
-    <rdf:Description rdf:about="&foaf;Person">
-        <dct:identifier>foaf:Person</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Pessoa</rdfs:label>
-        <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+    	<dct:identifier>foaf:Organization / foaf:Person</dct:identifier>
+    	<rdfs:label xml:lang="en">Organization / Person</rdfs:label>
+    	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/spec/#term_Agent" />
+    	<rdfs:comment xml:lang="pt-BR">
+            [FOAF] Fornece diversas propriedades para descrever pessoas, organizações ou entidades.
+        </rdfs:comment>
     </rdf:Description>
 
     <!-- Local (dct:Location) -->
     <rdf:Description rdf:about="&dct;Location">
-        <dct:identifier>dct:Location</dct:identifier>
+        <dct:identifier>dcterms:Location</dct:identifier>
         <rdfs:label xml:lang="pt-BR">Local</rdfs:label>
         <rdfs:label xml:lang="en">Location</rdfs:label>
         <rdfs:comment xml:lang="pt-BR">Uma região espacial ou lugar nomeado.</rdfs:comment>
-        <rdfs:comment xml:lang="en">A spatial region or named place.</rdfs:comment>
     </rdf:Description>
 
     <!-- Serviço de Dados (dcat:DataService) -->
@@ -197,12 +176,7 @@
         <rdfs:label xml:lang="pt-BR">Serviço de Dados</rdfs:label>
         <rdfs:label xml:lang="en">Data Service</rdfs:label>
         <rdfs:comment xml:lang="pt-BR">
-            Coleção de operações que fornece acesso a um ou mais conjuntos de dados
-            ou funções de processamento de dados.
-        </rdfs:comment>
-        <rdfs:comment xml:lang="en">
-            A collection of operations that provides access to one or more datasets
-            or data processing functions.
+            Uma coleção de operações que fornece acesso a um ou mais conjuntos de dados ou funções de processamento de dados.
         </rdfs:comment>
     </rdf:Description>
 
@@ -212,383 +186,1285 @@
         <rdfs:label xml:lang="pt-BR">Verificação de Integridade (Checksum)</rdfs:label>
         <rdfs:label xml:lang="en">Checksum</rdfs:label>
         <rdfs:comment xml:lang="pt-BR">
-            Valor que permite verificar a integridade do conteúdo de um arquivo,
-            representando o resultado de um algoritmo de checksum ou hash.
-        </rdfs:comment>
-        <rdfs:comment xml:lang="en">
-            A value that allows the integrity of a file’s content to be checked,
-            representing the result of a checksum or hash algorithm.
+            Um Checksum é um valor que permite verificar a integridade do conteúdo de um arquivo. Mesmo pequenas alterações no conteúdo do arquivo alterarão seu Checksum. Esta classe permite que os resultados de uma variedade de algoritmos de Checksum e resumo de mensagens criptográficas sejam representados.
         </rdfs:comment>
     </rdf:Description>
 
-    <!-- ========================================================= -->
-    <!-- PROPRIEDADES PARA A CLASSE CONJUNTO DE DADOS             -->
-    <!-- ========================================================= -->
+    <!-- ####################################### -->
+    <!-- ##===================================## -->
+    <!-- ##==          PROPERTIES           ==## -->
+    <!-- ##===================================## --> 
+    <!-- ####################################### -->
+     
+    <!-- ======================================= -->
+    <!-- ==  Conjunto de Dados - Properties   == -->
+    <!-- ======================================= --> 
+    
+    <!-- Periodicidade de Atualização -->
+    <rdf:Description rdf:about="&dcterms;accrualPeriodicity">
+        <dct:identifier>dcterms:accrualPeriodicity</dct:identifier>
 
-    <!-- Periodicidade de atualização -->
-    <rdf:Description rdf:about="&dct;accrualPeriodicity">
-        <dct:identifier>dct:accrualPeriodicity</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Conjunto de Dados - periodicidade de atualização</rdfs:label>
-        <rdfs:label xml:lang="en">Dataset - accrual periodicity</rdfs:label>
+        <rdfs:label xml:lang="pt-BR">Periodicidade de Atualização</rdfs:label>
+        <rdfs:label xml:lang="en">Accrual Periodicity</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado.
+            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado
+            (ex.: diária, mensal, trimestral, semestral, anual).
+            (Selo de Qualidade: Bronze)
         </vann:usageNote>
+
         <rdfs:comment xml:lang="pt-BR">
-            Frequência com que os dados do conjunto de dados são publicados ou atualizados.
+            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado.
         </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&dcterms;Frequency"/>
     </rdf:Description>
 
-    <!-- Área geográfica -->
-    <rdf:Description rdf:about="&dct;spatial">
-        <dct:identifier>dct:spatial</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Conjunto de Dados - área geográfica</rdfs:label>
-        <rdfs:label xml:lang="en">Dataset - spatial / geographical coverage</rdfs:label>
+    <!-- Área Geográfica (Cobertura Espacial) -->
+    <rdf:Description rdf:about="&dcterms;spatial">
+        <dct:identifier>dcterms:spatial</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Área Geográfica</rdfs:label>
+        <rdfs:label xml:lang="en">Spatial / Geographical Coverage</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Área geográfica coberta pelo conjunto de dados.
+            Deve indicar a área geográfica coberta pelo conjunto de dados,
+            representando a extensão territorial à qual os dados se referem.
+            (Selo de Qualidade: Ouro)
         </vann:usageNote>
-    </rdf:Description>
 
-    <!-- Período temporal coberto -->
-    <rdf:Description rdf:about="&dct;temporal">
-        <dct:identifier>dct:temporal</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Conjunto de Dados - período temporal</rdfs:label>
-        <rdfs:label xml:lang="en">Dataset - temporal coverage</rdfs:label>
+        <rdfs:comment xml:lang="pt-BR">
+            A área geográfica coberta pelo conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&dcterms;Location"/>
+    </rdf:Description>
+    
+    <!-- Período Temporal -->
+    <rdf:Description rdf:about="&dcterms;temporal">
+        <dct:identifier>dcterms:temporal</dct:identifier>
+        
+        <rdfs:label xml:lang="pt-BR">Período Temporal</rdfs:label>
+        <rdfs:label xml:lang="en">Temporal Coverage</rdfs:label>
+        
         <vann:usageNote xml:lang="pt-BR">
-            Período temporal que o conjunto de dados cobre, normalmente descrito por
-            um recurso dct:PeriodOfTime.
+            Utilizar para indicar o intervalo temporal coberto pelos dados,
+            referenciando um recurso do tipo dcterms:PeriodOfTime.
         </vann:usageNote>
+       
+        <rdfs:comment xml:lang="pt-BR">
+            O período temporal que o conjunto de dados cobre.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&dcterms;PeriodOfTime"/>
     </rdf:Description>
 
-    <!-- Fornecedor negocial (prov:wasGeneratedBy) -->
+    <!-- Fornecedor Negocial do Conjunto de Dados -->
     <rdf:Description rdf:about="&prov;wasGeneratedBy">
         <dct:identifier>prov:wasGeneratedBy</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Conjunto de Dados - fornecedor negocial</rdfs:label>
-        <rdfs:label xml:lang="en">Dataset - generating activity</rdfs:label>
+        
+        <rdfs:label xml:lang="pt-BR">Fornecedor Negocial do Conjunto de Dados</rdfs:label>
+        <rdfs:label xml:lang="en">Was Generated By</rdfs:label>
+        
         <vann:usageNote xml:lang="pt-BR">
-            Atividade de negócio que gerou ou fornece o contexto para criação do conjunto de dados.
+            Referencie uma instância de prov:Activity descrevendo o processo/atividade que gerou o conjunto de dados
+            (ex.: "Cálculo anual do Conceito Enade", "Extração mensal do CNPJ", etc.).
         </vann:usageNote>
+        
+        <rdfs:comment xml:lang="pt-BR">
+            Uma atividade que gerou ou fornece o contexto de negócios para a criação do conjunto de dados.
+        </rdfs:comment>
+        
+        <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&prov;Activity"/>
     </rdf:Description>
 
-    <!-- Em série (dcat:inSeries) -->
+    <!-- Em Série -->
     <rdf:Description rdf:about="&dcat;inSeries">
         <dct:identifier>dcat:inSeries</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Conjunto de Dados - em série</rdfs:label>
-        <rdfs:label xml:lang="en">Dataset - in series</rdfs:label>
+        
+        <rdfs:label xml:lang="pt-BR">Em Série</rdfs:label>
+        <rdfs:label xml:lang="en">In Series</rdfs:label>
+        
         <vann:usageNote xml:lang="pt-BR">
-            Indica a série de conjuntos de dados da qual o conjunto atual faz parte.
+            Deve indicar se o conjunto de dados faz parte de uma série de conjuntos de dados.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Uma série de conjuntos de dados da qual o conjunto de dados faz parte.
+        </rdfs:comment>
+        
+        <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&prov;Activity"/>
     </rdf:Description>
 
-    <!-- ========================================================= -->
-    <!-- PROPRIEDADES PARA A CLASSE RECURSO (CONJUNTO DE DADOS)   -->
-    <!-- ========================================================= -->
+    <!-- ======================================= -->
+    <!-- ==  Recursos - Properties            == -->
+    <!-- ======================================= --> 
 
-    <!-- Observância legal (accessRights) -->
-    <rdf:Description rdf:about="&dct;accessRights">
-        <dct:identifier>dct:accessRights</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - observância legal</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - access rights</rdfs:label>
+    <!-- Observância Legal -->
+    <rdf:Description rdf:about="&dcterms;accessRights">
+        <dct:identifier>dcterms:accessRights</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Observância Legal</rdfs:label>
+        <rdfs:label xml:lang="en">Access Rights</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar se o recurso é público, restrito ou privado.
+            Deve indicar se o conjunto de dados é público, restrito ou privado.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar se o conjunto de dados é público, restrito ou privado.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcterms;RightsStatement"/>
     </rdf:Description>
 
-    <!-- Ponto de contato (e-mail da área técnica) -->
+    <!-- E-mail da Área Técnica Responsável -->
     <rdf:Description rdf:about="&dcat;contactPoint">
         <dct:identifier>dcat:contactPoint</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - ponto de contato</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - contact point</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">E-mail da Área Técnica Responsável</rdfs:label>
+        <rdfs:label xml:lang="en">Contact Point</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar as informações de contato (por exemplo, e-mail) da área técnica
-            responsável pelo conjunto de dados.
+            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&vcard;Kind"/>
     </rdf:Description>
 
-    <!-- Organização criadora -->
-    <rdf:Description rdf:about="&dct;creator">
-        <dct:identifier>dct:creator</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - organização criadora</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - creator</rdfs:label>
-        <vann:usageNote xml:lang="pt-BR">
-            Área técnica do órgão/entidade responsável pela criação do conjunto de dados.
-        </vann:usageNote>
-    </rdf:Description>
+    <!-- Organização -->
+    <rdf:Description rdf:about="&dcterms;creator">
+        <dct:identifier>dcterms:creator</dct:identifier>
 
-    <!-- Área técnica responsável (publisher) -->
-    <rdf:Description rdf:about="&dct;publisher">
-        <dct:identifier>dct:publisher</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - área técnica responsável</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - publisher</rdfs:label>
+        <rdfs:label xml:lang="pt-BR">Organização</rdfs:label>
+        <rdfs:label xml:lang="en">Creator</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Indica a organização responsável por disponibilizar o recurso.
+            Deve indicar qual área técnica do órgão/entidade é responsável pelo conjunto de dados.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar qual área técnica do órgão/entidade é responsável pelo conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     </rdf:Description>
 
     <!-- Descrição -->
-    <rdf:Description rdf:about="&dct;description">
-        <dct:identifier>dct:description</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - descrição</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - description</rdfs:label>
+    <rdf:Description rdf:about="&dcterms;description">
+        <dct:identifier>dcterms:description</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Descrição</rdfs:label>
+        <rdfs:label xml:lang="en">Description</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Descrição sobre o conjunto de dados, incluindo políticas públicas ou
-            serviços impactados e principais informações do recurso.
+            Descrição sobre o conjunto de dados, incluindo metadados que indiquem quais as Políticas Públicas
+            ou serviços públicos impactados e metadados que descreva as principais informações do conjunto de dados.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Descrição sobre o conjunto de dados, incluindo metadados que indiquem quais as Políticas Públicas
+            ou serviços públicos impactados e metadados que descreva as principais informações do conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
-    <!-- Palavras-chave -->
+    <!-- Palavras-Chave -->
     <rdf:Description rdf:about="&dcat;keyword">
         <dct:identifier>dcat:keyword</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - palavras-chave</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - keyword</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Palavras-Chave</rdfs:label>
+        <rdfs:label xml:lang="en">Keyword</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Palavras ou tags que resumem os principais aspectos do conjunto de dados.
+            Deve indicar palavras ou tags que resumem os principais aspectos do conjunto de dados.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar palavras ou tags que resumem os principais aspectos do conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
-    <!-- Licença -->
-    <rdf:Description rdf:about="&dct;license">
-        <dct:identifier>dct:license</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - licença de uso</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - license</rdfs:label>
+    <!-- Licença de Uso -->
+    <rdf:Description rdf:about="&dcterms;license">
+        <dct:identifier>dcterms:license</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Licença de Uso</rdfs:label>
+        <rdfs:label xml:lang="en">License</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Seleciona sob qual licença o conjunto de dados é publicado.
+            Deve selecionar sob qual espécie de licença o conjunto de dados será publicado
+            de acordo com as definições apresentadas.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar a licença de uso do conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcterms;LicenseDocument"/>
     </rdf:Description>
 
     <!-- Temas -->
     <rdf:Description rdf:about="&dcat;theme">
         <dct:identifier>dcat:theme</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - tema</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - theme</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Tema</rdfs:label>
+        <rdfs:label xml:lang="en">Theme / Category</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Área temática à qual o conjunto de dados está vinculado.
+            Deve selecionar a área temática à qual o conjunto de dados esteja vinculado.
+            Permite selecionar mais de uma opção.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar a área temática à qual o conjunto de dados está vinculado.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
     </rdf:Description>
 
     <!-- Título -->
-    <rdf:Description rdf:about="&dct;title">
-        <dct:identifier>dct:title</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - título</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - title</rdfs:label>
+    <rdf:Description rdf:about="&dcterms;title">
+        <dct:identifier>dcterms:title</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Título</rdfs:label>
+        <rdfs:label xml:lang="en">Title</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Nome dado ao conjunto de dados ou recurso catalogado.
+            Deve conter um nome dado ao Conjunto de Dados.
+            O título deve ser escrito por extenso utilizando sigla após o final do título, caso exista.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve conter um nome dado ao Conjunto de Dados.
+            Este é um campo obrigatório para a descrição de um conjunto de dados ou recurso catalogado.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
     <!-- Tipo -->
-    <rdf:Description rdf:about="&dct;type">
-        <dct:identifier>dct:type</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - tipo</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - type</rdfs:label>
+    <rdf:Description rdf:about="&dcterms;type">
+        <dct:identifier>dcterms:type</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Tipo do Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">Type</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Indica se o recurso é uma distribuição (arquivo), um serviço (API) ou outro tipo.
+            Deve selecionar se o recurso se refere a Distribuição (arquivo),
+            Serviço (API) ou outros.
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar o tipo do recurso, como Distribuição (arquivo),
+            Serviço (API) ou outros.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Class"/>
     </rdf:Description>
 
     <!-- Versão -->
     <rdf:Description rdf:about="&dcat;version">
         <dct:identifier>dcat:version</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - versão</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - version</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Versão</rdfs:label>
+        <rdfs:label xml:lang="en">Version</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar qual é a versão do conjunto de dados que está sendo cadastrada.
+            (Selo de Qualidade: Bronze)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar a versão do conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
-    <!-- Datas issued/modified, idioma, landingPage, rights, hasVersion, status etc. -->
-    <!-- (seguem o mesmo padrão de rdfs:label + usageNote, como no PDF DCAT-BR) -->
+    <!-- Área Técnica Responsável -->
+    <rdf:Description rdf:about="&dcterms;publisher">
+        <dct:identifier>dcterms:publisher</dct:identifier>
 
-    <!-- ========================================================= -->
-    <!-- PROPRIEDADES PARA A CLASSE DISTRIBUIÇÃO                  -->
-    <!-- ========================================================= -->
+        <rdfs:label xml:lang="pt-BR">Área Técnica Responsável</rdfs:label>
+        <rdfs:label xml:lang="en">Publisher</rdfs:label>
 
-    <!-- URL de acesso -->
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar qual área técnica do órgão/entidade é responsável pelo conjunto de dados.
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar qual área técnica do órgão/entidade é responsável pela disponibilização
+            do conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </rdf:Description>
+
+    <!-- Data de Publicação -->
+    <rdf:Description rdf:about="&dcterms;issued">
+        <dct:identifier>dcterms:issued</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Data de Publicação</rdfs:label>
+        <rdfs:label xml:lang="en">Release Date</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar a data de emissão formal do conjunto de dados
+            (por exemplo, a data de publicação).
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Data de emissão formal do conjunto de dados, como a data de sua publicação.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Description>
+
+    <!-- Data de Alteração -->
+    <rdf:Description rdf:about="&dcterms;modified">
+        <dct:identifier>dcterms:modified</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Data de Alteração</rdfs:label>
+        <rdfs:label xml:lang="en">Update / Modification Date</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar a data mais recente em que o recurso foi alterado,
+            atualizado ou modificado.
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Data mais recente em que o recurso foi alterado, atualizado ou modificado.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Description>
+
+    <!-- Idioma -->
+    <rdf:Description rdf:about="&dcterms;language">
+        <dct:identifier>dcterms:language</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Idioma</rdfs:label>
+        <rdfs:label xml:lang="en">Language</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o idioma do conjunto de dados usado para metadados textuais
+            (por exemplo, títulos, descrições) ou para os valores textuais do próprio
+            conjunto de dados.
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Idioma utilizado nos metadados textuais ou nos valores textuais do conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcterms;LinguisticSystem"/>
+    </rdf:Description>
+
+    <!-- URL de Obtenção de Acesso -->
+    <rdf:Description rdf:about="&dcat;landingPage">
+        <dct:identifier>dcat:landingPage</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">URL de Obtenção de Acesso</rdfs:label>
+        <rdfs:label xml:lang="en">Landing Page</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar uma página da Web para obter acesso a um catálogo, um conjunto de dados,
+            suas distribuições e/ou informações adicionais.
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Uma página da Web para obter acesso a um catálogo, um conjunto de dados,
+            suas distribuições e/ou informações adicionais.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&foaf;Document"/>
+    </rdf:Description>
+
+    <!-- Observância Legal Complementar -->
+    <rdf:Description rdf:about="&dcterms;rights">
+        <dct:identifier>dcterms:rights</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Observância Legal Complementar</rdfs:label>
+        <rdfs:label xml:lang="en">Rights</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar uma declaração que diz respeito a todos os direitos não abordados na
+            "Observância Legal", como declarações de direitos autorais.
+            (Selo de Qualidade: Prata)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Declaração de direitos não cobertos por dcterms:accessRights (ex.: copyright).
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcterms;RightsStatement"/>
+    </rdf:Description>
+
+    <!-- Atualização de Versão -->
+    <rdf:Description rdf:about="&dcat;hasVersion">
+        <dct:identifier>dcat:hasVersion</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Atualização de Versão</rdfs:label>
+        <rdfs:label xml:lang="en">Has Version</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar que este conjunto de dados possui um versionamento mais específico.
+            (Selo de Qualidade: Prata)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Referência para uma versão mais específica do recurso.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <!-- coerente: aponta para outro recurso (dcat:Resource) -->
+        <rdfs:range rdf:resource="&dcat;Resource"/>
+    </rdf:Description>
+
+    <!-- Situação -->
+    <rdf:Description rdf:about="&adms;status">
+        <dct:identifier>adms:status</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Situação</rdfs:label>
+        <rdfs:label xml:lang="en">Status</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o status do conjunto de dados (Ativo, Descontinuado, Em Construção, etc.).
+            Recomenda-se utilizar um conceito SKOS de um vocabulário controlado.
+            (Selo de Qualidade: Prata)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Status do conjunto de dados.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+    </rdf:Description>
+
+    <!-- Relacionamento não Especificado -->
+    <rdf:Description rdf:about="&dcterms;relation">
+        <dct:identifier>dcterms:relation</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Relacionamento não Especificado</rdfs:label>
+        <rdfs:label xml:lang="en">Relation</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar um conjunto de dados com uma relação não especificada com outro conjunto de dados catalogado.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Relacionamento genérico com outro recurso.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcat;Resource"/>
+    </rdf:Description>
+
+    <!-- Relacionamento (Qualificado) -->
+    <rdf:Description rdf:about="&dcat;qualifiedRelation">
+        <dct:identifier>dcat:qualifiedRelation</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Relacionamento</rdfs:label>
+        <rdfs:label xml:lang="en">Qualified Relation</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Link para uma descrição de um relacionamento com outro conjunto de dados.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Permite descrever o relacionamento com outro recurso por meio de dcat:Relationship.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcat;Relationship"/>
+    </rdf:Description>
+
+    <!-- Relacionamento Qualificado (dcat:Relationship) -->
+    <rdf:Description rdf:about="&dcat;Relationship">
+        <dct:identifier>dcat:Relationship</dct:identifier>
+        <rdfs:label xml:lang="pt-BR">Relacionamento (Qualificado)</rdfs:label>
+        <rdfs:label xml:lang="en">Relationship</rdfs:label>
+        <rdfs:comment xml:lang="pt-BR">
+            Classe utilizada para descrever um relacionamento qualificado entre recursos catalogados.
+            Normalmente referenciada por dcat:qualifiedRelation.
+        </rdfs:comment>
+    </rdf:Description>
+
+    <!-- Faz Parte -->
+    <rdf:Description rdf:about="&dcterms;hasPart">
+        <dct:identifier>dcterms:hasPart</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Faz Parte</rdfs:label>
+        <rdfs:label xml:lang="en">Has Part</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar conjunto de dados incluído física ou logicamente no conjunto de dados descrito.
+            (Selo de Qualidade: Ouro)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Relaciona o recurso a outro recurso que é parte dele.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcat;Resource"/>
+    </rdf:Description>
+
+    <!-- É Referenciado Por -->
+    <rdf:Description rdf:about="&dcterms;isReferencedBy">
+        <dct:identifier>dcterms:isReferencedBy</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">É Referenciado Por</rdfs:label>
+        <rdfs:label xml:lang="en">Is Referenced By</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar recurso relacionado (ex.: publicação) que referencia, cita ou aponta para o conjunto de dados.
+            Para descrição detalhada do relacionamento, utilizar dcat:qualifiedRelation.
+            (Selo de Qualidade: Ouro)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Recurso que referencia o conjunto de dados.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcat;Resource"/>
+    </rdf:Description>
+
+    <!-- Versão Anterior -->
+    <rdf:Description rdf:about="&dcat;previousVersion">
+        <dct:identifier>dcat:previousVersion</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Versão Anterior</rdfs:label>
+        <rdfs:label xml:lang="en">Previous Version</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar a versão anterior de um recurso em uma linhagem.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Referência para a versão anterior do recurso.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcat;Resource"/>
+    </rdf:Description>
+
+    <!-- Substituído Por -->
+    <rdf:Description rdf:about="&dcterms;replaces">
+        <dct:identifier>dcterms:replaces</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Substituído Por</rdfs:label>
+        <rdfs:label xml:lang="en">Replaces</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o conjunto de dados que é substituído pelo conjunto de dados descrito.
+            (Selo de Qualidade: Ouro)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Indica que o recurso descrito substitui outro recurso.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcat;Resource"/>
+    </rdf:Description>
+
+    <!-- Primeiro Recurso -->
+    <rdf:Description rdf:about="&dcat;first">
+        <dct:identifier>dcat:first</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Primeiro Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">First</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o primeiro conjunto de dados em uma coleção ordenada ou série de conjuntos de dados
+            à qual pertence o conjunto de dados atual.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Primeiro item de uma coleção ordenada ou série.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&dcat;Resource"/>
+    </rdf:Description>
+
+    <!-- ============================================== -->
+    <!-- ==  Propriedades para a classe Distribuição == -->
+    <!-- ===============================================-->
+
+    <!-- URL de Acesso -->
     <rdf:Description rdf:about="&dcat;accessURL">
         <dct:identifier>dcat:accessURL</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Distribuição - URL de acesso</rdfs:label>
-        <rdfs:label xml:lang="en">Distribution - access URL</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">URL de Acesso</rdfs:label>
+        <rdfs:label xml:lang="en">Access URL</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Endereço web onde o recurso (arquivo, API, serviço) está hospedado.
+            Deve indicar o endereço da web onde o recurso está hospedado
+            (arquivo, API ou serviço).
         </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Endereço da web onde o recurso pode ser acessado.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
     </rdf:Description>
 
-    <!-- Título, descrição, formato, datas, direitos, downloadURL, byteSize,
-         mediaType, compressFormat, conformsTo, checksum etc. são definidos
-         de forma análoga, seguindo as tabelas de propriedades de Distribuição
-         do DCAT-BR. -->
+    <!-- Descrição do Recurso -->
+    <rdf:Description rdf:about="&dcterms;description">
+        <dct:identifier>dcterms:description</dct:identifier>
 
-    <!-- ========================================================= -->
-    <!-- PROPRIEDADES PARA PERÍODO DE TEMPO, LOCAL, SERVIÇO, ETC  -->
-    <!-- ========================================================= -->
+        <rdfs:label xml:lang="pt-BR">Descrição do Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">Resource Description</rdfs:label>
 
-    <!-- Início e fim do período -->
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar a descrição do recurso do conjunto de dados, incluindo metadados
+            que indiquem quais as Políticas Públicas ou serviços públicos impactados e
+            metadados que descrevam as principais informações do conjunto de dados.
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Descrição textual do recurso (arquivo, API ou serviço) associado ao conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Description>
+
+    <!-- Título do Recurso -->
+    <rdf:Description rdf:about="&dcterms;title">
+        <dct:identifier>dcterms:title</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Título do Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">Resource Title</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve conter um nome dado ao recurso do conjunto de dados.
+            O título deve ser escrito por extenso utilizando siglas após o final do título, caso exista.
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Título atribuído ao recurso (arquivo, API ou serviço) associado ao conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Description>
+
+    <!-- Formato (Distribuição) -->
+    <rdf:Description rdf:about="&dcterms;format">
+        <dct:identifier>dcterms:format</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Formato</rdfs:label>
+        <rdfs:label xml:lang="en">Format</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve selecionar sob qual formato o recurso será disponibilizado.
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Deve indicar o formato do recurso (por exemplo, CSV, JSON, PDF).
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&dcterms;MediaTypeOrExtent"/>
+    </rdf:Description>
+
+    <!-- Data de Publicação do Recurso (Distribuição) -->
+    <rdf:Description rdf:about="&dcterms;issued">
+        <dct:identifier>dcterms:issued</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Data de Publicação do Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">Release Date</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Data de emissão formal (por exemplo, publicação) do recurso.
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Data de emissão formal do recurso (por exemplo, a data de publicação do arquivo/API).
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Description>
+
+    <!-- Data de Alteração do Recurso (Distribuição) -->
+    <rdf:Description rdf:about="&dcterms;modified">
+        <dct:identifier>dcterms:modified</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Data de Alteração do Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">Update / Modification Date</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Data mais recente em que o recurso foi alterado, atualizado ou modificado.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Data mais recente em que o recurso foi alterado, atualizado ou modificado.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Description>
+
+    <!-- Observância Legal Complementar do Recurso -->
+    <rdf:Description rdf:about="&dcterms;rights">
+        <dct:identifier>dcterms:rights</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Observância Legal Complementar do Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">Rights</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar uma declaração que diz respeito a todos os direitos não abordados com
+            dcterms:license ou dcterms:accessRights, como declarações de direitos autorais.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Declaração de direitos complementares aplicáveis ao recurso (ex.: copyright).
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&dcterms;RightsStatement"/>
+    </rdf:Description>
+
+    <!-- Observância Legal do Recurso -->
+    <rdf:Description rdf:about="&dcterms;accessRights">
+        <dct:identifier>dcterms:accessRights</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Observância Legal do Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">Access Rights</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar a visibilidade do Recurso, se a visibilidade é pública ou privada.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Indica a visibilidade do recurso (público ou privado).
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&dcterms;RightsStatement"/>
+    </rdf:Description>
+
+    <!-- Licença de Uso do Recurso -->
+    <rdf:Description rdf:about="&dcterms;license">
+        <dct:identifier>dcterms:license</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Licença de Uso do Recurso</rdfs:label>
+        <rdfs:label xml:lang="en">License</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve selecionar sob qual espécie de licença o recurso será publicado
+            de acordo com as definições apresentadas.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Licença aplicável ao recurso (arquivo/API/serviço) associado ao conjunto de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&dcterms;LicenseDocument"/>
+    </rdf:Description>
+
+    <!-- URL de Download -->
+    <rdf:Description rdf:about="&dcat;downloadURL">
+        <dct:identifier>dcat:downloadURL</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">URL de Download</rdfs:label>
+        <rdfs:label xml:lang="en">Download URL</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar a URL de download do arquivo em um determinado formato
+            (por exemplo, CSV, ODS ou RDF). O formato deve ser indicado por
+            dcterms:format e/ou dcat:mediaType da distribuição.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            URL direta para download do arquivo da distribuição em um formato específico.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
+    </rdf:Description>
+
+    <!-- Tamanho em Bytes -->
+    <rdf:Description rdf:about="&dcat;byteSize">
+        <dct:identifier>dcat:byteSize</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Tamanho em Bytes</rdfs:label>
+        <rdfs:label xml:lang="en">Byte Size</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o tamanho da distribuição em bytes.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Valor que representa o tamanho do recurso distribuído, expresso em bytes.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Description>
+
+    <!-- Conforme a -->
+    <rdf:Description rdf:about="&dcterms;conformsTo">
+        <dct:identifier>dcterms:conformsTo</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Conforme a</rdfs:label>
+        <rdfs:label xml:lang="en">Conforms To</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar um padrão, norma ou especificação estabelecida
+            ao qual a distribuição está em conformidade.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Referência a um padrão ou especificação técnica seguida pela distribuição.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&dcterms;Standard"/>
+    </rdf:Description>
+
+    <!-- Tipo de Mídia -->
+    <rdf:Description rdf:about="&dcat;mediaType">
+        <dct:identifier>dcat:mediaType</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Tipo de Mídia</rdfs:label>
+        <rdfs:label xml:lang="en">Media Type</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o tipo de mídia (MIME type) da distribuição, conforme IANA.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Tipo de mídia (MIME) da distribuição (ex.: text/csv, application/json).
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&dcterms;MediaType"/>
+    </rdf:Description>
+
+    <!-- Formato de Compactação -->
+    <rdf:Description rdf:about="&dcat;compressFormat">
+        <dct:identifier>dcat:compressFormat</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Formato de Compactação</rdfs:label>
+        <rdfs:label xml:lang="en">Compress Format</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o formato de compactação da distribuição na qual os dados estão contidos,
+            por exemplo, para reduzir o tamanho do arquivo para download.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Formato de compactação aplicado ao recurso (ex.: application/zip, application/x-7z-compressed).
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&dcterms;MediaType"/>
+    </rdf:Description>
+
+    <!-- Verificação de Conteúdo -->
+    <rdf:Description rdf:about="&spdx;checksum">
+        <dct:identifier>spdx:checksum</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Verificação de Conteúdo</rdfs:label>
+        <rdfs:label xml:lang="en">Checksum</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Mecanismo para verificar se o conteúdo de um arquivo ou pacote não foi alterado.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Checksum do arquivo para verificação de integridade.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;Distribution"/>
+        <rdfs:range rdf:resource="&spdx;Checksum"/>
+    </rdf:Description>
+
+    <!-- ================================================= -->
+    <!-- == Propriedades para a classe Período de Tempo == -->
+    <!-- ================================================= -->
+
+    <!-- Início do Período -->
     <rdf:Description rdf:about="&dcat;startDate">
         <dct:identifier>dcat:startDate</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Período de Tempo - início</rdfs:label>
-        <rdfs:label xml:lang="en">Period of Time - start date</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Início do Período</rdfs:label>
+        <rdfs:label xml:lang="en">Start Date</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o início do período.
+            (Selo de Qualidade: Ouro)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Data de início do período temporal.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcterms;PeriodOfTime"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
+    <!-- Final do Período -->
     <rdf:Description rdf:about="&dcat;endDate">
         <dct:identifier>dcat:endDate</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Período de Tempo - fim</rdfs:label>
-        <rdfs:label xml:lang="en">Period of Time - end date</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Final do Período</rdfs:label>
+        <rdfs:label xml:lang="en">End Date</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o final do período.
+            (Selo de Qualidade: Ouro)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Data de fim do período temporal.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcterms;PeriodOfTime"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
-    <!-- Geometria, bbox, centroid -->
+    <!-- ================================================= -->
+    <!-- ==    Propriedades para a classe Local         == -->
+    <!-- ================================================= -->
+
+    <!-- Localização Geométrica -->
     <rdf:Description rdf:about="&locn;geometry">
         <dct:identifier>locn:geometry</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Local - geometria</rdfs:label>
-        <rdfs:label xml:lang="en">Location - geometry</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Localização Geométrica</rdfs:label>
+        <rdfs:label xml:lang="en">Geometry</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Associa uma área espacial a uma geometria correspondente.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Associa uma localização (área espacial) a uma geometria correspondente.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance -->
+        <rdfs:domain rdf:resource="&dcterms;Location"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
     </rdf:Description>
 
+    <!-- Caixa Delimitadora -->
     <rdf:Description rdf:about="&dcat;bbox">
         <dct:identifier>dcat:bbox</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Local - caixa delimitadora</rdfs:label>
-        <rdfs:label xml:lang="en">Location - bounding box</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Caixa Delimitadora</rdfs:label>
+        <rdfs:label xml:lang="en">Bounding Box</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar a caixa delimitadora geográfica de uma área espacial.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Caixa delimitadora geográfica (bounding box) de uma localização.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcterms;Location"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
+    <!-- Centro Geográfico -->
     <rdf:Description rdf:about="&dcat;centroid">
         <dct:identifier>dcat:centroid</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Local - centróide</rdfs:label>
-        <rdfs:label xml:lang="en">Location - centroid</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Centro Geográfico</rdfs:label>
+        <rdfs:label xml:lang="en">Centroid</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o centro geográfico (centróide) de uma coisa espacial.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Centro geográfico (centróide) associado a uma localização.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcterms;Location"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
-    <!-- Serviço de Dados: endpointURL, endpointDescription, servesDataset -->
+    <!-- ================================================== -->
+    <!-- == Propriedades para a classe Serviços de Dados == -->
+    <!-- ================================================== -->
 
+    <!-- URL do Endpoint -->
     <rdf:Description rdf:about="&dcat;endpointURL">
         <dct:identifier>dcat:endpointURL</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Serviço de Dados - URL do endpoint</rdfs:label>
-        <rdfs:label xml:lang="en">Data Service - endpoint URL</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">URL do Endpoint</rdfs:label>
+        <rdfs:label xml:lang="en">Endpoint URL</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o local raiz ou endpoint primário do serviço (um IRI resolvível pela Web).
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Endpoint principal do serviço de dados (URI/URL resolvível).
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;DataService"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
     </rdf:Description>
 
+    <!-- Descrição do Endpoint -->
     <rdf:Description rdf:about="&dcat;endpointDescription">
         <dct:identifier>dcat:endpointDescription</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Serviço de Dados - descrição do endpoint</rdfs:label>
-        <rdfs:label xml:lang="en">Data Service - endpoint description</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Descrição do Endpoint</rdfs:label>
+        <rdfs:label xml:lang="en">Endpoint Description</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar uma descrição dos serviços disponíveis através dos terminais,
+            incluindo operações, parâmetros, etc.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Referência para documentação técnica do endpoint (ex.: OpenAPI/Swagger, WSDL).
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;DataService"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
     </rdf:Description>
 
+    <!-- Serviço de Dados (Serves Dataset) -->
     <rdf:Description rdf:about="&dcat;servesDataset">
         <dct:identifier>dcat:servesDataset</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Serviço de Dados - serve conjunto de dados</rdfs:label>
-        <rdfs:label xml:lang="en">Data Service - serves dataset</rdfs:label>
+
+        <rdfs:label xml:lang="pt-BR">Serviço de Dados</rdfs:label>
+        <rdfs:label xml:lang="en">Serves Dataset</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar um conjunto de dados que este serviço de dados pode distribuir/servir.
+            (Selo de Qualidade: Sem Selo)
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Conjunto de dados atendido pelo serviço de dados.
+        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&dcat;DataService"/>
+        <rdfs:range rdf:resource="&dcat;Dataset"/>
     </rdf:Description>
 
-    <!-- Verificação de integridade: valor do checksum -->
+    <!-- =========================================================== -->
+    <!-- == Propriedades para a classe Verificação de Integridade == -->
+    <!-- =========================================================== -->
+   
+    <!-- Valor de Verificação de Integridade -->
     <rdf:Description rdf:about="&spdx;checksumValue">
         <dct:identifier>spdx:checksumValue</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Verificação de Integridade - valor do checksum</rdfs:label>
-        <rdfs:label xml:lang="en">Checksum - value</rdfs:label>
-    </rdf:Description>
 
-    <!-- ========================================================= -->
-    <!-- ==   EXTENSÕES DCAT-BR PARA CAMPOS ESPECÍFICOS CKAN    == -->
-    <!-- ==   (NÃO CONSTAM NO PDF OFICIAL DO DCAT-BR)           == -->
-    <!-- ========================================================= -->
+        <rdfs:label xml:lang="pt-BR">Valor de Verificação de Integridade</rdfs:label>
+        <rdfs:label xml:lang="en">Checksum Value</rdfs:label>
 
-    <!-- Classe conceitual para agrupar extensões de metadados CKAN -->
-    <rdf:Description rdf:about="http://purl.org/dcat-br/ExtraCKANMetadata">
-        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-        <rdfs:label xml:lang="pt-BR">Metadados Extras CKAN (Extensão DCAT-BR)</rdfs:label>
-        <rdfs:label xml:lang="en">CKAN Extra Metadata (DCAT-BR Extension)</rdfs:label>
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar um valor de resumo (checksum) codificado em hexadecimal minúsculo,
+            produzido usando um algoritmo específico.
+        </vann:usageNote>
+
         <rdfs:comment xml:lang="pt-BR">
-            Classe conceitual para agrupar propriedades adicionais usadas em perfis DCAT-BR
-            integrados ao CKAN. Extensão DCAT-BR – não faz parte do documento oficial DCAT-BR em PDF.
+            Valor do checksum em hexadecimal (minúsculo) associado ao algoritmo informado.
         </rdfs:comment>
-        <rdfs:comment xml:lang="en">
-            Conceptual class to group additional properties used in DCAT-BR profiles integrated
-            with CKAN. DCAT-BR extension – not included in the official DCAT-BR PDF specification.
-        </rdfs:comment>
+
+        <!-- Domínio e alcance (Variação) -->
+        <rdfs:domain rdf:resource="&spdx;Checksum"/>
+        <rdfs:range rdf:resource="&xsd;hexBinary"/>
     </rdf:Description>
 
-    <!-- dcatbr:dadosAbertos (extra CKAN: "dadosAbertos") -->
-    <rdf:Description rdf:about="http://purl.org/dcat-br/dadosAbertos">
-        <dct:identifier>dcatbr:dadosAbertos</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - dado aberto?</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - open data?</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <!-- ============ -->
+    <!-- == EXTRAS == -->
+    <!-- ============ -->
+
+    <!-- Desenvolvimento Sustentável (ODS) -->
+    <rdf:Description rdf:about="&dcatbr;relacionadoODS">
+        <dct:identifier>dcatbr:relacionadoODS</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Relacionamento com ODS</rdfs:label>
+        <rdfs:label xml:lang="en">Related to SDGs</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Indica se o recurso/conjunto de dados é considerado dado aberto segundo a política do
-            catálogo (por exemplo, valores "sim"/"não"). 
-            Extensão DCAT-BR – campo específico CKAN, não presente no documento oficial DCAT-BR.
+            Deve indicar se o conjunto de dados possui (Sim) ou não (Não) relação com Objetivos de Desenvolvimento Sustentável (ODS).
         </vann:usageNote>
-        <rdfs:comment xml:lang="en">
-            Indicates whether the resource/dataset is considered open data according to the
-            catalog policy (e.g. "yes"/"no"). 
-            DCAT-BR extension – CKAN-specific field, not present in the official DCAT-BR document.
+
+        <rdfs:comment xml:lang="pt-BR">
+            Indicador booleano para sinalizar relacionamento do conjunto de dados com ODS.
         </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
     </rdf:Description>
 
-    <!-- dcatbr:dadosGenero (extra CKAN: "dadosGenero") -->
-    <rdf:Description rdf:about="http://purl.org/dcat-br/dadosGenero">
-        <dct:identifier>dcatbr:dadosGenero</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - contém dados de gênero?</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - contains gender data?</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:Description rdf:about="&dcatbr;ods">
+        <dct:identifier>dcatbr:ods</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Objetivos de Desenvolvimento Sustentável (ODS)</rdfs:label>
+        <rdfs:label xml:lang="en">Sustainable Development Goals (SDGs)</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Indica se o conjunto de dados contém informações sensíveis ou classificadas por gênero.
-            Extensão DCAT-BR – campo específico CKAN, não presente no documento oficial DCAT-BR.
+            Caso o conjunto de dados seja relacionado a ODS, deve indicar um ou mais ODS associados.
         </vann:usageNote>
-        <rdfs:comment xml:lang="en">
-            Indicates whether the dataset contains sensitive or disaggregated information by gender.
-            DCAT-BR extension – CKAN-specific field, not present in the official DCAT-BR document.
+
+        <rdfs:comment xml:lang="pt-BR">
+            Lista de ODS associados ao conjunto de dados (recomenda-se vocabulário controlado SKOS).
         </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
     </rdf:Description>
 
     <!-- dcatbr:dadosRacaEtnia (extra CKAN: "dadosRacaEtnia") -->
-    <rdf:Description rdf:about="http://purl.org/dcat-br/dadosRacaEtnia">
+    <rdf:Description rdf:about="&dcatbr;dadosRacaEtnia">
         <dct:identifier>dcatbr:dadosRacaEtnia</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - contém dados de raça/etnia?</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - contains race/ethnicity data?</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+
+        <rdfs:label xml:lang="pt-BR">Dados de raça/etnia</rdfs:label>
+        <rdfs:label xml:lang="en">Race/Ethnicity Data</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Indica se o conjunto de dados contém informações sensíveis ou classificadas por raça/etnia.
-            Extensão DCAT-BR – campo específico CKAN, não presente no documento oficial DCAT-BR.
+            Deve indicar se o conjunto de dados possui (Sim) ou não (Não) dados de raça/etnia.
         </vann:usageNote>
-        <rdfs:comment xml:lang="en">
-            Indicates whether the dataset contains sensitive or disaggregated information
-            by race/ethnicity.
-            DCAT-BR extension – CKAN-specific field, not present in the official DCAT-BR document.
+
+        <rdfs:comment xml:lang="pt-BR">
+            Indicador booleano de presença de dados de raça/etnia no conjunto de dados.
         </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
     </rdf:Description>
 
-    <!-- dcatbr:descontinuado (extra CKAN: "descontinuado") -->
-    <rdf:Description rdf:about="http://purl.org/dcat-br/descontinuado">
-        <dct:identifier>dcatbr:descontinuado</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - descontinuado?</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - discontinued?</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <!-- dcatbr:dadosGenero (extra CKAN: "dadosGenero") -->
+    <rdf:Description rdf:about="&dcatbr;dadosGenero">
+        <dct:identifier>dcatbr:dadosGenero</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Dados de gênero</rdfs:label>
+        <rdfs:label xml:lang="en">Gender Data</rdfs:label>
+
         <vann:usageNote xml:lang="pt-BR">
-            Indica se a publicação do conjunto de dados foi descontinuada pelo órgão responsável.
-            Recomenda-se combinar com um período temporal que indique a data de encerramento
-            (por exemplo, em dct:temporal).
-            Extensão DCAT-BR – campo específico CKAN, não presente no documento oficial DCAT-BR.
+            Deve indicar se o conjunto de dados possui (Sim) ou não (Não) dados de gênero.
         </vann:usageNote>
-        <rdfs:comment xml:lang="en">
-            Indicates whether the publication of the dataset has been discontinued by the
-            responsible organization. It is recommended to combine it with a temporal coverage
-            indicating the end date (e.g. in dct:temporal).
-            DCAT-BR extension – CKAN-specific field, not present in the official DCAT-BR document.
+
+        <rdfs:comment xml:lang="pt-BR">
+            Indicador booleano de presença de dados de gênero no conjunto de dados.
         </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
     </rdf:Description>
 
-    <!-- dcatbr:atualizacaoVersao (extra CKAN: "atualizacaoVersao") -->
-    <rdf:Description rdf:about="http://purl.org/dcat-br/atualizacaoVersao">
-        <dct:identifier>dcatbr:atualizacaoVersao</dct:identifier>
-        <rdfs:label xml:lang="pt-BR">Recurso - em atualização de versão?</rdfs:label>
-        <rdfs:label xml:lang="en">Resource - version update in progress?</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:usageNote xml:lang="pt-BR">
-            Indica se o conjunto de dados está em processo de atualização de versão, podendo afetar
-            a estabilidade dos arquivos e metadados.
-            Extensão DCAT-BR – campo específico CKAN, não presente no documento oficial DCAT-BR.
-        </vann:usageNote>
-        <rdfs:comment xml:lang="en">
-            Indicates whether the dataset is undergoing a version update, which may affect the
-            stability of files and metadata.
-            DCAT-BR extension – CKAN-specific field, not present in the official DCAT-BR document.
-        </rdfs:comment>
-    </rdf:Description>
+    <!-- Granularidade Espacial -->
+    <rdf:Description rdf:about="&dcat;spatialResolutionInMeters">
+        <dct:identifier>dcat:spatialResolutionInMeters</dct:identifier>
 
+        <rdfs:label xml:lang="pt-BR">Granularidade Espacial</rdfs:label>
+        <rdfs:label xml:lang="en">Spatial Resolution (Meters)</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Deve indicar o nível de granularidade espacial do conjunto de dados.
+            Refere-se ao nível de detalhamento/resolução com que áreas geográficas são representadas (em metros).
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Resolução espacial expressa em metros.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Description>
+    
 </rdf:RDF>

@@ -2,50 +2,22 @@
 @prefix dct:  <http://purl.org/dc/terms/> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://dcat-br.gov.br/vocabularies/VCR-CE/esquema> a skos:ConceptScheme ;
-  dct:title "Vocabulário Controlado de Cobertura Espacial (VCR-CE) - DCAT-BR"@pt-BR ;
-  dct:description "Vocabulário SKOS para descrever a cobertura espacial de distribuições de dados em catálogos de dados públicos no Brasil, classificando a abrangência territorial em níveis federais, estaduais e municipais."@pt-BR ;
-  dct:issued "2025-12-11"^^xsd:date ;
-  dct:modified "2025-12-11"^^xsd:date ;
-  dct:language "pt-BR" ;
+<https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/> a skos:ConceptScheme, owl:Ontology ;
+  dc11:title "Vocabulário Controlado de Cobertura Espacial (VCR-CE) - DCAT-BR"@pt-BR ;
+  dc11:title "Spatial Coverage Controlled Vocabulary (VCR-CE) - DCAT-BR"@en ;
+  dc11:description "Vocabulário SKOS para descrever a cobertura espacial de distribuições de dados em catálogos de dados públicos no Brasil, classificando a abrangência territorial em níveis federais, estaduais e municipais."@pt-BR ;
+  dc11:description "SKOS vocabulary to describe the spatial coverage of data distributions in public data catalogs in Brazil, classifying territorial coverage at federal, state and municipal levels."@en ;
+  dct:issued "2025-12-12"^^xsd:date ;
+  dct:modified "2025-12-12"^^xsd:date ;
   dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dct:publisher <https://dcat-br.gov.br/> ;
+  dct:creator [ a foaf:Organization ; foaf:name "Grupo de Trabalho DCAT-BR" ] ;
+  owl:versionInfo "2025-12-12" ;
+  owl:versionIRI <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/2025-12-12/> ;
   skos:hasTopConcept
-    <https://dcat-br.gov.br/vocabularies/VCR-CE/FEDERAL>,
-    <https://dcat-br.gov.br/vocabularies/VCR-CE/ESTADUAL>,
-    <https://dcat-br.gov.br/vocabularies/VCR-CE/MUNICIPAL> .
-
-# Federal
-<https://dcat-br.gov.br/vocabularies/VCR-CE/FEDERAL> a skos:Concept ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/VCR-CE/esquema> ;
-  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/VCR-CE/esquema> ;
-  skos:prefLabel "Federal"@pt-BR ;
-  skos:prefLabel "Federal"@en ;
-  skos:notation "FEDERAL" ;
-  skos:definition "Cobertura espacial de abrangência federal, referente a dados que se aplicam a todo o território nacional brasileiro."@pt-BR ;
-  skos:definition "Federal spatial coverage, referring to data that applies to the entire Brazilian national territory."@en ;
-  dct:identifier "FEDERAL" .
-
-# Estadual/Distrital
-<https://dcat-br.gov.br/vocabularies/VCR-CE/ESTADUAL> a skos:Concept ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/VCR-CE/esquema> ;
-  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/VCR-CE/esquema> ;
-  skos:prefLabel "Estadual/Distrital"@pt-BR ;
-  skos:prefLabel "State"@en ;
-  skos:notation "ESTADUAL" ;
-  skos:definition "Cobertura espacial de abrangência estadual ou distrital, referente a dados que se aplicam a um ou mais estados brasileiros ou ao Distrito Federal."@pt-BR ;
-  skos:definition "State-level or district-level spatial coverage, referring to data that applies to one or more Brazilian states or to the Federal District."@en ;
-  dct:identifier "ESTADUAL" .
-
-# Municipal
-<https://dcat-br.gov.br/vocabularies/VCR-CE/MUNICIPAL> a skos:Concept ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/VCR-CE/esquema> ;
-  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/VCR-CE/esquema> ;
-  skos:prefLabel "Municipal"@pt-BR ;
-  skos:prefLabel "Municipal"@en ;
-  skos:notation "MUNICIPAL" ;
-  skos:definition "Cobertura espacial de abrangência municipal, referente a dados que se aplicam a um ou mais municípios brasileiros."@pt-BR ;
-  skos:definition "Municipal spatial coverage, referring to data that applies to one or more Brazilian municipalities."@en ;
-  dct:identifier "MUNICIPAL" .
-
+    <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/FEDERAL>,
+    <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/ESTADUAL>,
+    <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/MUNICIPAL> .

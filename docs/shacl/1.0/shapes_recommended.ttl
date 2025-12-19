@@ -4,12 +4,13 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatbr: <http://purl.org/dcat-br/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -19,188 +20,251 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcatbr: <http://purl.org/dcat-br/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix wdrs: <http://www.w3.org/2007/05/powder-s#> .
 
-<https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/shapes_recommended.ttl> 
+<https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/shapes_recommended.ttl>
+    a owl:Ontology ;
+    dct:title "DCAT-BR 1.0.0 - SHACL (recommended properties)"@en ;
+    dct:title "DCAT-BR 1.0.0 - SHACL (propriedades recomendadas)"@pt-BR ;
     dct:description "Este arquivo especifica as restrições sobre propriedades recomendadas expressas pelo DCAT-BR em SHACL."@pt-BR ;
-    dct:description "This file specifies the constraints on recommended properties expressed by DCAT-BR in SHACL."@en .
+    dct:description "This file specifies the constraints on recommended properties expressed by DCAT-BR in SHACL."@en ;
+    owl:versionInfo "1.0.0" .
 
 #-------------------------------------------------------------------------
-# As shapes neste arquivo cobrem todas as recomendações no DCAT-BR 1.0.0.
-# Estas são propriedades que não são obrigatórias, mas são recomendadas
-# para melhorar a qualidade e interoperabilidade dos metadados.
+# As shapes neste arquivo cobrem recomendações (não obrigatórias).
+# Use sh:severity sh:Warning para sinalizar melhoria de qualidade.
 #-------------------------------------------------------------------------
+
+# -------------------------------------------------------------------------
+# foaf:Agent (recomendado)
+# -------------------------------------------------------------------------
 
 :Agent_Shape
     a sh:NodeShape ;
-    rdfs:label "Agente"@pt-BR ;
-    rdfs:label "Agent"@en ;
+    rdfs:label "Agente (recomendado)"@pt-BR ;
+    rdfs:label "Agent (recommended)"@en ;
+    sh:targetClass foaf:Agent ;
     sh:property [
-        sh:minCount 1 ;
         sh:path dct:type ;
-        sh:severity sh:Warning
-    ] ;
-    sh:targetClass foaf:Agent .
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: informar dct:type para o agente (ex.: classificação organizacional/tipo de agente) como um recurso."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:DataService (recomendado)
+# -------------------------------------------------------------------------
 
 :DataService_Shape
     a sh:NodeShape ;
-    rdfs:label "Serviço de Dados"@pt-BR ;
-    rdfs:label "Data Service"@en ;
+    rdfs:label "Serviço de Dados (recomendado)"@pt-BR ;
+    rdfs:label "Data Service (recommended)"@en ;
+    sh:targetClass dcat:DataService ;
     sh:property [
-        sh:minCount 1 ;
         sh:path dcat:servesDataset ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar ao menos um dcat:servesDataset para o serviço."@pt-BR
+    ], [
         sh:path dcat:endpointDescription ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: fornecer dcat:endpointDescription (documentação técnica do endpoint)."@pt-BR
+    ], [
         sh:path dcat:contactPoint ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: fornecer dcat:contactPoint (ponto de contato) para o serviço."@pt-BR
+    ], [
         sh:path dct:publisher ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:publisher (organização responsável/publicadora) do serviço."@pt-BR
+    ], [
         sh:path dcat:theme ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar ao menos um dcat:theme (tema) para o serviço."@pt-BR
+    ], [
         sh:path dct:conformsTo ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:conformsTo (padrão/especificação) aplicável ao serviço."@pt-BR
+    ], [
         sh:path dcat:keyword ;
-        sh:severity sh:Warning
-    ] ;
-    sh:targetClass dcat:DataService .
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: incluir ao menos uma palavra-chave (dcat:keyword) para o serviço."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:Dataset (recomendado)
+# -------------------------------------------------------------------------
 
 :Dataset_Shape
     a sh:NodeShape ;
-    rdfs:label "Conjunto de Dados"@pt-BR ;
-    rdfs:label "Dataset"@en ;
+    rdfs:label "Conjunto de Dados (recomendado)"@pt-BR ;
+    rdfs:label "Dataset (recommended)"@en ;
+    sh:targetClass dcat:Dataset ;
     sh:property [
-        sh:minCount 1 ;
         sh:path dcat:contactPoint ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: fornecer dcat:contactPoint (ponto de contato) para o conjunto de dados."@pt-BR
+    ], [
         sh:path dcat:distribution ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: fornecer ao menos uma dcat:distribution (distribuição) para o conjunto de dados."@pt-BR
+    ], [
         sh:path dcat:keyword ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: incluir ao menos uma palavra-chave (dcat:keyword) para o conjunto de dados."@pt-BR
+    ], [
         sh:path dct:publisher ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:publisher (organização publicadora/responsável) do conjunto de dados."@pt-BR
+    ], [
         sh:path dct:spatial ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:spatial (cobertura espacial), quando aplicável."@pt-BR
+    ], [
         sh:path dct:temporal ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:temporal (cobertura temporal), quando aplicável."@pt-BR
+    ], [
         sh:path dcat:theme ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar ao menos um dcat:theme (tema) para o conjunto de dados."@pt-BR
+    ], [
         sh:path dct:accrualPeriodicity ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:accrualPeriodicity (frequência de atualização) do conjunto de dados."@pt-BR
+    ], [
         sh:path dct:accessRights ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:accessRights (direitos/nível de acesso) do conjunto de dados."@pt-BR
+    ], [
         sh:path dct:license ;
-        sh:severity sh:Warning
-    ] ;
-    sh:targetClass dcat:Dataset .
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:license (licença) do conjunto de dados."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dcat:Distribution (recomendado)
+# -------------------------------------------------------------------------
 
 :Distribution_Shape
     a sh:NodeShape ;
-    rdfs:label "Distribuição"@pt-BR ;
-    rdfs:label "Distribution"@en ;
+    rdfs:label "Distribuição (recomendado)"@pt-BR ;
+    rdfs:label "Distribution (recommended)"@en ;
+    sh:targetClass dcat:Distribution ;
     sh:property [
-        sh:minCount 1 ;
         sh:path dct:description ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: incluir dct:description para a distribuição."@pt-BR
+    ], [
         sh:path dct:format ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:format (formato) da distribuição."@pt-BR
+    ], [
         sh:path dct:license ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:license (licença) da distribuição."@pt-BR
+    ], [
         sh:path dct:title ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: incluir dct:title (título) da distribuição."@pt-BR
+    ], [
         sh:path dcat:byteSize ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dcat:byteSize (tamanho em bytes) da distribuição."@pt-BR
+    ], [
         sh:path dct:modified ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:modified (data de modificação) da distribuição."@pt-BR
+    ], [
         sh:path dct:issued ;
-        sh:severity sh:Warning
-    ] ;
-    sh:targetClass dcat:Distribution .
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:issued (data de publicação) da distribuição."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dct:Location (recomendado)
+# -------------------------------------------------------------------------
 
 :Location_Shape
     a sh:NodeShape ;
-    rdfs:label "Local"@pt-BR ;
-    rdfs:label "Location"@en ;
+    rdfs:label "Local (recomendado)"@pt-BR ;
+    rdfs:label "Location (recommended)"@en ;
+    sh:targetClass dct:Location ;
     sh:property [
-        sh:minCount 1 ;
         sh:path dcat:bbox ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dcat:bbox (caixa delimitadora) da localização, quando aplicável."@pt-BR
+    ], [
         sh:path dcat:centroid ;
-        sh:severity sh:Warning
-    ] ;
-    sh:targetClass dct:Location .
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dcat:centroid (centróide) da localização, quando aplicável."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# dct:PeriodOfTime (recomendado)
+# -------------------------------------------------------------------------
 
 :PeriodOfTime_Shape
     a sh:NodeShape ;
-    rdfs:label "Período de Tempo"@pt-BR ;
-    rdfs:label "PeriodOfTime"@en ;
+    rdfs:label "Período de Tempo (recomendado)"@pt-BR ;
+    rdfs:label "PeriodOfTime (recommended)"@en ;
+    sh:targetClass dct:PeriodOfTime ;
     sh:property [
-        sh:minCount 1 ;
-        sh:path dcat:endDate ;
-        sh:severity sh:Warning
-    ], [
-        sh:minCount 1 ;
         sh:path dcat:startDate ;
-        sh:severity sh:Warning
-    ] ;
-    sh:targetClass dct:PeriodOfTime .
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dcat:startDate (data inicial) do período."@pt-BR
+    ], [
+        sh:path dcat:endDate ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dcat:endDate (data final) do período."@pt-BR
+    ] .
+
+# -------------------------------------------------------------------------
+# vcard:Organization (recomendado)
+# -------------------------------------------------------------------------
 
 :VCard_Shape
     a sh:NodeShape ;
-    rdfs:label "vCard"@pt-BR ;
-    rdfs:label "vCard"@en ;
+    rdfs:label "vCard (recomendado)"@pt-BR ;
+    rdfs:label "vCard (recommended)"@en ;
+    sh:targetClass vcard:Organization ;
     sh:property [
-        sh:minCount 1 ;
         sh:path vcard:fn ;
-        sh:severity sh:Warning
-    ], [
         sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: informar vcard:fn (nome completo) do contato."@pt-BR
+    ], [
         sh:path vcard:hasEmail ;
-        sh:severity sh:Warning
-    ] ;
-    sh:targetClass vcard:Organization .
-
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: informar vcard:hasEmail (e-mail) do contato."@pt-BR
+    ] .

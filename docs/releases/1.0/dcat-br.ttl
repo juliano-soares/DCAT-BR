@@ -1,0 +1,831 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ns1: <http://purl.org/vocommons/voaf#> .
+@prefix schema: <http://schema.org/> .
+
+<https://creativecommons.org/licenses/by/4.0/>
+  dc:title "Attribution 4.0 International (CC BY 4.0)" ;
+  cc:attributionName "Governo Federal do Brasil" ;
+  cc:attributionURL <https://www.gov.br/> .
+
+<https://dcat-br.gov.br/releases/1.0/dcat-br.html> dc:title "DCAT-BR 1.0.0" .
+dcat:Dataset
+  dc:identifier "dcat:Dataset" ;
+  rdfs:label "Conjunto de Dados"@pt-BR, "Dataset"@en ;
+  rdfs:comment """
+            Uma coleção de dados, publicada ou com curadoria de um único agente, e disponível para acesso ou download em uma ou mais representações.
+        """@pt-BR .
+
+dcat:Resource
+  dc:identifier "dcat:Resource" ;
+  rdfs:label "Recurso (Conjunto de Dados)"@pt-BR, "Resource (Dataset)"@en ;
+  rdfs:comment """
+            Recurso publicado ou curado por um único agente.
+        """@pt-BR .
+
+dcat:Distribution
+  dc:identifier "dcat:Distribution" ;
+  rdfs:label "Distribuição"@pt-BR, "Distribution"@en ;
+  rdfs:comment """
+            Uma representação específica de um conjunto de dados. Um conjunto de dados pode estar disponível em várias serializações que podem diferir de várias maneiras, incluindo linguagem natural, tipo ou formato de mídia, organização esquemática, resolução temporal e espacial, nível de detalhe ou perfis (que podem especificar qualquer um ou todos os itens acima).
+        """@pt-BR .
+
+dc:PeriodOfTime
+  dc:identifier "dcterms:PeriodOfTime" ;
+  rdfs:label "Período de Tempo"@pt-BR, "Period of Time"@en ;
+  rdfs:comment """
+            Um intervalo de tempo que é nomeado ou definido por seu início e fim.
+        """@pt-BR .
+
+foaf:Agent
+  dc:identifier "foaf:Organization / foaf:Person" ;
+  rdfs:label "Organization / Person"@en ;
+  rdfs:isDefinedBy <http://xmlns.com/foaf/spec/#term_Agent> ;
+  rdfs:comment """
+            [FOAF] Fornece diversas propriedades para descrever pessoas, organizações ou entidades.
+        """@pt-BR .
+
+dc:Location
+  dc:identifier "dcterms:Location" ;
+  rdfs:label "Local"@pt-BR, "Location"@en ;
+  rdfs:comment "Uma região espacial ou lugar nomeado."@pt-BR .
+
+dcat:DataService
+  dc:identifier "dcat:DataService" ;
+  rdfs:label "Serviço de Dados"@pt-BR, "Data Service"@en ;
+  rdfs:comment """
+            Uma coleção de operações que fornece acesso a um ou mais conjuntos de dados ou funções de processamento de dados.
+        """@pt-BR .
+
+<http://spdx.org/rdf/terms#Checksum>
+  dc:identifier "spdx:Checksum" ;
+  rdfs:label "Verificação de Integridade (Checksum)"@pt-BR, "Checksum"@en ;
+  rdfs:comment """
+            Um Checksum é um valor que permite verificar a integridade do conteúdo de um arquivo. Mesmo pequenas alterações no conteúdo do arquivo alterarão seu Checksum. Esta classe permite que os resultados de uma variedade de algoritmos de Checksum e resumo de mensagens criptográficas sejam representados.
+        """@pt-BR .
+
+dc:accrualPeriodicity
+  dc:identifier "dcterms:accrualPeriodicity" ;
+  rdfs:label "Periodicidade de Atualização"@pt-BR, "Accrual Periodicity"@en ;
+  ns0:usageNote """
+            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado
+            (ex.: diária, mensal, trimestral, semestral, anual).
+            (Selo de Qualidade: Bronze)
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado.
+        """@pt-BR ;
+  rdfs:domain dcat:Dataset ;
+  rdfs:range dc:Frequency .
+
+dc:spatial
+  dc:identifier "dcterms:spatial" ;
+  rdfs:label "Área Geográfica"@pt-BR, "Spatial / Geographical Coverage"@en ;
+  ns0:usageNote """
+            Deve indicar a área geográfica coberta pelo conjunto de dados,
+            representando a extensão territorial à qual os dados se referem.
+            (Selo de Qualidade: Ouro)
+        """@pt-BR ;
+  rdfs:comment """
+            A área geográfica coberta pelo conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Dataset ;
+  rdfs:range dc:Location .
+
+dc:temporal
+  dc:identifier "dcterms:temporal" ;
+  rdfs:label "Período Temporal"@pt-BR, "Temporal Coverage"@en ;
+  ns0:usageNote """
+            Utilizar para indicar o intervalo temporal coberto pelos dados,
+            referenciando um recurso do tipo dcterms:PeriodOfTime.
+        """@pt-BR ;
+  rdfs:comment """
+            O período temporal que o conjunto de dados cobre.
+        """@pt-BR ;
+  rdfs:domain dcat:Dataset ;
+  rdfs:range dc:PeriodOfTime .
+
+prov:wasGeneratedBy
+  dc:identifier "prov:wasGeneratedBy" ;
+  rdfs:label "Fornecedor Negocial do Conjunto de Dados"@pt-BR, "Was Generated By"@en ;
+  ns0:usageNote """
+            Referencie uma instância de prov:Activity descrevendo o processo/atividade que gerou o conjunto de dados
+            (ex.: "Cálculo anual do Conceito Enade", "Extração mensal do CNPJ", etc.).
+        """@pt-BR ;
+  rdfs:comment """
+            Uma atividade que gerou ou fornece o contexto de negócios para a criação do conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Dataset ;
+  rdfs:range prov:Activity .
+
+dcat:inSeries
+  dc:identifier "dcat:inSeries" ;
+  rdfs:label "Em Série"@pt-BR, "In Series"@en ;
+  ns0:usageNote """
+            Deve indicar se o conjunto de dados faz parte de uma série de conjuntos de dados.
+        """@pt-BR ;
+  rdfs:comment """
+            Uma série de conjuntos de dados da qual o conjunto de dados faz parte.
+        """@pt-BR ;
+  rdfs:domain dcat:Dataset ;
+  rdfs:range prov:Activity .
+
+dc:accessRights
+  dc:identifier "dcterms:accessRights" ;
+  rdfs:label "Observância Legal"@pt-BR, "Access Rights"@en, "Observância Legal do Recurso"@pt-BR ;
+  ns0:usageNote """
+            Deve indicar se o conjunto de dados é público, restrito ou privado.
+        """@pt-BR, """
+            Deve indicar a visibilidade do Recurso, se a visibilidade é pública ou privada.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar se o conjunto de dados é público, restrito ou privado.
+        """@pt-BR, """
+            Indica a visibilidade do recurso (público ou privado).
+        """@pt-BR ;
+  rdfs:domain dcat:Resource, dcat:Distribution ;
+  rdfs:range dc:RightsStatement .
+
+dcat:contactPoint
+  dc:identifier "dcat:contactPoint" ;
+  rdfs:label "E-mail da Área Técnica Responsável"@pt-BR, "Contact Point"@en ;
+  ns0:usageNote """
+            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range vcard:Kind .
+
+dc:creator
+  dc:identifier "dcterms:creator" ;
+  rdfs:label "Organização"@pt-BR, "Creator"@en ;
+  ns0:usageNote """
+            Deve indicar qual área técnica do órgão/entidade é responsável pelo conjunto de dados.
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar qual área técnica do órgão/entidade é responsável pelo conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range foaf:Agent .
+
+dc:description
+  dc:identifier "dcterms:description" ;
+  rdfs:label "Descrição"@pt-BR, "Description"@en, "Descrição do Recurso"@pt-BR, "Resource Description"@en ;
+  ns0:usageNote """
+            Descrição sobre o conjunto de dados, incluindo metadados que indiquem quais as Políticas Públicas
+            ou serviços públicos impactados e metadados que descreva as principais informações do conjunto de dados.
+        """@pt-BR, """
+            Deve indicar a descrição do recurso do conjunto de dados, incluindo metadados
+            que indiquem quais as Políticas Públicas ou serviços públicos impactados e
+            metadados que descrevam as principais informações do conjunto de dados.
+        """@pt-BR ;
+  rdfs:comment """
+            Descrição sobre o conjunto de dados, incluindo metadados que indiquem quais as Políticas Públicas
+            ou serviços públicos impactados e metadados que descreva as principais informações do conjunto de dados.
+        """@pt-BR, """
+            Descrição textual do recurso (arquivo, API ou serviço) associado ao conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource, dcat:Distribution ;
+  rdfs:range rdfs:Literal .
+
+dcat:keyword
+  dc:identifier "dcat:keyword" ;
+  rdfs:label "Palavras-Chave"@pt-BR, "Keyword"@en ;
+  ns0:usageNote """
+            Deve indicar palavras ou tags que resumem os principais aspectos do conjunto de dados.
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar palavras ou tags que resumem os principais aspectos do conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range rdfs:Literal .
+
+dc:license
+  dc:identifier "dcterms:license" ;
+  rdfs:label "Licença de Uso"@pt-BR, "License"@en, "Licença de Uso do Recurso"@pt-BR ;
+  ns0:usageNote """
+            Deve selecionar sob qual espécie de licença o conjunto de dados será publicado
+            de acordo com as definições apresentadas.
+        """@pt-BR, """
+            Deve selecionar sob qual espécie de licença o recurso será publicado
+            de acordo com as definições apresentadas.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar a licença de uso do conjunto de dados.
+        """@pt-BR, """
+            Licença aplicável ao recurso (arquivo/API/serviço) associado ao conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource, dcat:Distribution ;
+  rdfs:range dc:LicenseDocument .
+
+dcat:theme
+  dc:identifier "dcat:theme" ;
+  rdfs:label "Tema"@pt-BR, "Theme / Category"@en ;
+  ns0:usageNote """
+            Deve selecionar a área temática à qual o conjunto de dados esteja vinculado.
+            Permite selecionar mais de uma opção.
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar a área temática à qual o conjunto de dados está vinculado.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range skos:Concept .
+
+dc:title
+  dc:identifier "dcterms:title" ;
+  rdfs:label "Título"@pt-BR, "Title"@en, "Título do Recurso"@pt-BR, "Resource Title"@en ;
+  ns0:usageNote """
+            Deve conter um nome dado ao Conjunto de Dados.
+            O título deve ser escrito por extenso utilizando sigla após o final do título, caso exista.
+        """@pt-BR, """
+            Deve conter um nome dado ao recurso do conjunto de dados.
+            O título deve ser escrito por extenso utilizando siglas após o final do título, caso exista.
+        """@pt-BR ;
+  rdfs:comment """
+            Deve conter um nome dado ao Conjunto de Dados.
+            Este é um campo obrigatório para a descrição de um conjunto de dados ou recurso catalogado.
+        """@pt-BR, """
+            Título atribuído ao recurso (arquivo, API ou serviço) associado ao conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource, dcat:Distribution ;
+  rdfs:range rdfs:Literal .
+
+dc:type
+  dc:identifier "dcterms:type" ;
+  rdfs:label "Tipo do Recurso"@pt-BR, "Type"@en ;
+  ns0:usageNote """
+            Deve selecionar se o recurso se refere a Distribuição (arquivo),
+            Serviço (API) ou outros.
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar o tipo do recurso, como Distribuição (arquivo),
+            Serviço (API) ou outros.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range rdfs:Class .
+
+dcat:version
+  dc:identifier "dcat:version" ;
+  rdfs:label "Versão"@pt-BR, "Version"@en ;
+  ns0:usageNote """
+            Deve indicar qual é a versão do conjunto de dados que está sendo cadastrada.
+            (Selo de Qualidade: Bronze)
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar a versão do conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range rdfs:Literal .
+
+dc:publisher
+  dc:identifier "dcterms:publisher" ;
+  rdfs:label "Área Técnica Responsável"@pt-BR, "Publisher"@en ;
+  ns0:usageNote """
+            Deve indicar qual área técnica do órgão/entidade é responsável pelo conjunto de dados.
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar qual área técnica do órgão/entidade é responsável pela disponibilização
+            do conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range foaf:Agent .
+
+dc:issued
+  dc:identifier "dcterms:issued" ;
+  rdfs:label "Data de Publicação"@pt-BR, "Release Date"@en, "Data de Publicação do Recurso"@pt-BR ;
+  ns0:usageNote """
+            Deve indicar a data de emissão formal do conjunto de dados
+            (por exemplo, a data de publicação).
+        """@pt-BR, """
+            Data de emissão formal (por exemplo, publicação) do recurso.
+        """@pt-BR ;
+  rdfs:comment """
+            Data de emissão formal do conjunto de dados, como a data de sua publicação.
+        """@pt-BR, """
+            Data de emissão formal do recurso (por exemplo, a data de publicação do arquivo/API).
+        """@pt-BR ;
+  rdfs:domain dcat:Resource, dcat:Distribution ;
+  rdfs:range rdfs:Literal .
+
+dc:modified
+  dc:identifier "dcterms:modified" ;
+  rdfs:label "Data de Alteração"@pt-BR, "Update / Modification Date"@en, "Data de Alteração do Recurso"@pt-BR ;
+  ns0:usageNote """
+            Deve indicar a data mais recente em que o recurso foi alterado,
+            atualizado ou modificado.
+        """@pt-BR, """
+            Data mais recente em que o recurso foi alterado, atualizado ou modificado.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Data mais recente em que o recurso foi alterado, atualizado ou modificado.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource, dcat:Distribution ;
+  rdfs:range rdfs:Literal .
+
+dc:language
+  dc:identifier "dcterms:language" ;
+  rdfs:label "Idioma"@pt-BR, "Language"@en ;
+  ns0:usageNote """
+            Deve indicar o idioma do conjunto de dados usado para metadados textuais
+            (por exemplo, títulos, descrições) ou para os valores textuais do próprio
+            conjunto de dados.
+        """@pt-BR ;
+  rdfs:comment """
+            Idioma utilizado nos metadados textuais ou nos valores textuais do conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dc:LinguisticSystem .
+
+dcat:landingPage
+  dc:identifier "dcat:landingPage" ;
+  rdfs:label "URL de Obtenção de Acesso"@pt-BR, "Landing Page"@en ;
+  ns0:usageNote """
+            Deve indicar uma página da Web para obter acesso a um catálogo, um conjunto de dados,
+            suas distribuições e/ou informações adicionais.
+        """@pt-BR ;
+  rdfs:comment """
+            Uma página da Web para obter acesso a um catálogo, um conjunto de dados,
+            suas distribuições e/ou informações adicionais.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range foaf:Document .
+
+dc:rights
+  dc:identifier "dcterms:rights" ;
+  rdfs:label "Observância Legal Complementar"@pt-BR, "Rights"@en, "Observância Legal Complementar do Recurso"@pt-BR ;
+  ns0:usageNote """
+            Deve indicar uma declaração que diz respeito a todos os direitos não abordados na
+            "Observância Legal", como declarações de direitos autorais.
+            (Selo de Qualidade: Prata)
+        """@pt-BR, """
+            Deve indicar uma declaração que diz respeito a todos os direitos não abordados com
+            dcterms:license ou dcterms:accessRights, como declarações de direitos autorais.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Declaração de direitos não cobertos por dcterms:accessRights (ex.: copyright).
+        """@pt-BR, """
+            Declaração de direitos complementares aplicáveis ao recurso (ex.: copyright).
+        """@pt-BR ;
+  rdfs:domain dcat:Resource, dcat:Distribution ;
+  rdfs:range dc:RightsStatement .
+
+dcat:hasVersion
+  dc:identifier "dcat:hasVersion" ;
+  rdfs:label "Atualização de Versão"@pt-BR, "Has Version"@en ;
+  ns0:usageNote """
+            Deve indicar que este conjunto de dados possui um versionamento mais específico.
+            (Selo de Qualidade: Prata)
+        """@pt-BR ;
+  rdfs:comment """
+            Referência para uma versão mais específica do recurso.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dcat:Resource .
+
+<http://www.w3.org/ns/adms#status>
+  dc:identifier "adms:status" ;
+  rdfs:label "Situação"@pt-BR, "Status"@en ;
+  ns0:usageNote """
+            Deve indicar o status do conjunto de dados (Ativo, Descontinuado, Em Construção, etc.).
+            Recomenda-se utilizar um conceito SKOS de um vocabulário controlado.
+            (Selo de Qualidade: Prata)
+        """@pt-BR ;
+  rdfs:comment """
+            Status do conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range skos:Concept .
+
+dc:relation
+  dc:identifier "dcterms:relation" ;
+  rdfs:label "Relacionamento não Especificado"@pt-BR, "Relation"@en ;
+  ns0:usageNote """
+            Deve indicar um conjunto de dados com uma relação não especificada com outro conjunto de dados catalogado.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Relacionamento genérico com outro recurso.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dcat:Resource .
+
+dcat:qualifiedRelation
+  dc:identifier "dcat:qualifiedRelation" ;
+  rdfs:label "Relacionamento"@pt-BR, "Qualified Relation"@en ;
+  ns0:usageNote """
+            Link para uma descrição de um relacionamento com outro conjunto de dados.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Permite descrever o relacionamento com outro recurso por meio de dcat:Relationship.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dcat:Relationship .
+
+dcat:Relationship
+  dc:identifier "dcat:Relationship" ;
+  rdfs:label "Relacionamento (Qualificado)"@pt-BR, "Relationship"@en ;
+  rdfs:comment """
+            Classe utilizada para descrever um relacionamento qualificado entre recursos catalogados.
+            Normalmente referenciada por dcat:qualifiedRelation.
+        """@pt-BR .
+
+dc:hasPart
+  dc:identifier "dcterms:hasPart" ;
+  rdfs:label "Faz Parte"@pt-BR, "Has Part"@en ;
+  ns0:usageNote """
+            Deve indicar conjunto de dados incluído física ou logicamente no conjunto de dados descrito.
+            (Selo de Qualidade: Ouro)
+        """@pt-BR ;
+  rdfs:comment """
+            Relaciona o recurso a outro recurso que é parte dele.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dcat:Resource .
+
+dc:isReferencedBy
+  dc:identifier "dcterms:isReferencedBy" ;
+  rdfs:label "É Referenciado Por"@pt-BR, "Is Referenced By"@en ;
+  ns0:usageNote """
+            Deve indicar recurso relacionado (ex.: publicação) que referencia, cita ou aponta para o conjunto de dados.
+            Para descrição detalhada do relacionamento, utilizar dcat:qualifiedRelation.
+            (Selo de Qualidade: Ouro)
+        """@pt-BR ;
+  rdfs:comment """
+            Recurso que referencia o conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dcat:Resource .
+
+dcat:previousVersion
+  dc:identifier "dcat:previousVersion" ;
+  rdfs:label "Versão Anterior"@pt-BR, "Previous Version"@en ;
+  ns0:usageNote """
+            Deve indicar a versão anterior de um recurso em uma linhagem.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Referência para a versão anterior do recurso.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dcat:Resource .
+
+dc:replaces
+  dc:identifier "dcterms:replaces" ;
+  rdfs:label "Substituído Por"@pt-BR, "Replaces"@en ;
+  ns0:usageNote """
+            Deve indicar o conjunto de dados que é substituído pelo conjunto de dados descrito.
+            (Selo de Qualidade: Ouro)
+        """@pt-BR ;
+  rdfs:comment """
+            Indica que o recurso descrito substitui outro recurso.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dcat:Resource .
+
+dcat:first
+  dc:identifier "dcat:first" ;
+  rdfs:label "Primeiro Recurso"@pt-BR, "First"@en ;
+  ns0:usageNote """
+            Deve indicar o primeiro conjunto de dados em uma coleção ordenada ou série de conjuntos de dados
+            à qual pertence o conjunto de dados atual.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Primeiro item de uma coleção ordenada ou série.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range dcat:Resource .
+
+dcat:accessURL
+  dc:identifier "dcat:accessURL" ;
+  rdfs:label "URL de Acesso"@pt-BR, "Access URL"@en ;
+  ns0:usageNote """
+            Deve indicar o endereço da web onde o recurso está hospedado
+            (arquivo, API ou serviço).
+        """@pt-BR ;
+  rdfs:comment """
+            Endereço da web onde o recurso pode ser acessado.
+        """@pt-BR ;
+  rdfs:domain dcat:Distribution ;
+  rdfs:range rdfs:Resource .
+
+dc:format
+  dc:identifier "dcterms:format" ;
+  rdfs:label "Formato"@pt-BR, "Format"@en ;
+  ns0:usageNote """
+            Deve selecionar sob qual formato o recurso será disponibilizado.
+        """@pt-BR ;
+  rdfs:comment """
+            Deve indicar o formato do recurso (por exemplo, CSV, JSON, PDF).
+        """@pt-BR ;
+  rdfs:domain dcat:Distribution ;
+  rdfs:range dc:MediaTypeOrExtent .
+
+dcat:downloadURL
+  dc:identifier "dcat:downloadURL" ;
+  rdfs:label "URL de Download"@pt-BR, "Download URL"@en ;
+  ns0:usageNote """
+            Deve indicar a URL de download do arquivo em um determinado formato
+            (por exemplo, CSV, ODS ou RDF). O formato deve ser indicado por
+            dcterms:format e/ou dcat:mediaType da distribuição.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            URL direta para download do arquivo da distribuição em um formato específico.
+        """@pt-BR ;
+  rdfs:domain dcat:Distribution ;
+  rdfs:range rdfs:Resource .
+
+dcat:byteSize
+  dc:identifier "dcat:byteSize" ;
+  rdfs:label "Tamanho em Bytes"@pt-BR, "Byte Size"@en ;
+  ns0:usageNote """
+            Deve indicar o tamanho da distribuição em bytes.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Valor que representa o tamanho do recurso distribuído, expresso em bytes.
+        """@pt-BR ;
+  rdfs:domain dcat:Distribution ;
+  rdfs:range rdfs:Literal .
+
+dc:conformsTo
+  dc:identifier "dcterms:conformsTo" ;
+  rdfs:label "Conforme a"@pt-BR, "Conforms To"@en ;
+  ns0:usageNote """
+            Deve indicar um padrão, norma ou especificação estabelecida
+            ao qual a distribuição está em conformidade.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Referência a um padrão ou especificação técnica seguida pela distribuição.
+        """@pt-BR ;
+  rdfs:domain dcat:Distribution ;
+  rdfs:range dc:Standard .
+
+dcat:mediaType
+  dc:identifier "dcat:mediaType" ;
+  rdfs:label "Tipo de Mídia"@pt-BR, "Media Type"@en ;
+  ns0:usageNote """
+            Deve indicar o tipo de mídia (MIME type) da distribuição, conforme IANA.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Tipo de mídia (MIME) da distribuição (ex.: text/csv, application/json).
+        """@pt-BR ;
+  rdfs:domain dcat:Distribution ;
+  rdfs:range dc:MediaType .
+
+dcat:compressFormat
+  dc:identifier "dcat:compressFormat" ;
+  rdfs:label "Formato de Compactação"@pt-BR, "Compress Format"@en ;
+  ns0:usageNote """
+            Deve indicar o formato de compactação da distribuição na qual os dados estão contidos,
+            por exemplo, para reduzir o tamanho do arquivo para download.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Formato de compactação aplicado ao recurso (ex.: application/zip, application/x-7z-compressed).
+        """@pt-BR ;
+  rdfs:domain dcat:Distribution ;
+  rdfs:range dc:MediaType .
+
+<http://spdx.org/rdf/terms#checksum>
+  dc:identifier "spdx:checksum" ;
+  rdfs:label "Verificação de Conteúdo"@pt-BR, "Checksum"@en ;
+  ns0:usageNote """
+            Mecanismo para verificar se o conteúdo de um arquivo ou pacote não foi alterado.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Checksum do arquivo para verificação de integridade.
+        """@pt-BR ;
+  rdfs:domain dcat:Distribution ;
+  rdfs:range <http://spdx.org/rdf/terms#Checksum> .
+
+dcat:startDate
+  dc:identifier "dcat:startDate" ;
+  rdfs:label "Início do Período"@pt-BR, "Start Date"@en ;
+  ns0:usageNote """
+            Deve indicar o início do período.
+            (Selo de Qualidade: Ouro)
+        """@pt-BR ;
+  rdfs:comment """
+            Data de início do período temporal.
+        """@pt-BR ;
+  rdfs:domain dc:PeriodOfTime ;
+  rdfs:range rdfs:Literal .
+
+dcat:endDate
+  dc:identifier "dcat:endDate" ;
+  rdfs:label "Final do Período"@pt-BR, "End Date"@en ;
+  ns0:usageNote """
+            Deve indicar o final do período.
+            (Selo de Qualidade: Ouro)
+        """@pt-BR ;
+  rdfs:comment """
+            Data de fim do período temporal.
+        """@pt-BR ;
+  rdfs:domain dc:PeriodOfTime ;
+  rdfs:range rdfs:Literal .
+
+<http://www.w3.org/ns/locn#geometry>
+  dc:identifier "locn:geometry" ;
+  rdfs:label "Localização Geométrica"@pt-BR, "Geometry"@en ;
+  ns0:usageNote """
+            Associa uma área espacial a uma geometria correspondente.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Associa uma localização (área espacial) a uma geometria correspondente.
+        """@pt-BR ;
+  rdfs:domain dc:Location ;
+  rdfs:range rdfs:Resource .
+
+dcat:bbox
+  dc:identifier "dcat:bbox" ;
+  rdfs:label "Caixa Delimitadora"@pt-BR, "Bounding Box"@en ;
+  ns0:usageNote """
+            Deve indicar a caixa delimitadora geográfica de uma área espacial.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Caixa delimitadora geográfica (bounding box) de uma localização.
+        """@pt-BR ;
+  rdfs:domain dc:Location ;
+  rdfs:range rdfs:Literal .
+
+dcat:centroid
+  dc:identifier "dcat:centroid" ;
+  rdfs:label "Centro Geográfico"@pt-BR, "Centroid"@en ;
+  ns0:usageNote """
+            Deve indicar o centro geográfico (centróide) de uma coisa espacial.
+            (Selo de Qualidade: Não utilizado nos Selos)
+        """@pt-BR ;
+  rdfs:comment """
+            Centro geográfico (centróide) associado a uma localização.
+        """@pt-BR ;
+  rdfs:domain dc:Location ;
+  rdfs:range rdfs:Literal .
+
+dcat:endpointURL
+  dc:identifier "dcat:endpointURL" ;
+  rdfs:label "URL do Endpoint"@pt-BR, "Endpoint URL"@en ;
+  ns0:usageNote """
+            Deve indicar o local raiz ou endpoint primário do serviço (um IRI resolvível pela Web).
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Endpoint principal do serviço de dados (URI/URL resolvível).
+        """@pt-BR ;
+  rdfs:domain dcat:DataService ;
+  rdfs:range rdfs:Resource .
+
+dcat:endpointDescription
+  dc:identifier "dcat:endpointDescription" ;
+  rdfs:label "Descrição do Endpoint"@pt-BR, "Endpoint Description"@en ;
+  ns0:usageNote """
+            Deve indicar uma descrição dos serviços disponíveis através dos terminais,
+            incluindo operações, parâmetros, etc.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Referência para documentação técnica do endpoint (ex.: OpenAPI/Swagger, WSDL).
+        """@pt-BR ;
+  rdfs:domain dcat:DataService ;
+  rdfs:range rdfs:Resource .
+
+dcat:servesDataset
+  dc:identifier "dcat:servesDataset" ;
+  rdfs:label "Serviço de Dados"@pt-BR, "Serves Dataset"@en ;
+  ns0:usageNote """
+            Deve indicar um conjunto de dados que este serviço de dados pode distribuir/servir.
+            (Selo de Qualidade: Sem Selo)
+        """@pt-BR ;
+  rdfs:comment """
+            Conjunto de dados atendido pelo serviço de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:DataService ;
+  rdfs:range dcat:Dataset .
+
+<http://spdx.org/rdf/terms#checksumValue>
+  dc:identifier "spdx:checksumValue" ;
+  rdfs:label "Valor de Verificação de Integridade"@pt-BR, "Checksum Value"@en ;
+  ns0:usageNote """
+            Deve indicar um valor de resumo (checksum) codificado em hexadecimal minúsculo,
+            produzido usando um algoritmo específico.
+        """@pt-BR ;
+  rdfs:comment """
+            Valor do checksum em hexadecimal (minúsculo) associado ao algoritmo informado.
+        """@pt-BR ;
+  rdfs:domain <http://spdx.org/rdf/terms#Checksum> ;
+  rdfs:range xsd:hexBinary .
+
+<http://purl.org/dcat-br/relacionadoODS>
+  dc:identifier "dcatbr:relacionadoODS" ;
+  rdfs:label "Relacionamento com ODS"@pt-BR, "Related to SDGs"@en ;
+  ns0:usageNote """
+            Deve indicar se o conjunto de dados possui (Sim) ou não (Não) relação com Objetivos de Desenvolvimento Sustentável (ODS).
+        """@pt-BR ;
+  rdfs:comment """
+            Indicador booleano para sinalizar relacionamento do conjunto de dados com ODS.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range xsd:boolean .
+
+<http://purl.org/dcat-br/ods>
+  dc:identifier "dcatbr:ods" ;
+  rdfs:label "Objetivos de Desenvolvimento Sustentável (ODS)"@pt-BR, "Sustainable Development Goals (SDGs)"@en ;
+  ns0:usageNote """
+            Caso o conjunto de dados seja relacionado a ODS, deve indicar um ou mais ODS associados.
+        """@pt-BR ;
+  rdfs:comment """
+            Lista de ODS associados ao conjunto de dados (recomenda-se vocabulário controlado SKOS).
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range skos:Concept .
+
+<http://purl.org/dcat-br/dadosRacaEtnia>
+  dc:identifier "dcatbr:dadosRacaEtnia" ;
+  rdfs:label "Dados de raça/etnia"@pt-BR, "Race/Ethnicity Data"@en ;
+  ns0:usageNote """
+            Deve indicar se o conjunto de dados possui (Sim) ou não (Não) dados de raça/etnia.
+        """@pt-BR ;
+  rdfs:comment """
+            Indicador booleano de presença de dados de raça/etnia no conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range xsd:boolean .
+
+<http://purl.org/dcat-br/dadosGenero>
+  dc:identifier "dcatbr:dadosGenero" ;
+  rdfs:label "Dados de gênero"@pt-BR, "Gender Data"@en ;
+  ns0:usageNote """
+            Deve indicar se o conjunto de dados possui (Sim) ou não (Não) dados de gênero.
+        """@pt-BR ;
+  rdfs:comment """
+            Indicador booleano de presença de dados de gênero no conjunto de dados.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range xsd:boolean .
+
+dcat:spatialResolutionInMeters
+  dc:identifier "dcat:spatialResolutionInMeters" ;
+  rdfs:label "Granularidade Espacial"@pt-BR, "Spatial Resolution (Meters)"@en ;
+  ns0:usageNote """
+            Deve indicar o nível de granularidade espacial do conjunto de dados.
+            Refere-se ao nível de detalhamento/resolução com que áreas geográficas são representadas (em metros).
+        """@pt-BR ;
+  rdfs:comment """
+            Resolução espacial expressa em metros.
+        """@pt-BR ;
+  rdfs:domain dcat:Resource ;
+  rdfs:range xsd:decimal .
+
+[]
+  a owl:Ontology ;
+  rdfs:label "Vocabulário Padrão DCAT-BR"@pt-BR, "DCAT-BR Application Profile"@en ;
+  dc:abstract """
+            O DCAT-BR é um perfil de aplicação do vocabulário Data Catalog (DCAT) para
+            descrever conjuntos de dados, recursos, distribuições, serviços de dados e
+            metadados relacionados no contexto do setor público brasileiro.
+        """@pt-BR, """
+            DCAT-BR is an application profile of the Data Catalog Vocabulary (DCAT) for
+            describing datasets, resources, distributions, data services and related
+            metadata for Brazilian public sector data.
+        """@en ;
+  dc:modified "2025-12-12"^^xsd:date ;
+  owl:versionInfo "1.0.0" ;
+  cc:attributionName "Governo Federal do Brasil"@pt-BR ;
+  cc:attributionURL <https://www.gov.br/> ;
+  ns1:specializes dcat: ;
+  dc:publisher [
+    foaf:name "Ministério da Gestão e da Inovação em Serviços Públicos" ;
+    foaf:homepage <https://www.gov.br/gestao/pt-br>
+  ] ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:conformsTo <https://dcat-br.gov.br/releases/1.0/dcat-br.html> ;
+  dc:creator [
+    foaf:name "Juliano Leonardo Soares" ;
+    foaf:homepage <https://www.linkedin.com/in/juliano-leonardo-soares/> ;
+    schema:affiliation [
+      foaf:name "CPQD" ;
+      foaf:homepage <https://cpqd.com.br>
+    ]
+  ] .
