@@ -14,13 +14,13 @@
   dct:publisher <https://dcat-br.gov.br/> ;
   skos:hasTopConcept
     <https://www.iana.org/assignments/media-types/application/x-7z-compressed>,
-    <https://www.iana.org/assignments/media-types/application/json>,
     <https://www.iana.org/assignments/media-types/text/csv>,
     <https://www.iana.org/assignments/media-types/application/msword>,
     <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document>,
     <https://www.iana.org/assignments/media-types/application/gzip>,
     <https://www.iana.org/assignments/media-types/text/html>,
     <https://www.iana.org/assignments/media-types/image/jpeg>,
+    <https://www.iana.org/assignments/media-types/application/json>,
     <https://www.iana.org/assignments/media-types/application/pdf>,
     <https://www.iana.org/assignments/media-types/image/png>,
     <https://www.iana.org/assignments/media-types/application/x-rar-compressed>,
@@ -112,9 +112,10 @@
   skos:prefLabel "application/json"@pt-BR ;
   skos:prefLabel "application/json"@en ;
   skos:notation "json" ;
+  skos:altLabel "api"@pt-BR ;
   skos:altLabel "odata"@pt-BR ;
-  skos:definition "JavaScript Object Notation. Formato de dados estruturados baseado em texto, amplamente utilizado em APIs web e serviços OData."@pt-BR ;
-  skos:definition "JavaScript Object Notation. Text-based data format widely used in web APIs and OData services."@en ;
+  skos:definition "JavaScript Object Notation. Formato de dados estruturados baseado em texto, amplamente utilizado em APIs web e serviços REST/OData."@pt-BR ;
+  skos:definition "JavaScript Object Notation. Text-based data format widely used in web APIs and REST/OData services."@en ;
   dct:source <https://www.iana.org/assignments/media-types/application/json> ;
   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc8259> .
 

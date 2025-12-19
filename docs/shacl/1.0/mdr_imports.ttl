@@ -24,37 +24,41 @@
     #####################################################################
     # Vocabulários VCR — Perfil Brasileiro (DCAT-BR)
     #####################################################################
-
-    # Frequência de atualização (VCR-FR)
-    # Baseado/compatível com CLD Frequency (Dublin Core Collection Description)
-    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-FR.ttl> ;
-
-    # Licença de uso (VCR-LU)
-    # Inclui CC (Creative Commons), ODbL e conceitos nacionais (ex.: uso restrito)
-    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-LU.ttl> ;
-
-    # Idioma (VCR-LN)
-    # Mapeado a ISO 639-1 / ISO 639-2 (Library of Congress)
-    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-LN.ttl> ;
-
-    # Cobertura espacial / abrangência administrativa (VCR-CE)
-    # Federal / Estadual / Municipal
-    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-CE.ttl> ;
+ 
+    # Temas
+    owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/themes/themes.ttl> ;
 
     # Tipo de recurso (VCR-TR)
-    # Ex.: Dados, Dicionário de Dados, Documentação, API, Outro
-    owl:imports <http://purl.org/dcat-br/vocabularies/VCR-TR.ttl> ;
+    owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/tipo-recurso.ttl> ;
+
+    # Cobertura espacial (VCR-CE)
+    owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/cobertura-espacial.ttl> ;
+
+# Observância Legal (SEI)
+    owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/SEI/sei.ttl> ;
+
+    # Formatos (IANA Media Types)
+    owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/formato/formato.ttl> ;
+
+    # Frequência de atualização (VCR-FR)
+    owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/VCR-FR/freq.ttl> ;
+
+    # Licença de uso (VCR-LU)
+    owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/VCR-LU/licenca-uso.ttl> ;
 
     #####################################################################
-    # Vocabulários externos de referência (bases semânticas)
+    # Vocabulários Faltantes
     #####################################################################
 
-    # ISO 639-1 — Library of Congress
-    # Base canônica para idiomas
-    owl:imports <https://id.loc.gov/vocabulary/iso639-1.rdf> ;
+    # Idioma (VCR-LN)
+    #owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/VCR-LN/language.ttl> ;
 
-    # SPDX Ontology
-    # Usada para checksum (spdx:Checksum) e apoio a licenças
-    owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> ;
+    # IBGE
+    # owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/IBGE/ibge.ttl> ;
+    
+    # SIORG
+    # owl:imports <https://dcat-br.github.io/dcat-br/vocabularies/SIORG/siorg.ttl> ;
 
+    # Verificação de conteúdo (SPDX)
+    #owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> ;
     .

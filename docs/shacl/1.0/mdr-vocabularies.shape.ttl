@@ -39,34 +39,6 @@
 # Restrições de Vocabulários Controlados para DCAT-BR
 #-------------------------------------------------------------------------
 
-# Periodicidade de Atualização (dct:accrualPeriodicity)
-:PeriodicityRestriction
-    a sh:NodeShape ;
-    rdfs:comment "Restrição de periodicidade de atualização"@pt-BR ;
-    rdfs:comment "Accrual periodicity restriction"@en ;
-    rdfs:label "Restrição de Periodicidade"@pt-BR ;
-    rdfs:label "Periodicity Restriction"@en ;
-    sh:property [
-        sh:hasValue <http://purl.org/dcat-br/vocabularies/periodicity> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
-
-# Observância Legal / Direitos de Acesso (dct:accessRights)
-:AccessRightRestriction
-    a sh:NodeShape ;
-    rdfs:comment "Restrição de observância legal / direitos de acesso"@pt-BR ;
-    rdfs:comment "Access rights restriction"@en ;
-    rdfs:label "Restrição de Observância Legal"@pt-BR ;
-    rdfs:label "Access Rights Restriction"@en ;
-    sh:property [
-        sh:hasValue <http://purl.org/dcat-br/vocabularies/access-rights> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
-
 # Temas (dcat:theme)
 :ThemeRestriction
     a sh:NodeShape ;
@@ -75,7 +47,7 @@
     rdfs:label "Restrição de Tema"@pt-BR ;
     rdfs:label "Theme Restriction"@en ;
     sh:property [
-        sh:hasValue <http://purl.org/dcat-br/vocabularies/theme> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -89,53 +61,82 @@
     rdfs:label "Restrição de Tipo de Recurso"@pt-BR ;
     rdfs:label "Resource Type Restriction"@en ;
     sh:property [
-        sh:hasValue <http://purl.org/dcat-br/vocabularies/resource-type> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
     ] .
 
-# Idioma (dct:language) - pode usar vocabulário padrão ou criar específico
-:LanguageRestriction
+# Cobertura Espacial (dct:spatial) - VCR-CE
+:SpatialRestriction
     a sh:NodeShape ;
-    rdfs:comment "Restrição de idioma"@pt-BR ;
-    rdfs:comment "Language restriction"@en ;
-    rdfs:label "Restrição de Idioma"@pt-BR ;
-    rdfs:label "Language Restriction"@en ;
+    rdfs:comment "Restrição de cobertura espacial"@pt-BR ;
+    rdfs:comment "Spatial restriction"@en ;
+    rdfs:label "Restrição de Cobertura Espacial"@pt-BR ;
+    rdfs:label "Spatial Restriction"@en ;
     sh:property [
-        sh:hasValue <http://publications.europa.eu/resource/authority/language> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
     ] .
 
-# Formato de Arquivo (dct:format) - IANA
-:IANARestrictionRegexURI
-    rdfs:comment "Restrição IANA - baseada na estrutura de URL"@pt-BR ;
-    rdfs:comment "IANA restriction - base itself on URL structure"@en ;
-    rdfs:label "Restrição IANA"@pt-BR ;
-    rdfs:label "IANA restriction"@en ;
+# Periodicidade de Atualização (dct:accrualPeriodicity) - VCR-FR
+:PeriodicityRestriction
     a sh:NodeShape ;
-    sh:pattern "^http.*://www.iana.org/assignments/media-types/" .
-
-# Checksum Algorithm
-:ChecksumAlgorithmRestriction
-    a sh:NodeShape ;
-    rdfs:comment "Restrição de algoritmo de checksum"@pt-BR ;
-    rdfs:comment "Checksum algorithm restriction"@en ;
-    rdfs:label "Restrição de Algoritmo de Checksum"@pt-BR ;
-    rdfs:label "Checksum Algorithm Restriction"@en ;
-    sh:pattern "^https://spdx.org/rdf/terms" ;
-    sh:class <http://spdx.org/rdf/terms#ChecksumAlgorithm> .
-
-:Checksum_ShapeCV
-    a sh:NodeShape ;
+    rdfs:comment "Restrição de periodicidade de atualização"@pt-BR ;
+    rdfs:comment "Accrual periodicity restriction"@en ;
+    rdfs:label "Restrição de Periodicidade"@pt-BR ;
+    rdfs:label "Periodicity Restriction"@en ;
     sh:property [
-        sh:node :ChecksumAlgorithmRestriction ;
+        sh:hasValue <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+        sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
-        sh:path spdx:algorithm
-    ] ;
-    sh:targetClass spdx:Checksum .
+        sh:path skos:inScheme
+    ] .
+
+# Observância Legal / Direitos de Acesso (dct:accessRights) - SEI
+:AccessRightRestriction
+    a sh:NodeShape ;
+    rdfs:comment "Restrição de observância legal / direitos de acesso"@pt-BR ;
+    rdfs:comment "Access rights restriction"@en ;
+    rdfs:label "Restrição de Observância Legal"@pt-BR ;
+    rdfs:label "Access Rights Restriction"@en ;
+    sh:property [
+        sh:hasValue <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:path skos:inScheme
+    ] .
+
+# Formato de Arquivo (dct:format) - Vocabulário DCAT-BR
+:FormatRestriction
+    a sh:NodeShape ;
+    rdfs:comment "Restrição de formato usando vocabulário DCAT-BR"@pt-BR ;
+    rdfs:comment "Format restriction using DCAT-BR vocabulary"@en ;
+    rdfs:label "Restrição de Formato"@pt-BR ;
+    rdfs:label "Format Restriction"@en ;
+    sh:property [
+        sh:hasValue <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:path skos:inScheme
+    ] .
+
+# Licença de Uso (dct:license) - VCR-LU
+:LicenseRestriction
+    a sh:NodeShape ;
+    rdfs:comment "Restrição de licença de uso"@pt-BR ;
+    rdfs:comment "License restriction"@en ;
+    rdfs:label "Restrição de Licença de Uso"@pt-BR ;
+    rdfs:label "License Restriction"@en ;
+    sh:property [
+        sh:hasValue <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:path skos:inScheme
+    ] .
+
 
 #-------------------------------------------------------------------------
 # Shapes para Dataset com restrições de vocabulários controlados
@@ -151,13 +152,6 @@
         sh:description "A non DCAT-BR managed concept is used to indicate the accrualPeriodicity frequency. If no corresponding can be found inform the maintainer of the DCAT-BR frequency vocabulary."@en ;
         sh:severity sh:Violation
     ], [
-        sh:node :LanguageRestriction ;
-        sh:nodeKind sh:IRI ;
-        sh:path dct:language ;
-        sh:description "Um conceito não gerenciado é usado para indicar um idioma. Se nenhum correspondente for encontrado, informe o mantenedor do vocabulário de idioma."@pt-BR ;
-        sh:description "A non managed concept is used to indicate a language. If no corresponding can be found inform the maintainer of the language vocabulary."@en ;
-        sh:severity sh:Violation
-    ], [
         sh:node :AccessRightRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dct:accessRights ;
@@ -168,15 +162,15 @@
         sh:node :ThemeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dcat:theme ;
-        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <http://purl.org/dcat-br/vocabularies/theme> deve estar presente."@pt-BR ;
-        sh:description "Multiple themes can be used but at least one concept of <http://purl.org/dcat-br/vocabularies/theme> should be present."@en ;
+        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/dcat-br/vocabularies/themes/> deve estar presente."@pt-BR ;
+        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/dcat-br/vocabularies/themes/> should be present."@en ;
         sh:severity sh:Warning
     ], [
         sh:node :ResourceTypeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dct:type ;
-        sh:description "Múltiplos tipos podem ser usados, mas é recomendado fornecer pelo menos um conceito de <http://purl.org/dcat-br/vocabularies/resource-type>."@pt-BR ;
-        sh:description "Multiple types can be used but it is recommended to also provide at least one concept of <http://purl.org/dcat-br/vocabularies/resource-type> should be present."@en ;
+        sh:description "Múltiplos tipos podem ser usados, mas é recomendado fornecer pelo menos um conceito de <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/>."@pt-BR ;
+        sh:description "Multiple types can be used but it is recommended to also provide at least one concept of <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/> should be present."@en ;
         sh:severity sh:Warning
     ] ;
     sh:targetClass dcat:Dataset .
@@ -188,25 +182,25 @@
 :Distribution_ShapeCV
     a sh:NodeShape ;
     sh:property [
-        sh:node :IANARestrictionRegexURI ;
+        sh:node :FormatRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dct:format ;
-        sh:description "Um formato espera um valor da IANA. Esta verificação usa as URLs da IANA para realizar a verificação, pois não há uma lista de códigos IANA para download."@pt-BR ;
-        sh:description "A format expects a value from IANA. This check uses the URLs from IANA to perform the check as there is no IANA codelist downloadable."@en ;
+        sh:description "Um formato deve usar um conceito do vocabulário DCAT-BR de formatos."@pt-BR ;
+        sh:description "A format should use a concept from the DCAT-BR format vocabulary."@en ;
         sh:severity sh:Warning
     ], [
-        sh:node :LanguageRestriction ;
+        sh:node :LicenseRestriction ;
         sh:nodeKind sh:IRI ;
-        sh:path dct:language ;
-        sh:description "Um conceito não gerenciado é usado para indicar um idioma. Se nenhum correspondente for encontrado, informe o mantenedor do vocabulário de idioma."@pt-BR ;
-        sh:description "A non managed concept is used to indicate a language. If no corresponding can be found inform the maintainer of the language vocabulary."@en ;
-        sh:severity sh:Violation
+        sh:path dct:license ;
+        sh:description "Uma licença deve usar um conceito do vocabulário DCAT-BR de licenças (VCR-LU)."@pt-BR ;
+        sh:description "A license should use a concept from the DCAT-BR license vocabulary (VCR-LU)."@en ;
+        sh:severity sh:Warning
     ], [
-        sh:node :IANARestrictionRegexURI ;
+        sh:node :AccessRightRestriction ;
         sh:nodeKind sh:IRI ;
-        sh:path dcat:mediaType ;
-        sh:description "Um mediaType espera um valor da IANA. Esta verificação usa as URLs da IANA para realizar a verificação, pois não há uma lista de códigos IANA para download."@pt-BR ;
-        sh:description "A mediaType expects a value from IANA. This check uses the URLs from IANA to perform the check as there is no IANA codelist downloadable."@en ;
+        sh:path dct:accessRights ;
+        sh:description "A observância legal deve usar um conceito do vocabulário SEI do DCAT-BR."@pt-BR ;
+        sh:description "Access rights should use a concept from the DCAT-BR SEI vocabulary."@en ;
         sh:severity sh:Warning
     ] ;
     sh:targetClass dcat:Distribution .

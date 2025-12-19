@@ -16,13 +16,13 @@
     <dct:publisher rdf:resource="https://dcat-br.gov.br/"/>
     
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/application/x-7z-compressed"/>
-    <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/application/json"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/text/csv"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/application/msword"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/application/gzip"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/text/html"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/image/jpeg"/>
+    <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/application/json"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/image/png"/>
     <skos:hasTopConcept rdf:resource="https://www.iana.org/assignments/media-types/application/x-rar-compressed"/>
@@ -108,6 +108,7 @@
     <skos:definition xml:lang="pt-BR">HyperText Markup Language. Formato padrão para páginas web e documentos HTML.</skos:definition>
     <skos:definition xml:lang="en">HyperText Markup Language. Standard format for web pages and HTML documents.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/text/html"/>
+    <rdfs:seeAlso rdf:resource="https://html.spec.whatwg.org/"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/image/jpeg">
@@ -118,6 +119,7 @@
     <skos:definition xml:lang="pt-BR">Joint Photographic Experts Group. Formato de imagem raster com compressão com perdas.</skos:definition>
     <skos:definition xml:lang="en">Joint Photographic Experts Group. Raster image format with lossy compression.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/image/jpeg"/>
+    <rdfs:seeAlso rdf:resource="https://www.iso.org/standard/54989.html"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/pdf">
@@ -128,6 +130,7 @@
     <skos:definition xml:lang="pt-BR">Portable Document Format. Formato de documento portátil amplamente utilizado para documentos oficiais.</skos:definition>
     <skos:definition xml:lang="en">Portable Document Format. Widely used portable document format for official documents.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
+    <rdfs:seeAlso rdf:resource="https://www.iso.org/standard/51502.html"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/image/png">
@@ -138,6 +141,7 @@
     <skos:definition xml:lang="pt-BR">Portable Network Graphics. Formato de imagem raster com suporte a transparência.</skos:definition>
     <skos:definition xml:lang="en">Portable Network Graphics. Raster image format with transparency support.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/image/png"/>
+    <rdfs:seeAlso rdf:resource="https://www.w3.org/TR/PNG/"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/x-rar-compressed">
@@ -158,6 +162,7 @@
     <skos:definition xml:lang="pt-BR">Resource Description Framework em XML. Formato RDF serializado em XML.</skos:definition>
     <skos:definition xml:lang="en">Resource Description Framework in XML. RDF format serialized in XML.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/application/rdf+xml"/>
+    <rdfs:seeAlso rdf:resource="https://www.w3.org/TR/rdf-syntax-grammar/"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/text/plain">
@@ -168,6 +173,7 @@
     <skos:definition xml:lang="pt-BR">Texto plano. Formato de texto sem formatação ou marcação.</skos:definition>
     <skos:definition xml:lang="en">Plain text. Text format without formatting or markup.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/text/plain"/>
+    <rdfs:seeAlso rdf:resource="https://www.rfc-editor.org/rfc/rfc2046"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/wsdl+xml">
@@ -178,6 +184,7 @@
     <skos:definition xml:lang="pt-BR">Web Services Description Language. Formato XML para descrever serviços web.</skos:definition>
     <skos:definition xml:lang="en">Web Services Description Language. XML format for describing web services.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/application/wsdl+xml"/>
+    <rdfs:seeAlso rdf:resource="https://www.w3.org/TR/wsdl20/"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/vnd.ms-excel">
@@ -208,6 +215,7 @@
     <skos:definition xml:lang="pt-BR">Extensible Markup Language. Formato de marcação para documentos e dados estruturados.</skos:definition>
     <skos:definition xml:lang="en">Extensible Markup Language. Markup format for documents and structured data.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/application/xml"/>
+    <rdfs:seeAlso rdf:resource="https://www.w3.org/XML/"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/zip">
@@ -218,6 +226,7 @@
     <skos:definition xml:lang="pt-BR">Arquivo ZIP comprimido. Formato de compressão de arquivos amplamente utilizado.</skos:definition>
     <skos:definition xml:lang="en">ZIP compressed archive. Widely used file compression format.</skos:definition>
     <dct:source rdf:resource="https://www.iana.org/assignments/media-types/application/zip"/>
+    <rdfs:seeAlso rdf:resource="https://www.pkware.com/documents/APPNOTE/"/>
   </skos:Concept>
 
 </rdf:RDF>
