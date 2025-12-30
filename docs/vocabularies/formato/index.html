@@ -79,6 +79,13 @@
       garante interoperabilidade e facilita a descoberta de dados por formato.
     </p>
     <p>
+      Além do vocabulário principal, este documento também fornece classificações de qualidade dos formatos, 
+      identificando quais são <a href="#formatos-legiveis-maquina">legíveis por máquina</a> e quais são 
+      <a href="#formatos-nao-proprietarios">não proprietários</a>, conforme as diretrizes do DCAT-BR. 
+      Essas classificações auxiliam na seleção de formatos que promovem maior acessibilidade e 
+      interoperabilidade dos dados públicos.
+    </p>
+    <p>
       <strong>Selo de Conformidade:</strong> Bronze<br>
       <strong>Base:</strong> <a href="https://tools.ietf.org/html/rfc6838">RFC6838</a> e 
       <a href="https://tools.ietf.org/html/rfc4855">RFC4855</a><br>
@@ -222,6 +229,58 @@
     </p>
   </section>
 
+  <!-- Formatos Legíveis por Máquina -->
+  <section id="formatos-legiveis-maquina" class="informative">
+    <h2>Formatos Legíveis por Máquina</h2>
+    <p>
+      Formatos legíveis por máquina são aqueles que podem ser processados automaticamente por sistemas 
+      computacionais sem necessidade de interpretação humana. Segundo as diretrizes do DCAT-BR, os seguintes 
+      formatos são considerados legíveis por máquina:
+    </p>
+    <ul>
+      <li><code>text/csv</code> - Valores separados por vírgula</li>
+      <li><code>application/json</code> - JavaScript Object Notation</li>
+      <li><code>application/rdf+xml</code> - Resource Description Framework em XML</li>
+      <li><code>application/vnd.ms-excel</code> - Microsoft Excel (formato binário legado .xls)</li>
+      <li><code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code> - Microsoft Excel (OpenXML .xlsx)</li>
+      <li><code>application/xml</code> - Extensible Markup Language</li>
+    </ul>
+    <p>
+      A classificação de formatos como legíveis por máquina está disponível no arquivo RDF/XML 
+      <a href="machine_readable_formats.rdf" download>machine_readable_formats.rdf</a>, que utiliza a 
+      propriedade <code>fmtq:isMachineReadable</code> do vocabulário de formatos do DCAT-BR.
+    </p>
+  </section>
+
+  <!-- Formatos Não Proprietários -->
+  <section id="formatos-nao-proprietarios" class="informative">
+    <h2>Formatos Não Proprietários</h2>
+    <p>
+      Formatos não proprietários são aqueles baseados em especificações abertas e padronizadas, que não 
+      dependem de tecnologias proprietárias ou controladas por uma única organização. Segundo as diretrizes 
+      do DCAT-BR, os seguintes formatos são considerados não proprietários:
+    </p>
+    <ul>
+      <li><code>text/csv</code> - Valores separados por vírgula</li>
+      <li><code>text/html</code> - HyperText Markup Language</li>
+      <li><code>application/json</code> - JavaScript Object Notation</li>
+      <li><code>image/png</code> - Portable Network Graphics</li>
+      <li><code>text/plain</code> - Texto plano</li>
+      <li><code>application/rdf+xml</code> - Resource Description Framework em XML</li>
+      <li><code>application/xml</code> - Extensible Markup Language</li>
+      <li><code>application/zip</code> - Arquivo ZIP comprimido</li>
+    </ul>
+    <p>
+      A classificação de formatos como não proprietários está disponível no arquivo RDF/XML 
+      <a href="non_proprietary_formats.rdf" download>non_proprietary_formats.rdf</a>, que utiliza a 
+      propriedade <code>fmtq:isNonProprietary</code> do vocabulário de formatos do DCAT-BR.
+    </p>
+    <p>
+      <strong>Nota:</strong> A preferência por formatos não proprietários e legíveis por máquina é uma 
+      recomendação do DCAT-BR para facilitar o acesso, reutilização e interoperabilidade dos dados públicos.
+    </p>
+  </section>
+
   <!-- Formatos Disponíveis -->
   <section id="formatos" class="informative">
     <h2>Formatos Disponíveis</h2>
@@ -264,6 +323,39 @@
         </tr>
       </tbody>
     </table>
+
+    <h3>Arquivos de Classificação de Qualidade</h3>
+    <p>
+      Além do vocabulário principal, estão disponíveis arquivos RDF/XML com classificações de qualidade 
+      dos formatos:
+    </p>
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Arquivo</th>
+          <th>Descrição</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>machine_readable_formats.rdf</strong></td>
+          <td>Lista de formatos classificados como legíveis por máquina segundo as diretrizes do DCAT-BR.</td>
+          <td>
+            <a href="machine_readable_formats.rdf" download>Baixar</a> | 
+            <a href="machine_readable_formats.rdf" target="_blank">Visualizar</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>non_proprietary_formats.rdf</strong></td>
+          <td>Lista de formatos classificados como não proprietários segundo as diretrizes do DCAT-BR.</td>
+          <td>
+            <a href="non_proprietary_formats.rdf" download>Baixar</a> | 
+            <a href="non_proprietary_formats.rdf" target="_blank">Visualizar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- Exemplo de Uso -->
@@ -299,6 +391,9 @@
       
       <dt><a href="https://www.w3.org/TR/vocab-dcat-3/">DCAT 3.0</a></dt>
       <dd>Data Catalog Vocabulary (DCAT) - Version 3.0</dd>
+      
+      <dt><a href="https://dcat-br.gov.br/vocabularies/formato/qualidade#">Vocabulário de Qualidade de Formatos</a></dt>
+      <dd>Vocabulário RDF que define as propriedades <code>fmtq:isMachineReadable</code> e <code>fmtq:isNonProprietary</code> para classificação de formatos segundo as diretrizes do DCAT-BR.</dd>
     </dl>
   </section>
 

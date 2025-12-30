@@ -1,227 +1,196 @@
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dct:  <http://purl.org/dc/terms/> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<https://dcat-br.gov.br/vocabularies/formato/esquema> a skos:ConceptScheme ;
-  dct:title "Vocabulário Controlado de Formatos - IANA Media Types para DCAT-BR"@pt-BR ;
-  dct:description "Vocabulário SKOS baseado em IANA Media Types para descrever formatos de arquivo em catálogos de dados públicos no Brasil."@pt-BR ;
-  dct:source <https://www.iana.org/assignments/media-types/media-types.xhtml> ;
-  dct:issued "2025-12-11"^^xsd:date ;
-  dct:modified "2025-12-11"^^xsd:date ;
-  dct:language "pt-BR" ;
-  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dct:publisher <https://dcat-br.gov.br/> ;
-  skos:hasTopConcept
-    <https://www.iana.org/assignments/media-types/application/x-7z-compressed>,
-    <https://www.iana.org/assignments/media-types/text/csv>,
-    <https://www.iana.org/assignments/media-types/application/msword>,
-    <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document>,
-    <https://www.iana.org/assignments/media-types/application/gzip>,
-    <https://www.iana.org/assignments/media-types/text/html>,
-    <https://www.iana.org/assignments/media-types/image/jpeg>,
-    <https://www.iana.org/assignments/media-types/application/json>,
-    <https://www.iana.org/assignments/media-types/application/pdf>,
-    <https://www.iana.org/assignments/media-types/image/png>,
-    <https://www.iana.org/assignments/media-types/application/x-rar-compressed>,
-    <https://www.iana.org/assignments/media-types/application/rdf+xml>,
-    <https://www.iana.org/assignments/media-types/text/plain>,
-    <https://www.iana.org/assignments/media-types/application/wsdl+xml>,
-    <https://www.iana.org/assignments/media-types/application/vnd.ms-excel>,
-    <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet>,
-    <https://www.iana.org/assignments/media-types/application/xml>,
-    <https://www.iana.org/assignments/media-types/application/zip> .
+<https://dcat-br.gov.br/vocabularies/formato/qualidade#isMachineReadable>
+  a rdf:Property ;
+  rdfs:label "formato legível por máquina"@pt-BR, "machine-readable format"@en ;
+  rdfs:comment """
+        Indica se o tipo de mídia é considerado legível por máquina segundo as diretrizes do DCAT-BR.
+      """@pt-BR, """
+        Indicates whether the media type is considered machine-readable according to DCAT-BR guidelines.
+      """@en ;
+  rdfs:domain dc:MediaType ;
+  rdfs:range xsd:boolean .
 
-# 7z
-<https://www.iana.org/assignments/media-types/application/x-7z-compressed> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://dcat-br.gov.br/vocabularies/formato/qualidade#isNonProprietary>
+  a rdf:Property ;
+  rdfs:label "formato não proprietário"@pt-BR, "non-proprietary format"@en ;
+  rdfs:comment """
+      Indica se o tipo de mídia é considerado não proprietário segundo as diretrizes do DCAT-BR.
+    """@pt-BR, """
+      Indicates whether the media type is considered non-proprietary according to DCAT-BR guidelines.
+    """@en ;
+  rdfs:domain dc:MediaType ;
+  rdfs:range xsd:boolean .
+
+<https://dcat-br.gov.br/vocabularies/formato/esquema>
+  a skos:ConceptScheme ;
+  dc:title "Vocabulário Controlado de Formatos - IANA Media Types para DCAT-BR"@pt-BR ;
+  dc:description "Vocabulário SKOS baseado em IANA Media Types para descrever formatos de arquivo em catálogos de dados públicos no Brasil."@pt-BR ;
+  dc:source <https://www.iana.org/assignments/media-types/media-types.xhtml> ;
+  dc:issued "2025-12-11"^^xsd:date ;
+  dc:modified "2025-12-11"^^xsd:date ;
+  dc:language "pt-BR" ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:publisher <https://dcat-br.gov.br/> ;
+  skos:hasTopConcept <https://www.iana.org/assignments/media-types/application/x-7z-compressed>, <https://www.iana.org/assignments/media-types/text/csv>, <https://www.iana.org/assignments/media-types/application/msword>, <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document>, <https://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/html>, <https://www.iana.org/assignments/media-types/image/jpeg>, <https://www.iana.org/assignments/media-types/application/json>, <https://www.iana.org/assignments/media-types/application/pdf>, <https://www.iana.org/assignments/media-types/image/png>, <https://www.iana.org/assignments/media-types/application/x-rar-compressed>, <https://www.iana.org/assignments/media-types/application/rdf+xml>, <https://www.iana.org/assignments/media-types/text/plain>, <https://www.iana.org/assignments/media-types/application/wsdl+xml>, <https://www.iana.org/assignments/media-types/application/vnd.ms-excel>, <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet>, <https://www.iana.org/assignments/media-types/application/xml>, <https://www.iana.org/assignments/media-types/application/zip> .
+
+<https://www.iana.org/assignments/media-types/application/x-7z-compressed>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/x-7z-compressed"@pt-BR ;
-  skos:prefLabel "application/x-7z-compressed"@en ;
+  skos:prefLabel "application/x-7z-compressed"@pt-BR, "application/x-7z-compressed"@en ;
   skos:notation "7z" ;
-  skos:definition "Formato de compressão 7z. Arquivo compactado usando o algoritmo de compressão 7z."@pt-BR ;
-  skos:definition "7z compression format. Compressed file using the 7z compression algorithm."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/x-7z-compressed> .
+  skos:definition "Formato de compressão 7z. Arquivo compactado usando o algoritmo de compressão 7z."@pt-BR, "7z compression format. Compressed file using the 7z compression algorithm."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/x-7z-compressed> .
 
-# CSV
-<https://www.iana.org/assignments/media-types/text/csv> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/application/json>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "text/csv"@pt-BR ;
-  skos:prefLabel "text/csv"@en ;
-  skos:notation "csv" ;
-  skos:definition "Valores separados por vírgula (Comma-Separated Values). Formato tabular amplamente utilizado para dados estruturados."@pt-BR ;
-  skos:definition "Comma-Separated Values. Widely used tabular format for structured data."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/text/csv> ;
-  rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc4180> .
-
-# DOC
-<https://www.iana.org/assignments/media-types/application/msword> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/msword"@pt-BR ;
-  skos:prefLabel "application/msword"@en ;
-  skos:notation "doc" ;
-  skos:definition "Microsoft Word (formato binário legado). Documentos do Word na versão .doc."@pt-BR ;
-  skos:definition "Microsoft Word (legacy binary format). Word documents in .doc version."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/msword> .
-
-# DOCX
-<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/vnd.openxmlformats-officedocument.wordprocessingml.document"@pt-BR ;
-  skos:prefLabel "application/vnd.openxmlformats-officedocument.wordprocessingml.document"@en ;
-  skos:notation "docx" ;
-  skos:definition "Microsoft Word (OpenXML). Documentos do Word na versão .docx (formato XML aberto)."@pt-BR ;
-  skos:definition "Microsoft Word (OpenXML). Word documents in .docx version (open XML format)."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document> .
-
-# GZ
-<https://www.iana.org/assignments/media-types/application/gzip> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/gzip"@pt-BR ;
-  skos:prefLabel "application/gzip"@en ;
-  skos:notation "gz" ;
-  skos:definition "GNU Zip. Formato de compressão gzip amplamente utilizado em sistemas Unix/Linux."@pt-BR ;
-  skos:definition "GNU Zip. Gzip compression format widely used in Unix/Linux systems."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/gzip> ;
-  rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc1952> .
-
-# HTML
-<https://www.iana.org/assignments/media-types/text/html> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "text/html"@pt-BR ;
-  skos:prefLabel "text/html"@en ;
-  skos:notation "html" ;
-  skos:definition "HyperText Markup Language. Formato padrão para páginas web e documentos HTML."@pt-BR ;
-  skos:definition "HyperText Markup Language. Standard format for web pages and HTML documents."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/text/html> ;
-  rdfs:seeAlso <https://html.spec.whatwg.org/> .
-
-# JPEG
-<https://www.iana.org/assignments/media-types/image/jpeg> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "image/jpeg"@pt-BR ;
-  skos:prefLabel "image/jpeg"@en ;
-  skos:notation "jpeg" ;
-  skos:definition "Joint Photographic Experts Group. Formato de imagem raster com compressão com perdas."@pt-BR ;
-  skos:definition "Joint Photographic Experts Group. Raster image format with lossy compression."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/image/jpeg> ;
-  rdfs:seeAlso <https://www.iso.org/standard/54989.html> .
-
-# JSON
-<https://www.iana.org/assignments/media-types/application/json> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/json"@pt-BR ;
-  skos:prefLabel "application/json"@en ;
+  skos:prefLabel "application/json"@pt-BR, "application/json"@en ;
   skos:notation "json" ;
-  skos:altLabel "api"@pt-BR ;
-  skos:altLabel "odata"@pt-BR ;
-  skos:definition "JavaScript Object Notation. Formato de dados estruturados baseado em texto, amplamente utilizado em APIs web e serviços REST/OData."@pt-BR ;
-  skos:definition "JavaScript Object Notation. Text-based data format widely used in web APIs and REST/OData services."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/json> ;
+  skos:altLabel "api"@pt-BR, "odata"@pt-BR ;
+  skos:definition "JavaScript Object Notation. Formato de dados estruturados baseado em texto, amplamente utilizado em APIs web e serviços REST/OData."@pt-BR, "JavaScript Object Notation. Text-based data format widely used in web APIs and REST/OData services."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/json> ;
   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc8259> .
 
-# PDF
-<https://www.iana.org/assignments/media-types/application/pdf> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/text/csv>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/pdf"@pt-BR ;
-  skos:prefLabel "application/pdf"@en ;
+  skos:prefLabel "text/csv"@pt-BR, "text/csv"@en ;
+  skos:notation "csv" ;
+  skos:definition "Valores separados por vírgula (Comma-Separated Values). Formato tabular amplamente utilizado para dados estruturados."@pt-BR, "Comma-Separated Values. Widely used tabular format for structured data."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/text/csv> ;
+  rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc4180> .
+
+<https://www.iana.org/assignments/media-types/application/msword>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
+  skos:prefLabel "application/msword"@pt-BR, "application/msword"@en ;
+  skos:notation "doc" ;
+  skos:definition "Microsoft Word (formato binário legado). Documentos do Word na versão .doc."@pt-BR, "Microsoft Word (legacy binary format). Word documents in .doc version."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/msword> .
+
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
+  skos:prefLabel "application/vnd.openxmlformats-officedocument.wordprocessingml.document"@pt-BR, "application/vnd.openxmlformats-officedocument.wordprocessingml.document"@en ;
+  skos:notation "docx" ;
+  skos:definition "Microsoft Word (OpenXML). Documentos do Word na versão .docx (formato XML aberto)."@pt-BR, "Microsoft Word (OpenXML). Word documents in .docx version (open XML format)."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document> .
+
+<https://www.iana.org/assignments/media-types/application/gzip>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
+  skos:prefLabel "application/gzip"@pt-BR, "application/gzip"@en ;
+  skos:notation "gz" ;
+  skos:definition "GNU Zip. Formato de compressão gzip amplamente utilizado em sistemas Unix/Linux."@pt-BR, "GNU Zip. Gzip compression format widely used in Unix/Linux systems."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/gzip> ;
+  rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc1952> .
+
+<https://www.iana.org/assignments/media-types/text/html>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
+  skos:prefLabel "text/html"@pt-BR, "text/html"@en ;
+  skos:notation "html" ;
+  skos:definition "HyperText Markup Language. Formato padrão para páginas web e documentos HTML."@pt-BR, "HyperText Markup Language. Standard format for web pages and HTML documents."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/text/html> ;
+  rdfs:seeAlso <https://html.spec.whatwg.org/> .
+
+<https://www.iana.org/assignments/media-types/image/jpeg>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
+  skos:prefLabel "image/jpeg"@pt-BR, "image/jpeg"@en ;
+  skos:notation "jpeg" ;
+  skos:definition "Joint Photographic Experts Group. Formato de imagem raster com compressão com perdas."@pt-BR, "Joint Photographic Experts Group. Raster image format with lossy compression."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/image/jpeg> ;
+  rdfs:seeAlso <https://www.iso.org/standard/54989.html> .
+
+<https://www.iana.org/assignments/media-types/application/pdf>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
+  skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
+  skos:prefLabel "application/pdf"@pt-BR, "application/pdf"@en ;
   skos:notation "pdf" ;
-  skos:definition "Portable Document Format. Formato de documento portátil amplamente utilizado para documentos oficiais."@pt-BR ;
-  skos:definition "Portable Document Format. Widely used portable document format for official documents."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/pdf> ;
+  skos:definition "Portable Document Format. Formato de documento portátil amplamente utilizado para documentos oficiais."@pt-BR, "Portable Document Format. Widely used portable document format for official documents."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/pdf> ;
   rdfs:seeAlso <https://www.iso.org/standard/51502.html> .
 
-# PNG
-<https://www.iana.org/assignments/media-types/image/png> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/image/png>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "image/png"@pt-BR ;
-  skos:prefLabel "image/png"@en ;
+  skos:prefLabel "image/png"@pt-BR, "image/png"@en ;
   skos:notation "png" ;
-  skos:definition "Portable Network Graphics. Formato de imagem raster com suporte a transparência."@pt-BR ;
-  skos:definition "Portable Network Graphics. Raster image format with transparency support."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/image/png> ;
+  skos:definition "Portable Network Graphics. Formato de imagem raster com suporte a transparência."@pt-BR, "Portable Network Graphics. Raster image format with transparency support."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/image/png> ;
   rdfs:seeAlso <https://www.w3.org/TR/PNG/> .
 
-# RAR
-<https://www.iana.org/assignments/media-types/application/x-rar-compressed> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/application/x-rar-compressed>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/x-rar-compressed"@pt-BR ;
-  skos:prefLabel "application/x-rar-compressed"@en ;
+  skos:prefLabel "application/x-rar-compressed"@pt-BR, "application/x-rar-compressed"@en ;
   skos:notation "rar" ;
-  skos:definition "RAR Archive. Formato de compressão RAR desenvolvido por Eugene Roshal."@pt-BR ;
-  skos:definition "RAR Archive. RAR compression format developed by Eugene Roshal."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/x-rar-compressed> .
+  skos:definition "RAR Archive. Formato de compressão RAR desenvolvido por Eugene Roshal."@pt-BR, "RAR Archive. RAR compression format developed by Eugene Roshal."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/x-rar-compressed> .
 
-# RDF
-<https://www.iana.org/assignments/media-types/application/rdf+xml> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/application/rdf+xml>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/rdf+xml"@pt-BR ;
-  skos:prefLabel "application/rdf+xml"@en ;
+  skos:prefLabel "application/rdf+xml"@pt-BR, "application/rdf+xml"@en ;
   skos:notation "rdf" ;
-  skos:definition "Resource Description Framework em XML. Formato RDF serializado em XML."@pt-BR ;
-  skos:definition "Resource Description Framework in XML. RDF format serialized in XML."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/rdf+xml> ;
+  skos:definition "Resource Description Framework em XML. Formato RDF serializado em XML."@pt-BR, "Resource Description Framework in XML. RDF format serialized in XML."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/rdf+xml> ;
   rdfs:seeAlso <https://www.w3.org/TR/rdf-syntax-grammar/> .
 
-# TXT
-<https://www.iana.org/assignments/media-types/text/plain> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/text/plain>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "text/plain"@pt-BR ;
-  skos:prefLabel "text/plain"@en ;
+  skos:prefLabel "text/plain"@pt-BR, "text/plain"@en ;
   skos:notation "txt" ;
-  skos:definition "Texto plano. Formato de texto sem formatação ou marcação."@pt-BR ;
-  skos:definition "Plain text. Text format without formatting or markup."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/text/plain> ;
+  skos:definition "Texto plano. Formato de texto sem formatação ou marcação."@pt-BR, "Plain text. Text format without formatting or markup."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/text/plain> ;
   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc2046> .
 
-# WSDL
-<https://www.iana.org/assignments/media-types/application/wsdl+xml> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/application/wsdl+xml>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/wsdl+xml"@pt-BR ;
-  skos:prefLabel "application/wsdl+xml"@en ;
+  skos:prefLabel "application/wsdl+xml"@pt-BR, "application/wsdl+xml"@en ;
   skos:notation "wsdl" ;
-  skos:definition "Web Services Description Language. Formato XML para descrever serviços web."@pt-BR ;
-  skos:definition "Web Services Description Language. XML format for describing web services."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/wsdl+xml> ;
+  skos:definition "Web Services Description Language. Formato XML para descrever serviços web."@pt-BR, "Web Services Description Language. XML format for describing web services."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/wsdl+xml> ;
   rdfs:seeAlso <https://www.w3.org/TR/wsdl20/> .
 
-# XLS
-<https://www.iana.org/assignments/media-types/application/vnd.ms-excel> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/application/vnd.ms-excel>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/vnd.ms-excel"@pt-BR ;
-  skos:prefLabel "application/vnd.ms-excel"@en ;
+  skos:prefLabel "application/vnd.ms-excel"@pt-BR, "application/vnd.ms-excel"@en ;
   skos:notation "xls" ;
-  skos:definition "Microsoft Excel (formato binário legado). Planilhas do Excel na versão .xls."@pt-BR ;
-  skos:definition "Microsoft Excel (legacy binary format). Excel spreadsheets in .xls version."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/vnd.ms-excel> .
+  skos:definition "Microsoft Excel (formato binário legado). Planilhas do Excel na versão .xls."@pt-BR, "Microsoft Excel (legacy binary format). Excel spreadsheets in .xls version."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/vnd.ms-excel> .
 
-# XLSX
-<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"@pt-BR ;
-  skos:prefLabel "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"@en ;
+  skos:prefLabel "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"@pt-BR, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"@en ;
   skos:notation "xlsx" ;
-  skos:definition "Microsoft Excel (OpenXML). Planilhas do Excel na versão .xlsx (formato XML aberto)."@pt-BR ;
-  skos:definition "Microsoft Excel (OpenXML). Excel spreadsheets in .xlsx version (open XML format)."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> .
+  skos:definition "Microsoft Excel (OpenXML). Planilhas do Excel na versão .xlsx (formato XML aberto)."@pt-BR, "Microsoft Excel (OpenXML). Excel spreadsheets in .xlsx version (open XML format)."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> .
 
-# XML
-<https://www.iana.org/assignments/media-types/application/xml> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/application/xml>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/xml"@pt-BR ;
-  skos:prefLabel "application/xml"@en ;
+  skos:prefLabel "application/xml"@pt-BR, "application/xml"@en ;
   skos:notation "xml" ;
-  skos:definition "Extensible Markup Language. Formato de marcação para documentos e dados estruturados."@pt-BR ;
-  skos:definition "Extensible Markup Language. Markup format for documents and structured data."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/xml> ;
+  skos:definition "Extensible Markup Language. Formato de marcação para documentos e dados estruturados."@pt-BR, "Extensible Markup Language. Markup format for documents and structured data."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/xml> ;
   rdfs:seeAlso <https://www.w3.org/XML/> .
 
-# ZIP
-<https://www.iana.org/assignments/media-types/application/zip> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
+<https://www.iana.org/assignments/media-types/application/zip>
+  a skos:Concept, dc:MediaType, dc:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
-  skos:prefLabel "application/zip"@pt-BR ;
-  skos:prefLabel "application/zip"@en ;
+  skos:prefLabel "application/zip"@pt-BR, "application/zip"@en ;
   skos:notation "zip" ;
-  skos:definition "Arquivo ZIP comprimido. Formato de compressão de arquivos amplamente utilizado."@pt-BR ;
-  skos:definition "ZIP compressed archive. Widely used file compression format."@en ;
-  dct:source <https://www.iana.org/assignments/media-types/application/zip> ;
+  skos:definition "Arquivo ZIP comprimido. Formato de compressão de arquivos amplamente utilizado."@pt-BR, "ZIP compressed archive. Widely used file compression format."@en ;
+  dc:source <https://www.iana.org/assignments/media-types/application/zip> ;
   rdfs:seeAlso <https://www.pkware.com/documents/APPNOTE/> .
