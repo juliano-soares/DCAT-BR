@@ -6,11 +6,11 @@
   xmlns:dcterms="http://purl.org/dc/terms/"
   xmlns:dc11="http://purl.org/dc/elements/1.1/">
 
-  <rdf:Description rdf:about="http://purl.org/dcat-br/vocabularies/VCR-FR/QUADRIMESTRAL">
+  <rdf:Description rdf:about="http://purl.org/dcat-br/docs/vocabularies/VCR-FR/QUADRIMESTRAL">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 
     <!-- Ligação ao scheme -->
-    <skos:inScheme rdf:resource="http://purl.org/dcat-br/vocabularies/VCR-FR"/>
+    <skos:inScheme rdf:resource="http://purl.org/dcat-br/docs/vocabularies/VCR-FR"/>
 
     <!-- Rótulos/descrições -->
     <skos:prefLabel xml:lang="pt-BR">Quadrimestral</skos:prefLabel>
@@ -19,7 +19,7 @@
     <skos:definition xml:lang="en">The event occurs every four months.</skos:definition>
 
     <!-- Mapeamento para URI DCAT-BR -->
-    <skos:exactMatch rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/freq/quadrimestral"/>
+    <skos:exactMatch rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/quadrimestral"/>
 
     <!-- Identificadores -->
     <dcterms:identifier>QUADRIMESTRAL</dcterms:identifier>

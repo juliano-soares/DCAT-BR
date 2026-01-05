@@ -1,10 +1,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 
-<https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/DADOS>
+<https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/DADOS>
   a skos:Concept ;
-  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/> ;
-  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/> ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/> ;
   skos:prefLabel "Dados"@pt-BR ;
   skos:prefLabel "Data"@en ;
   skos:definition "Recurso do tipo dados, contendo informações estruturadas ou não estruturadas."@pt-BR ;

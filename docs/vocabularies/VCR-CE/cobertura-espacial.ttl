@@ -6,7 +6,7 @@
 @prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/> a skos:ConceptScheme, owl:Ontology ;
+<https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/> a skos:ConceptScheme, owl:Ontology ;
   dc11:title "Vocabulário Controlado de Cobertura Espacial (VCR-CE) - DCAT-BR"@pt-BR ;
   dc11:title "Spatial Coverage Controlled Vocabulary (VCR-CE) - DCAT-BR"@en ;
   dc11:description "Vocabulário SKOS para descrever a cobertura espacial de distribuições de dados em catálogos de dados públicos no Brasil, classificando a abrangência territorial em níveis federais, estaduais e municipais."@pt-BR ;
@@ -16,8 +16,8 @@
   dct:license <https://creativecommons.org/licenses/by/4.0/> ;
   dct:creator [ a foaf:Organization ; foaf:name "Grupo de Trabalho DCAT-BR" ] ;
   owl:versionInfo "2025-12-12" ;
-  owl:versionIRI <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/2025-12-12/> ;
+  owl:versionIRI <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/2025-12-12/> ;
   skos:hasTopConcept
-    <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/FEDERAL>,
-    <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/ESTADUAL>,
-    <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/MUNICIPAL> .
+    <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/FEDERAL>,
+    <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/ESTADUAL>,
+    <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/MUNICIPAL> .

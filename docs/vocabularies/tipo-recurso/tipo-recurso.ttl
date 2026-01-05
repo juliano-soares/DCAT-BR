@@ -5,7 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/>
+<https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/>
   a skos:ConceptScheme, owl:Ontology ;
   dc11:title "Vocabulário Controlado de Tipo de Recurso - DCAT-BR"@pt-BR, "Resource Type Controlled Vocabulary (DCAT-BR)"@en ;
   dc11:description """
@@ -21,10 +21,10 @@
   ] ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
   owl:versionInfo "2025-12-12" ;
-  owl:versionIRI <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/2025-12-12/> ;
+  owl:versionIRI <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/2025-12-12/> ;
   skos:hasTopConcept 
-    <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/DADOS>, 
-    <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/DICIONARIO_DE_DADOS>, 
-    <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/DOCUMENTACAO>, 
-    <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/API>, 
-    <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/OUTRO> .
+    <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/DADOS>, 
+    <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/DICIONARIO_DE_DADOS>, 
+    <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/DOCUMENTACAO>, 
+    <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/API>, 
+    <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/OUTRO> .

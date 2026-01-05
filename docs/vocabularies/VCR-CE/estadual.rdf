@@ -6,12 +6,12 @@
   xmlns:dcterms="http://purl.org/dc/terms/"
   xmlns:dc11="http://purl.org/dc/elements/1.1/">
 
-  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/ESTADUAL">
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/ESTADUAL">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 
     <!-- Ligação ao scheme -->
-    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/"/>
 
     <!-- Rótulos/descrições -->
     <skos:prefLabel xml:lang="pt-BR">Estadual/Distrital</skos:prefLabel>

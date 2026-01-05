@@ -6,14 +6,14 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dct:  <http://purl.org/dc/terms/> .
 
-@prefix vcrfr: <http://purl.org/dcat-br/vocabularies/VCR-FR/> .
+@prefix vcrfr: <http://purl.org/dcat-br/docs/vocabularies/VCR-FR/> .
 @prefix freq:  <http://purl.org/cld/freq/> .
 
 #######################################################################
 # VCR-FR — Frequência (DCAT-BR)
 #######################################################################
 
-<http://purl.org/dcat-br/vocabularies/VCR-FR>
+<http://purl.org/dcat-br/docs/vocabularies/VCR-FR>
   a owl:Ontology, skos:ConceptScheme ;
   dct:title "Vocabulário Controlado de Referência — Frequência (VCR-FR)"@pt-BR ;
   dct:title "Reference Controlled Vocabulary — Frequency (VCR-FR)"@en ;
@@ -29,141 +29,141 @@
 
 vcrfr:ANUAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Anual"@pt-BR ;
   skos:exactMatch freq:annual ;
 .
 
 vcrfr:DIARIA
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Diária"@pt-BR ;
   skos:exactMatch freq:daily ;
 .
 
 vcrfr:MENSAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Mensal"@pt-BR ;
   skos:exactMatch freq:monthly ;
 .
 
 vcrfr:QUINZENAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Quinzenal"@pt-BR ;
   skos:exactMatch freq:biweekly ;
 .
 
 vcrfr:SEMANAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Semanal"@pt-BR ;
   skos:exactMatch freq:weekly ;
 .
 
 vcrfr:SEMESTRAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Semestral"@pt-BR ;
   skos:exactMatch freq:semiannual ;
 .
 
 vcrfr:TRIMESTRAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Trimestral"@pt-BR ;
   skos:exactMatch freq:quarterly ;
 .
 
 vcrfr:BIENAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Bienal"@pt-BR ;
   skos:exactMatch freq:biennial ;
 .
 
 vcrfr:BIMESTRAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Bimestral"@pt-BR ;
   skos:exactMatch freq:bimonthly ;
 .
 
 vcrfr:CONTINUO
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Contínuo"@pt-BR ;
   skos:exactMatch freq:continuous ;
 .
 
 vcrfr:IRREGULAR
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Irregular"@pt-BR ;
   skos:exactMatch freq:irregular ;
 .
 
 vcrfr:SEMIMENSAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Semimensal"@pt-BR ;
   skos:exactMatch freq:semimonthly ;
 .
 
 vcrfr:SEMISSEMANAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Semissemanal"@pt-BR ;
   skos:exactMatch freq:semiweekly ;
 .
 
 vcrfr:TRES_VEZES_POR_MES
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Três vezes por mês"@pt-BR ;
   skos:exactMatch freq:threeTimesAMonth ;
 .
 
 vcrfr:TRES_VEZES_POR_SEMANA
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Três vezes por semana"@pt-BR ;
   skos:exactMatch freq:threeTimesAWeek ;
 .
 
 vcrfr:TRES_VEZES_AO_ANO
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Três vezes ao ano"@pt-BR ;
   skos:exactMatch freq:threeTimesAYear ;
 .
 
 vcrfr:TRIENAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Trienal"@pt-BR ;
   skos:exactMatch freq:triennial ;
 .
 
 vcrfr:QUADRIMESTRAL
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Quadrimestral"@pt-BR ;
-  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/quadrimestral> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/quadrimestral> ;
 .
 
 vcrfr:SOB_DEMANDA
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Sob demanda"@pt-BR ;
-  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/onDemand> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/onDemand> ;
 .
 
 vcrfr:OUTRAS
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Outras"@pt-BR ;
-  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/others> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/others> ;
 .
     

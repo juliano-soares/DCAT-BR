@@ -1,10 +1,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 
-<https://dcat-br.github.io/dcat-br/vocabularies/themes/defesa-nacional>
+<https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/defesa-nacional>
   a skos:Concept ;
-  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
-  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> ;
   skos:prefLabel "Defesa Nacional"@pt-BR ;
   skos:definition "Tema para classificação de dados relacionados à defesa nacional."@pt-BR ;
   dc:identifier "defesa-nacional" ;

@@ -21,7 +21,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcatbr: <http://purl.org/dcat-br/> .
 
-<http://purl.org/dcat-br/vocabularies/mdr_shapes>
+<http://purl.org/dcat-br/docs/vocabularies/mdr_shapes>
     dcat:accessURL <https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/catalogo-nacional-de-dados/releases/DCAT-BR-1.0.0/shacl/mdr-vocabularies.shape.ttl> ;
     dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dct:conformsTo <https://www.w3.org/TR/shacl> ;
@@ -47,7 +47,7 @@
     rdfs:label "Restrição de Tema"@pt-BR ;
     rdfs:label "Theme Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -61,7 +61,7 @@
     rdfs:label "Restrição de Tipo de Recurso"@pt-BR ;
     rdfs:label "Resource Type Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -75,7 +75,7 @@
     rdfs:label "Restrição de Cobertura Espacial"@pt-BR ;
     rdfs:label "Spatial Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/vocabularies/VCR-CE/> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -89,7 +89,7 @@
     rdfs:label "Restrição de Periodicidade"@pt-BR ;
     rdfs:label "Periodicity Restriction"@en ;
     sh:property [
-        sh:hasValue <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
+        sh:hasValue <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -162,15 +162,15 @@
         sh:node :ThemeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dcat:theme ;
-        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/dcat-br/vocabularies/themes/> deve estar presente."@pt-BR ;
-        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/dcat-br/vocabularies/themes/> should be present."@en ;
+        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> deve estar presente."@pt-BR ;
+        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> should be present."@en ;
         sh:severity sh:Warning
     ], [
         sh:node :ResourceTypeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dct:type ;
-        sh:description "Múltiplos tipos podem ser usados, mas é recomendado fornecer pelo menos um conceito de <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/>."@pt-BR ;
-        sh:description "Multiple types can be used but it is recommended to also provide at least one concept of <https://dcat-br.github.io/dcat-br/vocabularies/tipo-recurso/> should be present."@en ;
+        sh:description "Múltiplos tipos podem ser usados, mas é recomendado fornecer pelo menos um conceito de <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/>."@pt-BR ;
+        sh:description "Multiple types can be used but it is recommended to also provide at least one concept of <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/> should be present."@en ;
         sh:severity sh:Warning
     ] ;
     sh:targetClass dcat:Dataset .
