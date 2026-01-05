@@ -1,10 +1,10 @@
-http://purl.org/cld/freq/annual,ANUAL
-http://purl.org/cld/freq/daily,DIARIA
-http://purl.org/cld/freq/monthly,MENSAL
-http://purl.org/cld/freq/biweekly,QUINZENAL
-http://purl.org/cld/freq/weekly,SEMANAL
-http://purl.org/cld/freq/semiannual,SEMESTRAL
-http://purl.org/cld/freq/quarterly,TRIMESTRAL
+https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/annual,ANUAL
+https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/daily,DIARIA
+https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/monthly,MENSAL
+https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/biweekly,QUINZENAL
+https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/weekly,SEMANAL
+https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/semiannual,SEMESTRAL
+https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/quarterly,TRIMESTRAL
 https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/quadrimestral,QUADRIMESTRAL
 https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/onDemand,SOB_DEMANDA
 https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/others,OUTRAS

@@ -89,13 +89,10 @@
     rdfs:label "Restrição de Periodicidade"@pt-BR ;
     rdfs:label "Periodicity Restriction"@en ;
     sh:property [
-        sh:path skos:inScheme ;
-        sh:in (
-            <http://purl.org/dcat-br/docs/vocabularies/VCR-FR>
-            <http://purl.org/cld/freq>
-        ) ;
+        sh:hasValue <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
         sh:minCount 1 ;
-        sh:nodeKind sh:IRI
+        sh:nodeKind sh:IRI ;
+        sh:path skos:inScheme
     ] .
 
 # Observância Legal / Direitos de Acesso (dct:accessRights) - SEI
