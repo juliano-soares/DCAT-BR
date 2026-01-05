@@ -7,7 +7,7 @@
 @prefix dct:  <http://purl.org/dc/terms/> .
 
 @prefix vcrfr: <http://purl.org/dcat-br/docs/vocabularies/VCR-FR/> .
-@prefix freq:  <http://purl.org/cld/freq/> .
+@prefix freq:  <https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/> .
 
 #######################################################################
 # VCR-FR — Frequência (DCAT-BR)
@@ -18,7 +18,7 @@
   dct:title "Vocabulário Controlado de Referência — Frequência (VCR-FR)"@pt-BR ;
   dct:title "Reference Controlled Vocabulary — Frequency (VCR-FR)"@en ;
   dct:description "Vocabulário controlado para descrever a frequência/periodicidade de atualização de conjuntos de dados no perfil DCAT-BR."@pt-BR ;
-  dct:source <http://purl.org/cld/freq/> ;
+  dct:source <https://dcat-br.github.io/dcat-br/docs/vocabularies/freq/> ;
   dct:issued "2025-12-18"^^xsd:date ;
   owl:versionInfo "1.0.0" ;
 .
