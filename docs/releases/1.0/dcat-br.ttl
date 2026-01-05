@@ -1,3 +1,4 @@
+@prefix : <http://purl.org/dcat-br/> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -11,11 +12,56 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ns1: <http://purl.org/vocommons/voaf#> .
 @prefix schema: <http://schema.org/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+
+<http://purl.org/dcat-br/>
+  a owl:Ontology ;
+  rdfs:label
+      "Vocabulário Padrão DCAT-BR"@pt-BR ,
+      "DCAT-BR Application Profile"@en ;
+  rdfs:comment
+      "Ontologia que é um perfil de aplicação do vocabulário DCAT para o setor público brasileiro."@pt-BR ,
+      "This ontology is a profile of the DCAT vocabulary for the Brazilian public sector."@en ;
+  dc:abstract """
+            O DCAT-BR é um perfil de aplicação do vocabulário Data Catalog (DCAT) para
+            descrever conjuntos de dados, recursos, distribuições, serviços de dados e
+            metadados relacionados no contexto do setor público brasileiro.
+        """@pt-BR ,
+        """
+            DCAT-BR is an application profile of the Data Catalog Vocabulary (DCAT) for
+            describing datasets, resources, distributions, data services and related
+            metadata for Brazilian public sector data.
+        """@en ;
+  dc:modified "2025-12-12"^^xsd:date ;
+  owl:versionInfo "1.0.0" ;
+  cc:attributionName "Governo Federal do Brasil"@pt-BR ;
+  cc:attributionURL <https://www.gov.br/> ;
+  ns1:specializes <http://www.w3.org/ns/dcat#> ;
+  dc:publisher [
+    foaf:name "Ministério da Gestão e da Inovação em Serviços Públicos" ;
+    foaf:homepage <https://www.gov.br/gestao/pt-br>
+  ] ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:conformsTo <https://dcat-br.gov.br/releases/1.0/dcat-br.html> ;
+  dc:creator [
+    foaf:name "Juliano Leonardo Soares" ;
+    foaf:homepage <https://www.linkedin.com/in/juliano-leonardo-soares/> ;
+    schema:affiliation [
+      foaf:name "CPQD" ;
+      foaf:homepage <https://cpqd.com.br>
+    ]
+  ] .
 
 <https://creativecommons.org/licenses/by/4.0/>
   dc:title "Attribution 4.0 International (CC BY 4.0)" ;
   cc:attributionName "Governo Federal do Brasil" ;
   cc:attributionURL <https://www.gov.br/> .
+
+####################################################
+#   Classes
+####################################################
 
 <https://dcat-br.gov.br/releases/1.0/dcat-br.html> dc:title "DCAT-BR 1.0.0" .
 dcat:Dataset
@@ -72,6 +118,15 @@ dcat:DataService
   rdfs:comment """
             Um Checksum é um valor que permite verificar a integridade do conteúdo de um arquivo. Mesmo pequenas alterações no conteúdo do arquivo alterarão seu Checksum. Esta classe permite que os resultados de uma variedade de algoritmos de Checksum e resumo de mensagens criptográficas sejam representados.
         """@pt-BR .
+####################################### 
+##===================================## 
+##==          PROPERTIES           ==## 
+##===================================## 
+####################################### 
+  
+#=====================================# 
+#==  Conjunto de Dados - Properties ==# 
+#=====================================# 
 
 dc:accrualPeriodicity
   dc:identifier "dcterms:accrualPeriodicity" ;
@@ -137,7 +192,11 @@ dcat:inSeries
             Uma série de conjuntos de dados da qual o conjunto de dados faz parte.
         """@pt-BR ;
   rdfs:domain dcat:Dataset ;
-  rdfs:range prov:Activity .
+  rdfs:range dcat:DatasetSeries .
+
+#=======================================#
+#==  Recursos - Properties            ==#
+#=======================================#
 
 dc:accessRights
   dc:identifier "dcterms:accessRights" ;
@@ -512,6 +571,10 @@ dcat:first
   rdfs:domain dcat:Resource ;
   rdfs:range dcat:Resource .
 
+#===============================================#
+#==  Propriedades para a classe Distribuição ==#
+#===============================================#
+
 dcat:accessURL
   dc:identifier "dcat:accessURL" ;
   rdfs:label "URL de Acesso"@pt-BR, "Access URL"@en ;
@@ -797,35 +860,3 @@ dcat:spatialResolutionInMeters
         """@pt-BR ;
   rdfs:domain dcat:Resource ;
   rdfs:range xsd:decimal .
-
-[]
-  a owl:Ontology ;
-  rdfs:label "Vocabulário Padrão DCAT-BR"@pt-BR, "DCAT-BR Application Profile"@en ;
-  dc:abstract """
-            O DCAT-BR é um perfil de aplicação do vocabulário Data Catalog (DCAT) para
-            descrever conjuntos de dados, recursos, distribuições, serviços de dados e
-            metadados relacionados no contexto do setor público brasileiro.
-        """@pt-BR, """
-            DCAT-BR is an application profile of the Data Catalog Vocabulary (DCAT) for
-            describing datasets, resources, distributions, data services and related
-            metadata for Brazilian public sector data.
-        """@en ;
-  dc:modified "2025-12-12"^^xsd:date ;
-  owl:versionInfo "1.0.0" ;
-  cc:attributionName "Governo Federal do Brasil"@pt-BR ;
-  cc:attributionURL <https://www.gov.br/> ;
-  ns1:specializes dcat: ;
-  dc:publisher [
-    foaf:name "Ministério da Gestão e da Inovação em Serviços Públicos" ;
-    foaf:homepage <https://www.gov.br/gestao/pt-br>
-  ] ;
-  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dc:conformsTo <https://dcat-br.gov.br/releases/1.0/dcat-br.html> ;
-  dc:creator [
-    foaf:name "Juliano Leonardo Soares" ;
-    foaf:homepage <https://www.linkedin.com/in/juliano-leonardo-soares/> ;
-    schema:affiliation [
-      foaf:name "CPQD" ;
-      foaf:homepage <https://cpqd.com.br>
-    ]
-  ] .
